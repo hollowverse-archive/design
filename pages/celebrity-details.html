@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700,900" rel="stylesheet">
+  </head>
+
+  <!-- notes: Currently there is a max-width set on the main container in order to present a mobile-only view for this iteration of the site. Simply removing the max-width will allow the site to be further developed for desktop and a fully responsive site with bootstrap. The navbar is also largely commented out for now.-->
+
+  <body>
+    <header>
+    <!-- Navbar -->
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-custom">
+        <!-- 
+        <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> 
+        -->
+        <a class="navbar-brand" href="#">HOLLOWVERSE</a>
+
+        <!-- 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div> 
+        -->
+      </nav>
+     <!-- /navbar --> 
+    </header>
+    <main>
+      <section>
+        <div class="container main-container">
+        <!-- row 1 (photo, name, categories) -->
+          <div class="row">
+            <div class="col-6">
+              <img src="../assets/tomHanks.jpg" alt="Tom Hanks' religion and political views" class="celeb-image img-fluid">
+            </div>  
+            <div class="col-6">  
+              <h5 class="title-text">Religion, politics, and ideas of</h5>
+              <h1 class="celeb-name">Tom Hanks</h1>
+              <ul class="celeb-tags">
+                <li>Filmmaker</li>
+                <li>Actor</li>
+                <li>Producer</li>
+              </ul>  
+            </div>
+          </div>
+        <!-- row 2 (overview paragraph) -->  
+          <div class="row overview-text">
+            <div class="col">
+              <p>Hanks has run the gamut of Christian denomiations from Mormonism to Catholocism but seems to have settled on Greek Orthodox.
+              </p>
+              <p>
+              Hanks is a hardcore Democrat and liberal, throwing his weight behind gay marriage, alternative energy, environmentalism, and Obama.
+              </p>
+            </div>
+          </div>
+        <!-- row 3 (yellow comments and quotes) -->
+          <div class="row">
+            <div class="col-12 yellow-sidebar-quote">
+              <h5 class="title-text quote-intro">Tom Hanks said:</h5>
+              <h5 class="title-text date-text">Jul 19, 2017</h5>
+              <p class="quote-text">Philosophy is considered a science but it is difficult to say, when one has to compare with an ordinary science, for example biology, or chemistry. This is a quesetion that turns into a burning problem among the scientists and linguists all over the world.</p>
+              <h5 class="title-text">Source: link.com</h5>
+            </div>
+            <div class="col-12">
+              <div class="quote-block-container">
+                <div class="quote-block yellow-quote-block">
+                  <p>There are many kinds of narratives and organizing principles. Science is driven by evidence gathered in experiments, and by the falsification of extant theories and their replacement with newer, asymptotically truer ones.</p>
+                  <div>
+                    <h4 class="quote-author-name">San Holo</h4>
+                    <div class="background-circle">
+                      <img src="../assets/sanHolo.png" class="quote-author-image" alt="San Holo photo">
+                    </div>
+                  </div>  
+                </div>
+              </div>  
+            </div>
+          </div>
+        <!-- row 4 (purple comments and quotes) -->  
+          <div class="row">
+            <div class="col-12 purple-sidebar-quote">
+              <h5 class="title-text quote-intro">Tom Hanks said:</h5>
+              <h5 class="title-text date-text">Jul 19, 2017</h5>
+              <p class="quote-text">Philosophy is considered a science but it is difficult to say, when one has to compare with an ordinary science, for example biology, or chemistry. This is a quesetion that turns into a burning problem among the scientists and linguists all over the world.</p>
+              <h5 class="title-text">Source: link.com</h5>
+            </div>
+            <div class="col-12">
+              <div class="quote-block-container">
+                <div class="quote-block purple-quote-block">
+                  <p>There are many kinds of narratives and organizing principles. Science is driven by evidence gathered in experiments, and by the falsification of extant theories and their replacement with newer, asymptotically truer ones.</p>
+                  <div>
+                    <h4 class="quote-author-name">San Holo</h4>
+                    <div class="background-circle">
+                      <img src="../assets/sanHolo.png" class="quote-author-image" alt="San Holo photo">
+                    </div>
+                  </div>  
+                </div>
+              </div>  
+            </div>
+          </div> 
+        </div> 
+        <!-- ^ end of container --> 
+      </section>
+    </main>  
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>

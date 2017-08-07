@@ -1,0 +1,168 @@
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar-brand {
+	margin: 0;
+	/* remove this margin change if going back to original bootstrap navbar */
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+	font-weight: bold;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("../images/svg/icon_menu.svg");
+    width: 20px;
+   	margin-top: 0.25rem;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: transparent;
+    border-width: 0;
+    padding: 0;
+}
+
+.navbar-custom {
+	background-color: #ffffff;
+	border-bottom: 1px solid lightgrey;
+}
+
+.main-container {
+	max-width: 750px;
+	/* remove this max-width if you want to let bootstrap work again */
+	padding-top: 30px;
+}
+
+.celeb-name {
+	font-weight: 900;
+	font-size: 2rem;
+}
+
+.celeb-image {
+	border-radius: 3px;
+	width: 100%;
+}
+
+.title-text {
+	color: #7f7f7f;
+	font-weight: normal;
+	font-size: 95%;
+}
+
+ul.celeb-tags {
+	padding: 0;
+	list-style-type: circle;
+}
+
+ul.celeb-tags li {
+	display: inline-block;
+	background-color: #6E63CF;
+	border-radius: 3px;
+	color: white;
+	padding: 5px 10px 5px 10px;
+	margin-bottom: 5px;
+}
+
+ul.celeb-tags li:before {
+  content: "• ";
+}
+
+.overview-text {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.yellow-sidebar-quote {
+	margin-left: 15px;
+	border-left: 5px solid #f5ca23;
+}
+
+.purple-sidebar-quote {
+	margin-left: 15px;
+	border-left: 5px solid #6E63CF;
+}
+
+.quote-intro {
+	display: inline-block;
+}
+
+.date-text {
+	display: inline-block;
+	float: right;
+	padding-right: 15px;
+}
+
+.quote-text {
+	padding-right: 15px;
+}
+
+.quote-block-container {
+	margin: 20px 0 70px 20px;
+}
+
+.yellow-quote-block, .purple-quote-block {
+	font-style: italic;
+}
+
+.quote-block p {
+	margin: 0;
+	padding: 0 20px 30px 20px;
+	border-radius: 3px;	
+}
+
+.yellow-quote-block p {
+	background-color: #f5ca23;
+}
+
+.yellow-quote-block p::before {
+	display: block;
+    content: ' ';
+    background: url("../images/svg/chat_arrow_yellow.svg") no-repeat;
+    width: 18px;
+    height: 15px;
+    position: relative;
+    top: -14px;
+    left: 95%;
+}
+
+.purple-quote-block p {
+	background-color: #6E63CF;
+	color: white;
+}
+
+.purple-quote-block p::before {
+	display: block;
+    content: ' ';
+    background: url("../images/svg/chat_arrow_purple.svg") no-repeat;
+    width: 18px;
+    height: 15px;
+    position: relative;
+    top: -14px;
+    left: 95%;
+}
+
+h4.quote-author-name {
+	font-size: 90%;
+	display: inline-block;
+	position: absolute;
+	bottom: 40px;
+	right: 100px;
+}
+
+.background-circle {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	border-radius: 50%;
+	border: 2px solid white;
+	display: inline-block;
+	right: 30px;
+	bottom: 30px;
+	overflow: hidden;
+	float: right;
+}
+
+.quote-author-image {
+	width: 100%;
+}
