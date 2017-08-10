@@ -28,7 +28,7 @@ const Quote = props => (
         <img
           className="quote-reply-avatar"
           alt={props.name}
-          src={`/assets/${props.replyAvatar}`}
+          src={`assets/${props.replyAvatar}`}
         />
       </div>
     }

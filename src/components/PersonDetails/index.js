@@ -16,7 +16,7 @@ const PersonDetails = props => (
     <img
       className="person-details-avatar"
       alt={props.name}
-      src={`/assets/${props.avatar}`}
+      src={`assets/${props.avatar}`}
     />
     <div className="person-details-caption">
       {strings.RELIGION_POLITICS_AND_IDEAS_OF}
