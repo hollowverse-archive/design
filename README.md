@@ -8,17 +8,19 @@ on the browser.
 
 ## How to use this repo
 
-* Clone it, and `cd` into it
-* `npm install`
-* `npm start`
+1. Clone it, and `cd` into it
+2. Install [Node.js](https://nodejs.org/en/).
+3. Install Node Package Manager `sudo npm install npm -g`.
+4. Install all dependencies `npm install`.
+5. Now you can run development server on localhost `npm start` or build the bundle `npm run build` for production.
 
-At this point you'll have a web server running on your local machine at a certain port. You
-should see a message on your terminal telling you how to reach that web server from your 
-browser. 
+## Develop
 
-For example, the server might be reachable at the following URL `http://localhost:5000`. Open that page.
+Run `npm start`. It runs the app in development mode on `localhost:8080` with hot loading. Also the website is available by IP address of the host with port 8080 from devices, connected to the current local network for testing on mobile devices.
 
-On the main page, you'll see links. These links lead to full designs of mock pages.
+## Build
+
+Run `npm run build`. It compiles and replaces `public/js/bundle.js`.
 
 ## Roles
 
