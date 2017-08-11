@@ -44,6 +44,20 @@
     .self & {
       color: $color-text-default;
       background-color: $color-yellow;
+
+      &::after {
+        background-image: url('../../shared/assets/quote-arrow-yellow.svg');
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 10px;
+      right: 15px;
+      top: -10px;
+      background: url('../../shared/assets/quote-arrow-pink.svg') 50% 50% no-repeat;
     }
   }
 
