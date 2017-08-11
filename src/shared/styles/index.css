@@ -25,7 +25,7 @@ body {
   height: 100%;
   min-width: 320px;
   position: relative;
-  color: $color-dark;
+  color: $color-text-default;
   background-color: #fff;
   font-size: 15px;
   font-family: 'Fira Sans', serif;

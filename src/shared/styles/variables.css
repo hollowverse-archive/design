@@ -5,8 +5,8 @@
 $color-pink: #6e63cf;
 $color-yellow: #f5ca23;
 
-$color-text-default: rgba(0.05, 0.05, 0.05, 1);
-$color-text-medium: rgba(0.1, 0.1, 0.1, 1);
+$color-text-default: #111;
+$color-text-medium: rgba(0.15, 0.15, 0.15, 1);
 $color-text-light: rgba(0, 0, 0, 0.5);
 
 $color-border-gray: #e5e5e5;
