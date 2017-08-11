@@ -1,18 +1,31 @@
 /**
  * App Container
  */
-import React from 'react';
+import React, { Component } from 'react';
 import NavBar from '../../components/NavBar';
 import Person from '../Person';
 import './styles.css';
 
-const App = () => (
-  <div className="app">
-    <NavBar />
-    <div className="app-view">
-      <Person />
-    </div>
-  </div>
-);
+export default class App extends Component {
+  componentDidMount() {
+    // Init Facabook SDK
+    /* eslint-disable */
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    /* eslint-enable */
+  }
 
-export default App;
+  render = () => (
+    <div className="app">
+      <NavBar />
+      <div className="app-view">
+        <Person />
+      </div>
+    </div>
+  );
+}

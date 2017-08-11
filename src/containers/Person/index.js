@@ -4,7 +4,7 @@
 import React from 'react';
 import PersonDetails from '../../components/PersonDetails';
 import Quote from '../../components/Quote';
-import Comments from '../../components/Comments';
+import FbComments from '../../components/FbComments';
 
 const PERSON_DATA = {
   name: 'Tom Hanks',
@@ -50,7 +50,7 @@ const Person = () => (
     <Quote self {...QUOTE_1} />
     <Quote {...QUOTE_2} />
     <Quote {...QUOTE_3} />
-    <Comments />
+    <FbComments />
   </div>
 );
 
