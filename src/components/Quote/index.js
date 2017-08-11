@@ -10,14 +10,19 @@ import './styles.css';
 const Quote = props => (
   <div className={classNames('quote', { self: props.self })}>
     <div className="quote-content">
+      <div className="quote-date">
+        {props.date}
+      </div>
       <div className="quote-caption">
         {props.self && props.author ?
           `${props.author} ${strings.SAID}:` : `${strings.SOMEONE} ${strings.SAID}:` }
       </div>
-      <div className="quote-date">
-        {props.date}
+      <div className="quote-text">
+        {props.text}
       </div>
-      {props.text}
+      <div className="quote-source">
+        {`${strings.SOURCE}: ${props.source}`}
+      </div>
     </div>
     {props.reply &&
       <div className="quote-reply">
@@ -40,6 +45,7 @@ Quote.propTypes = {
   date: PropTypes.string.isRequired,
   self: PropTypes.bool,
   author: PropTypes.string,
+  source: PropTypes.string,
   reply: PropTypes.string,
   replyAuthor: PropTypes.string,
 };
@@ -47,6 +53,7 @@ Quote.propTypes = {
 Quote.defaultProps = {
   self: false,
   author: '',
+  source: '',
   reply: '',
   replyAuthor: '',
   replyAvatar: '',
