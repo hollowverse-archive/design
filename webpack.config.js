@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 // PostCSSs plugins
 const partialImport = require('postcss-partial-import');
@@ -12,8 +11,7 @@ const postcssCalc = require('postcss-calc');
 const postcssSvgo = require('postcss-svgo');
 const postcssReporter = require('postcss-reporter');
 
-const isDev = process.env.NODE_ENV === 'development' || false;
-const buildPath = path.resolve(__dirname, 'build');
+const buildPath = path.resolve(__dirname, 'public');
 const nodeModules = path.resolve(__dirname, 'node_modules');
 
 // HTML templates for HtmlWebpackPlugin
@@ -23,7 +21,7 @@ const htmlTemplate = {
 };
 
 module.exports = {
-  devtool: isDev ? 'eval-source-map' : false,
+  devtool: 'eval-source-map',
 
   entry: [
     'babel-polyfill',
@@ -96,34 +94,11 @@ module.exports = {
     ],
   },
 
-  plugins: isDev ? [
+  plugins: [
     new HtmlWebpackPlugin(htmlTemplate),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV) },
-    }),
-  ] : [
-    new HtmlWebpackPlugin(htmlTemplate),
-    new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV) },
-    }),
-    new webpack.ContextReplacementPlugin(/moment[/\\\\]locale$/, /en/),
-    new FaviconsWebpackPlugin({
-      logo: './src/shared/assets/appicon.png',
-      prefix: 'assets/favicon/',
-      background: '#6e63cf',
-      icons: {
-        android: false,
-        appleIcon: true,
-        appleStartup: false,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false,
-      },
     }),
   ],
 
@@ -133,13 +108,13 @@ module.exports = {
   },
 
   devServer: {
-    hot: isDev,
+    hot: true,
     host: '0.0.0.0',
     port: 8080,
     contentBase: buildPath,
     historyApiFallback: true,
-    inline: isDev,
-    compress: !isDev,
+    inline: true,
+    compress: false,
     disableHostCheck: true,
   },
 };

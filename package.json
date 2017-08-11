@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run cp-public && NODE_ENV=development webpack-dev-server --progress",
-    "build": "npm run cp-public && NODE_ENV=production webpack -p --progress",
-    "cp-public": "cp -a ./public/. ./build"
+    "start": "NODE_ENV=development webpack-dev-server --progress"
   },
   "repository": {
     "type": "git",
