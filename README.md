@@ -8,17 +8,9 @@ on the browser.
 
 ## How to use this repo
 
-* Clone it, and `cd` into it
-* `npm install`
-* `npm start`
-
-At this point you'll have a web server running on your local machine at a certain port. You
-should see a message on your terminal telling you how to reach that web server from your 
-browser. 
-
-For example, the server might be reachable at the following URL `http://localhost:5000`. Open that page.
-
-On the main page, you'll see links. These links lead to full designs of mock pages.
+1. Clone it, and `cd` into it
+1. Install all dependencies `npm install`
+1. Now you can run development server on `http://localhost:8080` using `npm start`
 
 ## Roles
 

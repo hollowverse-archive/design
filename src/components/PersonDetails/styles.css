@@ -1,0 +1,46 @@
+/**
+ * Styles of PersonDetails
+ */
+@import '../../shared/styles/variables.css';
+
+$avatar-width: 150px;
+$avatar-height: 190px;
+
+.person-details {
+  position: relative;
+
+  &-avatar {
+    width: $avatar-width;
+    height: $avatar-height;
+    border-radius: 4px;
+    user-select: none;
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+
+  &-caption {
+    color: $color-text-light;
+    font-size: 13px;
+  }
+
+  &-name {
+    color: $color-text-default;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 32px;
+    margin: 5px;
+  }
+
+  &-tags {
+    margin: 10px 0;
+  }
+
+  &-about {
+    clear: both;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}

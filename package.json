@@ -1,10 +1,10 @@
 {
-  "name": "design",
-  "version": "1.0.0",
+  "name": "hollowverse-design",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/serve ."
+    "start": "NODE_ENV=development webpack-dev-server --progress"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,104 @@
   },
   "homepage": "https://github.com/hollowverse/design#readme",
   "dependencies": {
-    "serve": "^6.0.3"
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react-app": "^3.0.2",
+    "babel-runtime": "^6.25.0",
+    "browserslist": "^2.3.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.2.0",
+    "favicons-webpack-plugin": "0.0.7",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss": "^6.0.8",
+    "postcss-calc": "^6.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-loader": "^2.0.6",
+    "postcss-partial-import": "^4.1.0",
+    "postcss-reporter": "^5.0.0",
+    "postcss-svgo": "^2.1.6",
+    "precss": "^2.0.0",
+    "style-loader": "^0.18.2",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "svg-url-loader": "^2.1.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.3",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "env": {
+      "jest": true
+    },
+    "globals": {
+      "window": true,
+      "document": true,
+      "navigator": true,
+      "node": true
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "no-console": 0,
+      "strict": 0,
+      "no-return-assign": 0,
+      "jsx-a11y/img-has-alt": 0,
+      "jsx-a11y/no-autofocus": 0,
+      "jsx-a11y/href-no-hash": 0,
+      "react/prop-types": 0,
+      "react/forbid-prop-types": 0,
+      "react/jsx-filename-extension": 0,
+      "react/jsx-space-before-closing": 0,
+      "react/jsx-wrap-multilines": 0,
+      "no-param-reassign": [
+        2,
+        {
+          "props": false
+        }
+      ]
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "plugins": [],
+    "rules": {
+      "rule-empty-line-before": null,
+      "comment-empty-line-before": null,
+      "at-rule-empty-line-before": null,
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "appearance",
+            "text-size-adjust"
+          ]
+        }
+      ]
+    }
   }
 }
