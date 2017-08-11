@@ -29,8 +29,6 @@ body {
   background-color: #fff;
   font-size: 15px;
   font-family: 'Fira Sans', serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 
   .root {
     width: 100%;
