@@ -3,18 +3,12 @@
  */
 @import '../../shared/styles/variables.css';
 
-<<<<<<< HEAD
 $avatar-size: 120px;
-=======
-$avatar-width: 150px;
-$avatar-height: 190px;
->>>>>>> upstream/master
 
 .person-details {
   position: relative;
 
   &-avatar {
-<<<<<<< HEAD
     width: $avatar-size;
     height: $avatar-size;
     border-radius: calc($avatar-size / 2);
@@ -23,30 +17,17 @@ $avatar-height: 190px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
-=======
-    width: $avatar-width;
-    height: $avatar-height;
-    border-radius: 4px;
-    user-select: none;
-    float: left;
-    margin: 0 20px 20px 0;
->>>>>>> upstream/master
   }
 
   &-caption {
     color: $color-text-light;
-<<<<<<< HEAD
     font-size: 12px;
     text-align: center;
-=======
-    font-size: 13px;
->>>>>>> upstream/master
   }
 
   &-name {
     color: $color-text-default;
     font-size: 30px;
-<<<<<<< HEAD
     font-weight: bold;
     line-height: 25px;
     margin: 10px 0;
@@ -56,16 +37,6 @@ $avatar-height: 190px;
   &-labels {
     text-align: center;
     margin: 20px auto;
-=======
-    font-weight: 900;
-    letter-spacing: -1px;
-    line-height: 32px;
-    margin: 5px;
-  }
-
-  &-tags {
-    margin: 10px 0;
->>>>>>> upstream/master
   }
 
   &-about {

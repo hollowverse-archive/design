@@ -3,11 +3,7 @@
  */
 import React, { Component } from 'react';
 import NavBar from '../../components/NavBar';
-<<<<<<< HEAD
 import NotablePerson from '../NotablePerson';
-=======
-import Person from '../Person';
->>>>>>> upstream/master
 import './styles.css';
 
 export default class App extends Component {
@@ -27,13 +23,7 @@ export default class App extends Component {
   render = () => (
     <div className="app">
       <NavBar />
-<<<<<<< HEAD
       <NotablePerson />
-=======
-      <div className="app-view">
-        <Person />
-      </div>
->>>>>>> upstream/master
     </div>
   );
 }
