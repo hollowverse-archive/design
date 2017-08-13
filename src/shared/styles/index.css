@@ -1,7 +1,15 @@
 /**
+<<<<<<< HEAD
  * Resets some default values, init general layout
  */
 
+=======
+ * Resets some default values and import fonts
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700');
+
+>>>>>>> upstream/master
 *,
 *::after,
 *::before {
@@ -26,7 +34,11 @@ body {
   color: $color-text-default;
   background-color: #fff;
   font-size: 15px;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+=======
+  font-family: 'Fira Sans', serif;
+>>>>>>> upstream/master
 
   .root {
     width: 100%;
@@ -38,6 +50,10 @@ input,
 button,
 textarea {
   font-size: 15px;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+=======
+  font-family: 'Fira Sans', serif;
+>>>>>>> upstream/master
 }
 
