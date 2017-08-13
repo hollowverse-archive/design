@@ -1,9 +1,9 @@
 /**
- * Styles of Tag
+ * Styles of Label
  */
 @import '../../shared/styles/variables.css';
 
-.tag {
+.label {
   display: inline-block;
   position: relative;
   color: #fff;
