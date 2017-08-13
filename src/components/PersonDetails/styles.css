@@ -26,8 +26,7 @@ $avatar-height: 190px;
   &-name {
     color: $color-text-default;
     font-size: 30px;
-    font-weight: 900;
-    letter-spacing: -1px;
+    font-weight: bold;
     line-height: 32px;
     margin: 5px;
   }
