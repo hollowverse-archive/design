@@ -1,15 +1,15 @@
 /**
- * Styles of Tag
+ * Styles of Label
  */
 @import '../../shared/styles/variables.css';
 
-.tag {
+.label {
   display: inline-block;
   position: relative;
   color: #fff;
   background-color: $color-pink;
   margin: 0 5px 5px 0;
-  font-size: 14px;
+  font-size: 12px;
   padding: 5px 10px 5px 20px;
   border-radius: 3px;
 

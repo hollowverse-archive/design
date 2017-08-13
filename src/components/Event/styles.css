@@ -1,10 +1,10 @@
 /**
- * Styles of Quote
+ * Styles of Event
  */
 @import '../../shared/styles/variables.css';
 
-.quote {
-  margin: 20px auto 80px;
+.event {
+  margin: 40px auto 60px;
 
   &-content {
     position: relative;
@@ -36,9 +36,15 @@
     font-size: 12px;
     color: $color-text-light;
     margin: 5px 0;
+
+    a {
+      color: $color-text-light;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
   }
 
-  &-reply {
+  &-user-comment {
     position: relative;
     font-size: 14px;
     font-style: italic;
@@ -68,7 +74,7 @@
     }
   }
 
-  &-reply-author {
+  &-user-name {
     position: absolute;
     font-size: 13px;
     right: 75px;
@@ -78,7 +84,7 @@
     color: $color-text-light;
   }
 
-  &-reply-avatar {
+  &-user-avatar {
     position: absolute;
     bottom: -25px;
     right: 15px;
