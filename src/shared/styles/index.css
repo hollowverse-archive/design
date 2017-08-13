@@ -1,8 +1,6 @@
 /**
- * Resets some default values and import fonts
+ * Resets some default values, init general layout
  */
-
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700');
 
 *,
 *::after,
@@ -28,7 +26,7 @@ body {
   color: $color-text-default;
   background-color: #fff;
   font-size: 15px;
-  font-family: 'Fira Sans', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   .root {
     width: 100%;
@@ -40,6 +38,6 @@ input,
 button,
 textarea {
   font-size: 15px;
-  font-family: 'Fira Sans', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
