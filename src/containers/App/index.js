@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import NavBar from '../../components/NavBar';
-import Person from '../Person';
+import NotablePerson from '../NotablePerson';
 import './styles.css';
 
 export default class App extends Component {
@@ -23,9 +23,7 @@ export default class App extends Component {
   render = () => (
     <div className="app">
       <NavBar />
-      <div className="app-view">
-        <Person />
-      </div>
+      <NotablePerson />
     </div>
   );
 }
