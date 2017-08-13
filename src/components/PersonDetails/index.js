@@ -13,10 +13,9 @@ const renderParagraph = (i, index) => <p key={index}>{i}</p>;
 
 const PersonDetails = props => (
   <div className="person-details">
-    <img
+    <div
       className="person-details-avatar"
-      alt={props.name}
-      src={`assets/${props.avatar}`}
+      style={{ backgroundImage: `url(assets/${props.avatar})` }}
     />
     <div className="person-details-caption">
       {strings.RELIGION_POLITICS_AND_IDEAS_OF}

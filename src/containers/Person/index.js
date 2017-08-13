@@ -7,8 +7,8 @@ import Quote from '../../components/Quote';
 import FbComments from '../../components/FbComments';
 
 const PERSON_DATA = {
-  name: 'Tom Hanks',
-  avatar: 'tom-hanks.jpg',
+  name: 'Arnold Schwarznegger',
+  avatar: 'arnold.jpg',
   tags: ['Filmmaker', 'Actor', 'Producer'],
   about: [
     'Hanks has run the gamut of Chrisian denominations from Mormonism to Catholicism but seems to have settled on Greek Orthodox.',
