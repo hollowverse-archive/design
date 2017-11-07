@@ -11,4 +11,8 @@ $color-text-light: rgba(0, 0, 0, 0.5);
 
 $color-border-gray: #e5e5e5;
 
+$color-loading-placeholder: #f1f3f6;
+
 $navbar-height: 46px;
+
+$person-avatar-size: 120px;

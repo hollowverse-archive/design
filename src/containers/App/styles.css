@@ -3,15 +3,11 @@
  */
 @import '../../shared/styles/variables.css';
 
-.app {
+.app-view {
   width: 100%;
+  max-width: 720px;
+  position: relative;
   height: 100%;
-
-  &-view {
-    width: 100%;
-    max-width: 720px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  margin: 0 auto;
+  padding: 20px;
 }

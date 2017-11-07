@@ -3,15 +3,14 @@
  */
 @import '../../shared/styles/variables.css';
 
-$avatar-size: 120px;
-
 .person-details {
   position: relative;
+  animation: person-details-on 0.3s;
 
   &-avatar {
-    width: $avatar-size;
-    height: $avatar-size;
-    border-radius: calc($avatar-size / 2);
+    width: $person-avatar-size;
+    height: $person-avatar-size;
+    border-radius: calc($person-avatar-size / 2);
     user-select: none;
     margin: 0 auto 20px;
     background-position: 50% 50%;
@@ -45,5 +44,15 @@ $avatar-size: 120px;
 
   p {
     margin: 10px 0;
+  }
+}
+
+@keyframes person-details-on {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

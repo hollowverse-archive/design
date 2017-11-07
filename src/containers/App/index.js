@@ -2,11 +2,15 @@
  * App Container
  */
 import React, { Component } from 'react';
-import NavBar from '../../components/NavBar';
-import NotablePerson from '../NotablePerson';
+import { NavBar } from '../../components';
+import { NotablePerson } from '../../containers';
 import './styles.css';
 
 export default class App extends Component {
+  state = {
+    isLoading: true,
+  }
+
   componentDidMount() {
     // Init Facabook SDK
     /* eslint-disable */
@@ -18,12 +22,22 @@ export default class App extends Component {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     /* eslint-enable */
+
+    // Emulate loading
+    setTimeout(
+      () => this.setState({ isLoading: false }),
+      (Math.random() * 1000) + 100,
+    );
   }
 
-  render = () => (
-    <div className="app">
-      <NavBar />
-      <NotablePerson />
-    </div>
-  );
+  render() {
+    return ([
+      <NavBar key={1} />,
+      <div key={2} className="app-view">
+        <NotablePerson
+          isLoading={this.state.isLoading}
+        />
+      </div>,
+    ]);
+  }
 }
