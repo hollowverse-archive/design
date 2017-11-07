@@ -39,5 +39,10 @@ PersonDetails.propTypes = {
   about: PropTypes.arrayOf(PropTypes.string),
 };
 
+PersonDetails.defaultProps = {
+  labels: [],
+  about: [],
+};
+
 export default PersonDetails;
 
