@@ -1,6 +1,7 @@
 /**
  * Export all components
  */
+export { default as ErrorMessage } from './ErrorMessage';
 export { default as Event } from './Event';
 export { default as FbComments } from './FbComments';
 export { default as Label } from './Label';

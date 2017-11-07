@@ -1,0 +1,21 @@
+/**
+ * Styles of Event
+ */
+@import '../../shared/styles/variables.css';
+
+.error-message {
+  margin: 40px auto;
+  text-align: center;
+
+  &-title {
+    font-size: 100px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+  }
+
+  &-caption {
+    font-size: 22px;
+    color: $color-text-default;
+  }
+}

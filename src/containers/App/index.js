@@ -2,13 +2,24 @@
  * App Container
  */
 import React, { Component } from 'react';
-import { NavBar } from '../../components';
+import * as uiStrings from '../../constants/uiStrings';
+import { NavBar, ErrorMessage } from '../../components';
 import { NotablePerson } from '../../containers';
 import './styles.css';
+
+const ERRORS = [
+  'Notable Person is not found',
+  'Internet connection is lost or slow',
+  'Something is wrong on our end. Try again later',
+];
+
+const getRandomError = () =>
+  Math.random() >= 0.8 && ERRORS[Math.floor(Math.random() * ERRORS.length)];
 
 export default class App extends Component {
   state = {
     isLoading: true,
+    errorMessage: undefined,
   }
 
   componentDidMount() {
@@ -23,20 +34,30 @@ export default class App extends Component {
     }(document, 'script', 'facebook-jssdk'));
     /* eslint-enable */
 
-    // Emulate loading
-    setTimeout(
-      () => this.setState({ isLoading: false }),
-      (Math.random() * 1000) + 100,
-    );
+    // Emulate loading and error
+    setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
+  }
+
+  handleLoaded = () => {
+    this.setState({
+      isLoading: false,
+      errorMessage: getRandomError(),
+    });
   }
 
   render() {
     return ([
       <NavBar key={1} />,
       <div key={2} className="app-view">
-        <NotablePerson
-          isLoading={this.state.isLoading}
-        />
+        {this.state.errorMessage ?
+          <ErrorMessage
+            title={uiStrings.SORRY}
+            message={this.state.errorMessage}
+          />
+        :
+          <NotablePerson
+            isLoading={this.state.isLoading}
+          />}
       </div>,
     ]);
   }

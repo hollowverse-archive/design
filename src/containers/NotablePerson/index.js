@@ -2,6 +2,7 @@
  * NotablePerson Container
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { PersonLoading, PersonDetails, Event, FbComments } from '../../components';
 
 const NOTABLE_PERSON_DATA = {
@@ -57,5 +58,13 @@ const NotablePerson = ({ isLoading }) => (
       <FbComments key={5} />,
     ]
 );
+
+NotablePerson.propTypes = {
+  isLoading: PropTypes.bool,
+};
+
+NotablePerson.defaultProps = {
+  isLoading: false,
+};
 
 export default NotablePerson;
