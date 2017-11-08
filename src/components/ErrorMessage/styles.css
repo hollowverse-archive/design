@@ -4,7 +4,9 @@
 @import '../../shared/styles/variables.css';
 
 .error-message {
-  margin: 40px auto;
+  position: relative;
+  padding: 20px 20px 80px;
+  margin: auto;
   text-align: center;
 
   &-title {
