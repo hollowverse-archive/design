@@ -12,10 +12,8 @@ const ERRORS = [
   'Something is wrong on our end. Try again later.',
 ];
 
-// Math.random() >= 0.8
-
 const getRandomError = () =>
-  true && ERRORS[Math.floor(Math.random() * ERRORS.length)];
+  Math.random() >= 0.8 && ERRORS[Math.floor(Math.random() * ERRORS.length)];
 
 export default class App extends Component {
   state = {
