@@ -5,19 +5,30 @@
 
 .error-message {
   position: relative;
-  padding: 20px 20px 80px;
+  padding: 20px 20px 40px;
   margin: auto;
   text-align: center;
 
-  &-title {
-    font-size: 100px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.15);
-    margin-bottom: 10px;
+  &-caption {
+    font-size: 20px;
+    font-weight: 300;
+    color: $color-text-default;
   }
 
-  &-caption {
-    font-size: 22px;
-    color: $color-text-default;
+  &-button {
+    font-size: 14px;
+    padding: 10px 20px;
+    color: $color-pink;
+    margin: 40px 0;
+    border: 1px solid rgba(110, 99, 207, 0.8);
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      border-color: $color-pink;
+      background-color: rgba(110, 99, 207, 0.05);
+    }
   }
 }

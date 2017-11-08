@@ -2,19 +2,20 @@
  * App Container
  */
 import React, { Component } from 'react';
-import * as uiStrings from '../../constants/uiStrings';
 import { NavBar, ErrorMessage } from '../../components';
 import { NotablePerson } from '../../containers';
 import './styles.css';
 
 const ERRORS = [
-  'Notable Person is not found',
-  'Internet connection is lost or slow',
-  'Something is wrong on our end. Try again later',
+  'Notable Person is not found.',
+  'Internet connection is lost or slow.',
+  'Something is wrong on our end. Try again later.',
 ];
 
+// Math.random() >= 0.8
+
 const getRandomError = () =>
-  Math.random() >= 0.8 && ERRORS[Math.floor(Math.random() * ERRORS.length)];
+  true && ERRORS[Math.floor(Math.random() * ERRORS.length)];
 
 export default class App extends Component {
   state = {
@@ -52,8 +53,9 @@ export default class App extends Component {
       <div key={2} className="app-view">
         {this.state.errorMessage ?
           <ErrorMessage
-            title={uiStrings.SORRY}
             message={this.state.errorMessage}
+            action={() => window.location.reload()}
+            actionLabel="Reload the Page"
           />
         :
           <NotablePerson
