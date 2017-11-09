@@ -1,0 +1,35 @@
+/**
+ * Styles of Event
+ */
+@import '../../shared/styles/variables.css';
+
+.error-message {
+  position: relative;
+  padding: 160px 20px 20px;
+  margin: auto;
+  text-align: center;
+  background: url('./assets/icn-warning.svg') 50% 0 no-repeat;
+
+  &-caption {
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-text-default;
+  }
+
+  &-button {
+    font-size: 14px;
+    padding: 10px 20px;
+    color: $color-blue;
+    margin: 40px 0;
+    border: 1px solid rgba(75, 49, 246, 0.8);
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      border-color: $color-blue;
+      background-color: rgba(75, 49, 246, 0.04);
+    }
+  }
+}

@@ -2,9 +2,8 @@
  * NotablePerson Container
  */
 import React from 'react';
-import PersonDetails from '../../components/PersonDetails';
-import Event from '../../components/Event';
-import FbComments from '../../components/FbComments';
+import PropTypes from 'prop-types';
+import { PersonLoading, PersonDetails, Event, FbComments } from '../../components';
 
 const NOTABLE_PERSON_DATA = {
   name: 'Arnold Schwarznegger',
@@ -47,14 +46,25 @@ const EVENT_3 = {
   sourceUrl: 'http://link.com',
 };
 
-const NotablePerson = () => (
-  <div className="app-view">
-    <PersonDetails {...NOTABLE_PERSON_DATA} />
-    <Event self {...EVENT_1} />
-    <Event {...EVENT_2} />
-    <Event {...EVENT_3} />
-    <FbComments />
-  </div>
+const NotablePerson = ({ isLoading }) => (
+  isLoading ?
+    <PersonLoading />
+    :
+    [
+      <PersonDetails key={1} {...NOTABLE_PERSON_DATA} />,
+      <Event key={2} self {...EVENT_1} />,
+      <Event key={3} {...EVENT_2} />,
+      <Event key={4} {...EVENT_3} />,
+      <FbComments key={5} />,
+    ]
 );
+
+NotablePerson.propTypes = {
+  isLoading: PropTypes.bool,
+};
+
+NotablePerson.defaultProps = {
+  isLoading: false,
+};
 
 export default NotablePerson;

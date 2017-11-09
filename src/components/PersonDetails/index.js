@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as strings from '../../constants/UIStrings';
+import * as strings from '../../constants/uiStrings';
 import Label from '../Label';
 import './styles.css';
 
@@ -37,6 +37,11 @@ PersonDetails.propTypes = {
   photoUrl: PropTypes.string.isRequired,
   labels: PropTypes.arrayOf(PropTypes.string),
   about: PropTypes.arrayOf(PropTypes.string),
+};
+
+PersonDetails.defaultProps = {
+  labels: [],
+  about: [],
 };
 
 export default PersonDetails;

@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as strings from '../../constants/UIStrings';
+import * as strings from '../../constants/uiStrings';
 import './styles.css';
 
 const NavBar = props => (
