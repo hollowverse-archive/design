@@ -15,7 +15,9 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "react-dom": "^16.1.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -79,6 +81,7 @@
       "jsx-a11y/img-has-alt": 0,
       "jsx-a11y/no-autofocus": 0,
       "jsx-a11y/href-no-hash": 0,
+      "jsx-a11y/anchor-is-valid": 0,
       "react/prop-types": 0,
       "react/forbid-prop-types": 0,
       "react/jsx-filename-extension": 0,

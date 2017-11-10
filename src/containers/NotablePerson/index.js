@@ -17,6 +17,11 @@ const NotablePerson = ({ isLoading }) => (
       />,
       <EventGroup
         key={2}
+        type={eventTypes.DONATION}
+        events={data.DONATIONS.slice(0, 5)}
+      />,
+      <EventGroup
+        key={3}
         type={eventTypes.QUOTE}
         events={data.QUOTES}
       />,

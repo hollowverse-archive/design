@@ -6,7 +6,7 @@
 .person-details {
   position: relative;
   animation: person-details-on 0.3s;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   &-avatar {
     width: $person-avatar-size;
@@ -41,6 +41,7 @@
 
   &-about {
     clear: both;
+    margin: 0 20px;
   }
 
   p {

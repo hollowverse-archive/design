@@ -2,8 +2,8 @@
  * App Container
  */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavBar, ErrorMessage } from '../../components';
-import { NotablePerson } from '../../containers';
 import './styles.css';
 
 const ERRORS = [
@@ -16,6 +16,16 @@ const getRandomError = () =>
   Math.random() >= 0.8 && ERRORS[Math.floor(Math.random() * ERRORS.length)];
 
 export default class App extends Component {
+  static propTypes = {
+    screen: PropTypes.func,
+    screenProps: PropTypes.object,
+  }
+
+  static defaultProps = {
+    screen: <div />,
+    screenProps: undefined,
+  }
+
   state = {
     isLoading: true,
     errorMessage: undefined,
@@ -24,6 +34,8 @@ export default class App extends Component {
   componentDidMount() {
     // Emulate loading and error
     setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
+
+    window.scrollTo(0, 0);
   }
 
   handleLoaded = () => {
@@ -46,19 +58,23 @@ export default class App extends Component {
   /* eslint-enable */
 
   render() {
+    const Screen = this.props.screen;
+
     return ([
       <NavBar key={1} />,
       <div key={2} className="app-view">
-        {this.state.errorMessage ?
+        {!this.state.errorMessage ?
+          <Screen
+            isLoading={this.state.isLoading}
+            {...this.props.screenProps}
+          />
+          :
           <ErrorMessage
             message={this.state.errorMessage}
             action={() => window.location.reload()}
             actionLabel="Reload the Page"
           />
-        :
-          <NotablePerson
-            isLoading={this.state.isLoading}
-          />}
+        }
       </div>,
     ]);
   }

@@ -3,34 +3,52 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { eventTypes, uiStrings } from '../../constants';
+import { Link } from 'react-router-dom';
+import { paths, eventTypes, uiStrings } from '../../constants';
 import { EventAppearance, EventDonation, EventQuote } from '../../components';
 import './styles.css';
 
-const EventGroup = ({ type, events }) => {
-  let title;
-  let EventComponent;
+const getEventProps = (type) => {
+  switch (type) {
+    case eventTypes.APPEREANCE:
+      return {
+        path: paths.EVENTS_APPEARANCES,
+        title: uiStrings.APPEARANCES,
+        component: EventAppearance,
+      };
 
-  if (type === eventTypes.APPEREANCE) {
-    title = uiStrings.APPEARANCES;
-    EventComponent = EventAppearance;
-  } else if (type === eventTypes.DONATION) {
-    title = uiStrings.DONTAIONS;
-    EventComponent = EventDonation;
-  } else if (type === eventTypes.QUOTE) {
-    title = uiStrings.QUOTES;
-    EventComponent = EventQuote;
-  } else {
-    return undefined;
+    case eventTypes.DONATION:
+      return {
+        path: paths.EVENTS_DONATIONS,
+        title: uiStrings.DONTAIONS,
+        component: EventDonation,
+      };
+
+    case eventTypes.QUOTE:
+      return {
+        path: paths.EVENTS_QUOTES,
+        title: uiStrings.QUOTES,
+        component: EventQuote,
+      };
+
+    default:
+      return undefined;
   }
+};
+
+const EventGroup = ({ type, events }) => {
+  const eventProps = getEventProps(type);
 
   return (
     <div className="event-group">
-      <div className="event-group-title">
-        {title}
-      </div>
+      <Link
+        to={eventProps.path}
+        className="event-group-title"
+      >
+        {eventProps.title}
+      </Link>
       {events.map(event =>
-        <EventComponent
+        <eventProps.component
           key={event.id}
           {...event}
         />)}
