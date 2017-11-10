@@ -14,6 +14,7 @@ const Events = (props) => {
     case eventTypes.APPEARANCE:
       return (
         <EventGroup
+          personName={data.NOTABLE_PERSON.name}
           type={eventTypes.APPEARANCE}
           events={data.APPEARANCES}
         />);
@@ -21,6 +22,7 @@ const Events = (props) => {
     case eventTypes.DONATION:
       return (
         <EventGroup
+          personName={data.NOTABLE_PERSON.name}
           type={eventTypes.DONATION}
           events={data.DONATIONS}
         />);
@@ -28,6 +30,7 @@ const Events = (props) => {
     case eventTypes.QUOTE:
       return (
         <EventGroup
+          personName={data.NOTABLE_PERSON.name}
           type={eventTypes.QUOTE}
           events={data.QUOTES}
         />);

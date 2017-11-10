@@ -4,15 +4,20 @@
 @import '../../shared/styles/variables.css';
 
 .event-group {
-  margin: 0 10px;
+  margin: 10px;
 
   &-title {
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
     display: inline-block;
     color: $color-text-default;
     text-decoration: none;
 
     &:hover { color: $color-blue; }
+  }
+
+  &-person-name {
+    font-size: 16px;
+    display: block;
   }
 }

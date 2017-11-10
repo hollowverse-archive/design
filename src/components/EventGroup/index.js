@@ -36,7 +36,7 @@ const getEventProps = (type) => {
   }
 };
 
-const EventGroup = ({ type, events }) => {
+const EventGroup = ({ personName, type, events }) => {
   const eventProps = getEventProps(type);
 
   return (
@@ -45,6 +45,10 @@ const EventGroup = ({ type, events }) => {
         to={eventProps.path}
         className="event-group-title"
       >
+        {personName &&
+          <span className="event-group-person-name">
+            {personName}
+          </span>}
         {eventProps.title}
       </Link>
       {events.map(event =>
@@ -63,6 +67,11 @@ EventGroup.propTypes = {
     eventTypes.QUOTE,
   ]).isRequired,
   events: PropTypes.array.isRequired,
+  personName: PropTypes.string,
+};
+
+EventGroup.defaultProps = {
+  personName: undefined,
 };
 
 export default EventGroup;

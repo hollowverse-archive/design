@@ -8,7 +8,7 @@ import './styles.css';
 const EventDonate = props => (
   <div className="event-donate">
     <div className="event-donate-content">
-      {props.targetName}
+      {props.name}
       <div className="event-donate-caption">
         {props.date}
         {props.sourceName &&
@@ -26,7 +26,7 @@ const EventDonate = props => (
 
 EventDonate.propTypes = {
   date: PropTypes.string.isRequired,
-  targetName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   sourceName: PropTypes.string,
   sourceUrl: PropTypes.string,
 };

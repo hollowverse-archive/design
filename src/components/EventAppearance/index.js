@@ -8,7 +8,7 @@ import './styles.css';
 const EventAppearance = props => (
   <div className="event-appearance">
     <div className="event-appearance-content">
-      {props.targetName}
+      {props.name}
       <div className="event-appearance-caption">
         {props.date}
         {props.sourceName &&
@@ -26,7 +26,7 @@ const EventAppearance = props => (
 
 EventAppearance.propTypes = {
   date: PropTypes.string.isRequired,
-  targetName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   sourceName: PropTypes.string,
   sourceUrl: PropTypes.string,
 };
