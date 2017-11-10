@@ -6,7 +6,7 @@
 .app-view {
   width: 100%;
   max-width: 720px;
-  min-height: calc(100% - 40px);
+  min-height: calc(100% - 50px);
   position: relative;
   margin: 0 auto;
   padding: 20px 10px;

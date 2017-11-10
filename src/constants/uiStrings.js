@@ -9,3 +9,4 @@ export const SOURCE = 'Source';
 export const QUOTES = 'Quotes';
 export const APPEARANCES = 'Appearances';
 export const DONTAIONS = 'Donations';
+export const SEE_MORE = 'See more...';

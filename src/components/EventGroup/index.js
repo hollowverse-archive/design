@@ -10,7 +10,7 @@ import './styles.css';
 
 const getEventProps = (type) => {
   switch (type) {
-    case eventTypes.APPEREANCE:
+    case eventTypes.APPEARANCE:
       return {
         path: paths.EVENTS_APPEARANCES,
         title: uiStrings.APPEARANCES,
@@ -58,7 +58,7 @@ const EventGroup = ({ type, events }) => {
 
 EventGroup.propTypes = {
   type: PropTypes.oneOf([
-    eventTypes.APPEREANCE,
+    eventTypes.APPEARANCE,
     eventTypes.DONATION,
     eventTypes.QUOTE,
   ]).isRequired,

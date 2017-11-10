@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { data, eventTypes } from '../../constants';
-import { PersonLoading, PersonDetails, EventGroup, FbComments } from '../../components';
+import { PersonLoading, PersonDetails, EventWidget, FbComments } from '../../components';
 
 const NotablePerson = ({ isLoading }) => (
   isLoading ?
@@ -15,15 +15,20 @@ const NotablePerson = ({ isLoading }) => (
         key={1}
         {...data.NOTABLE_PERSON}
       />,
-      <EventGroup
+      <EventWidget
         key={2}
         type={eventTypes.DONATION}
         events={data.DONATIONS.slice(0, 5)}
       />,
-      <EventGroup
+      <EventWidget
         key={3}
+        type={eventTypes.APPEARANCE}
+        events={data.APPEARANCES.slice(0, 5)}
+      />,
+      <EventWidget
+        key={4}
         type={eventTypes.QUOTE}
-        events={data.QUOTES}
+        events={data.QUOTES.slice(0, 3)}
       />,
       <FbComments key={5} />,
     ]

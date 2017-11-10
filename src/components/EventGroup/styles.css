@@ -4,16 +4,12 @@
 @import '../../shared/styles/variables.css';
 
 .event-group {
-  margin: 10px 0;
-  padding: 15px 20px 10px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  border-radius: 3px;
+  margin: 0 10px;
 
   &-title {
     font-size: 26px;
     font-weight: bold;
-    display: block;
+    display: inline-block;
     color: $color-text-default;
     text-decoration: none;
 
