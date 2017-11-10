@@ -18,16 +18,29 @@
   color: $color-text-default;
   background-color: #fff;
 
+  &-inner {
+    position: relative;
+    max-width: $page-max-width;
+    margin: 0 auto;
+  }
+
   &-btn {
     position: absolute;
     top: 0;
     width: $navbar-height;
     height: $navbar-height;
+    display: block;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     cursor: pointer;
     &:hover { opacity: 0.7; }
     &:active { background-color: #f1f1f1; }
+  }
+
+  &-btn.back {
+    left: 0;
+    background-image: url('../../shared/assets/icn-back.svg');
+    animation: navbar-btn-left 0.3s;
   }
 
   &-btn.menu {
@@ -38,5 +51,17 @@
   &-btn.search {
     right: 0;
     background-image: url('../../shared/assets/icn-search.svg');
+  }
+}
+
+@keyframes navbar-btn-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateX(0);
   }
 }

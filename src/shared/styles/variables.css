@@ -16,3 +16,6 @@ $color-loading-placeholder: #f1f3f6;
 $navbar-height: 46px;
 
 $person-avatar-size: 120px;
+
+$page-min-width: 320px;
+$page-max-width: 720px;

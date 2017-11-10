@@ -21,7 +21,13 @@ import './shared/styles/index.css';
 const RouteEvents = ({ type, ...rest }) =>
   <Route
     {...rest}
-    render={() => <App screen={Events} screenProps={{ type }} />}
+    render={() =>
+      <App
+        screen={Events}
+        screenProps={{ type }}
+        backPath={paths.NOTABLE_PERSON}
+      />
+    }
   />;
 
 render(

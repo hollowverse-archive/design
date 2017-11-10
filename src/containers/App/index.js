@@ -19,11 +19,13 @@ export default class App extends Component {
   static propTypes = {
     screen: PropTypes.func,
     screenProps: PropTypes.object,
+    backPath: PropTypes.string,
   }
 
   static defaultProps = {
     screen: <div />,
     screenProps: undefined,
+    backPath: undefined,
   }
 
   state = {
@@ -49,7 +51,10 @@ export default class App extends Component {
     const Screen = this.props.screen;
 
     return ([
-      <NavBar key={1} />,
+      <NavBar
+        key={1}
+        back={this.props.backPath}
+      />,
       <div key={2} className="app-view">
         {!this.state.errorMessage ?
           <Screen
