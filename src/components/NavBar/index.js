@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as strings from '../../constants/uiStrings';
+import { uiStrings } from '../../constants';
 import './styles.css';
 
 const NavBar = props => (
@@ -17,7 +17,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  title: strings.HOLLOWVERSE,
+  title: uiStrings.HOLLOWVERSE,
 };
 
 export default NavBar;

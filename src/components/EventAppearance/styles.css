@@ -1,10 +1,10 @@
 /**
- * Styles of Event
+ * EventQuote Styles
  */
 @import '../../shared/styles/variables.css';
 
 .event {
-  margin: 40px auto 60px;
+  margin: 20px auto 80px;
 
   &-content {
     position: relative;

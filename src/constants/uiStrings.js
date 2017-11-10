@@ -6,3 +6,6 @@ export const RELIGION_POLITICS_AND_IDEAS_OF = 'Religon, politics, and ideas of';
 export const SOMEONE = 'Someone';
 export const SAID = 'said';
 export const SOURCE = 'Source';
+export const QUOTES = 'Quotes';
+export const APPEARANCES = 'Appearances';
+export const DONTAIONS = 'Donations';

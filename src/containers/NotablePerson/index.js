@@ -3,58 +3,23 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PersonLoading, PersonDetails, Event, FbComments } from '../../components';
-
-const NOTABLE_PERSON_DATA = {
-  name: 'Arnold Schwarznegger',
-  photoUrl: 'assets/arnold.jpg',
-  labels: ['Filmmaker', 'Actor', 'Producer'],
-  about: [
-    'Hanks has run the gamut of Chrisian denominations from Mormonism to Catholicism but seems to have settled on Greek Orthodox.',
-    'Hanks is a hardcode Democrat and liberal, throwing his weight behind gay marriage, alternatieve energy, environmentalism, and Obama.',
-  ],
-};
-
-const EVENT_1 = {
-  userComment: 'There are many kinds of narratives and organizing principles. Science is driven by evidence gathered in experiments, and by the falsification of extant theories and their replacement with newer, asymptotically truer, ones.',
-  userDisplayName: 'San Holo',
-  userAvatar: 'assets/san-holo.jpg',
-  author: 'Tom Hanks',
-  postedAt: 'Jul 19, 2017',
-  quote: 'Phisolophy is considered a science but it is difficult to stay, whne one has to compare with an ordinary science, for example biology, or chemistry. This is a question that turns into a burning problem among the scientists and linguists all over the world.',
-  sourceName: 'link.com',
-  sourceUrl: 'http://link.com',
-};
-
-const EVENT_2 = {
-  userComment: 'There are many kinds of narratives and organizing principles. Science is driven by evidence gathered in experiments, and by the falsification of extant theories and their replacement with newer, asymptotically truer, ones.',
-  userDisplayName: 'John Fantastico',
-  userAvatar: 'assets/john-fantastico.jpg',
-  postedAt: 'Jul 12, 2017',
-  quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
-  sourceName: 'link.com',
-  sourceUrl: 'http://link.com',
-};
-
-const EVENT_3 = {
-  userComment: 'There are many kinds of narratives and organizing principles. Science is driven by evidence gathered in experiments, and by the falsification of extant theories and their replacement with newer, asymptotically truer, ones.',
-  userDisplayName: 'Mr. Incredible',
-  userAvatar: 'assets/mr-incredible.jpg',
-  postedAt: 'Jul 10, 2017',
-  quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
-  sourceName: 'link.com',
-  sourceUrl: 'http://link.com',
-};
+import { data, eventTypes } from '../../constants';
+import { PersonLoading, PersonDetails, EventGroup, FbComments } from '../../components';
 
 const NotablePerson = ({ isLoading }) => (
   isLoading ?
     <PersonLoading />
     :
     [
-      <PersonDetails key={1} {...NOTABLE_PERSON_DATA} />,
-      <Event key={2} self {...EVENT_1} />,
-      <Event key={3} {...EVENT_2} />,
-      <Event key={4} {...EVENT_3} />,
+      <PersonDetails
+        key={1}
+        {...data.NOTABLE_PERSON}
+      />,
+      <EventGroup
+        key={2}
+        type={eventTypes.QUOTE}
+        events={data.QUOTES}
+      />,
       <FbComments key={5} />,
     ]
 );

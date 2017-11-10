@@ -1,0 +1,11 @@
+/**
+ * EventGroup Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.event-group {
+  &-title {
+    font-size: 26px;
+    font-weight: bold;
+  }
+}

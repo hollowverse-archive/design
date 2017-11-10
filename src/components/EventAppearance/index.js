@@ -1,13 +1,13 @@
 /**
- * Event Component
+ * EventQuote Component
  */
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import * as strings from '../../constants/uiStrings';
+import { uiStrings } from '../../constants';
 import './styles.css';
 
-const Event = props => (
+const EventQuote = props => (
   <div className={classNames('event', { self: props.self })}>
     <div className="event-content">
       <div className="event-date">
@@ -15,14 +15,14 @@ const Event = props => (
       </div>
       <div className="event-caption">
         {props.self && props.author ?
-          `${props.author} ${strings.SAID}:` : `${strings.SOMEONE} ${strings.SAID}:` }
+          `${props.author} ${uiStrings.SAID}:` : `${uiStrings.SOMEONE} ${uiStrings.SAID}:` }
       </div>
       <div className="event-text">
         {props.quote}
       </div>
       {props.sourceName &&
         <div className="event-source">
-          {`${strings.SOURCE}:`} <a href={props.sourceUrl}>{props.sourceName}</a>
+          {`${uiStrings.SOURCE}:`} <a href={props.sourceUrl}>{props.sourceName}</a>
         </div>
       }
     </div>
@@ -42,7 +42,7 @@ const Event = props => (
   </div>
 );
 
-Event.propTypes = {
+EventQuote.propTypes = {
   postedAt: PropTypes.string.isRequired,
   quote: PropTypes.string.isRequired,
   self: PropTypes.bool,
@@ -54,7 +54,7 @@ Event.propTypes = {
   userAvatar: PropTypes.string,
 };
 
-Event.defaultProps = {
+EventQuote.defaultProps = {
   self: false,
   author: '',
   sourceName: '',
@@ -64,5 +64,5 @@ Event.defaultProps = {
   userAvatar: '',
 };
 
-export default Event;
+export default EventQuote;
 
