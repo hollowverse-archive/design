@@ -24,21 +24,21 @@
     border-radius: calc($person-avatar-size / 2);
     user-select: none;
     margin: 0 auto 20px;
-    background-color: $color-loading-placeholder;
+    background-color: $color-background-light;
   }
 
   &-caption {
     height: 15px;
     width: 160px;
     margin: 0 auto;
-    background-color: $color-loading-placeholder;
+    background-color: $color-background-light;
   }
 
   &-name {
     height: 30px;
     width: 50%;
     margin: 10px auto;
-    background-color: $color-loading-placeholder;
+    background-color: $color-background-light;
   }
 
   &-labels {
@@ -51,13 +51,13 @@
     width: 100px;
     display: inline-block;
     margin: 0 5px 5px 0;
-    background-color: $color-loading-placeholder;
+    background-color: $color-background-light;
   }
 
   &-paragraph {
     height: 20px;
     margin: 10px 20px;
-    background-color: $color-loading-placeholder;
+    background-color: $color-background-light;
     &.second { width: 70%; }
     &.third { width: 80%; }
   }
