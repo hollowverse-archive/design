@@ -16,19 +16,19 @@ const NotablePerson = ({ isLoading }) => (
         {...data.NOTABLE_PERSON}
       />,
       <EventWidget
-        key={2}
+        key={3}
+        type={eventTypes.QUOTE}
+        events={data.QUOTES.slice(0, 3)}
+      />,
+      <EventWidget
+        key={4}
         type={eventTypes.DONATION}
         events={data.DONATIONS.slice(0, 5)}
       />,
       <EventWidget
-        key={3}
+        key={5}
         type={eventTypes.APPEARANCE}
         events={data.APPEARANCES.slice(0, 5)}
-      />,
-      <EventWidget
-        key={4}
-        type={eventTypes.QUOTE}
-        events={data.QUOTES.slice(0, 3)}
       />,
       <FbComments key={5} />,
     ]
