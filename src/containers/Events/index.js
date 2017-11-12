@@ -10,34 +10,19 @@ const Events = (props) => {
     return <Loader />;
   }
 
-  switch (props.type) {
-    case eventTypes.APPEARANCE:
-      return (
-        <EventGroup
-          personName={data.NOTABLE_PERSON.name}
-          type={eventTypes.APPEARANCE}
-          events={data.APPEARANCES}
-        />);
-
-    case eventTypes.DONATION:
-      return (
-        <EventGroup
-          personName={data.NOTABLE_PERSON.name}
-          type={eventTypes.DONATION}
-          events={data.DONATIONS}
-        />);
-
-    case eventTypes.QUOTE:
-      return (
-        <EventGroup
-          personName={data.NOTABLE_PERSON.name}
-          type={eventTypes.QUOTE}
-          events={data.QUOTES}
-        />);
-
-    default:
-      return undefined;
+  let events = data.QUOTES;
+  if (props.type === eventTypes.APPEARANCE) {
+    events = data.APPEARANCES;
+  } else if (props.type === eventTypes.DONATION) {
+    events = data.DONATIONS;
   }
+
+  return (
+    <EventGroup
+      person={data.NOTABLE_PERSON}
+      type={props.type}
+      events={events}
+    />);
 };
 
 export default Events;

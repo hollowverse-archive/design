@@ -4,20 +4,35 @@
 @import '../../shared/styles/variables.css';
 
 .event-group {
-  margin: 10px;
+  &.card {
+    margin: 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+    padding: 10px 15px 25px;
+  }
 
   &-title {
-    font-size: 30px;
+    font-size: 40px;
+    line-height: 28px;
     font-weight: bold;
     display: inline-block;
     color: $color-text-default;
     text-decoration: none;
-
-    &:hover { color: $color-blue; }
+    margin: 10px 0 15px;
   }
 
+  a.event-group-title:hover { color: $color-blue; }
+
   &-person-name {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: normal;
     display: block;
+  }
+
+  &-link-more {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-blue;
   }
 }

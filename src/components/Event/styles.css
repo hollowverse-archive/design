@@ -1,0 +1,75 @@
+/**
+ * Event Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.event {
+  margin: 20px auto 40px;
+
+  &-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  &-quote {
+    position: relative;
+    padding: 15px;
+    margin: 5px 0;
+    display: flex;
+    flex-flow: grow nowrap;
+    background: $color-background-light;
+    border-radius: 3px;
+
+    &::after {
+      content: '”';
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 80px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: white;
+    }
+  }
+
+  &-quote-text {
+    flex: 1;
+    flex-shrink: 0;
+    margin-left: 15px;
+    padding-right: 40px;
+    white-space: normal;
+  }
+
+  &-avatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    user-select: none;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-meta {
+    font-size: 12px;
+    color: $color-text-light;
+    margin-top: 5px;
+
+    a {
+      color: $color-text-light;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $color-blue;
+    }
+
+    *::before {
+      content: '\00B7';
+      padding-left: 8px;
+      margin-right: 8px;
+      color: $color-text-light;
+    }
+  }
+}

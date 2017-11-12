@@ -9,7 +9,7 @@
   min-height: calc(100% - 50px);
   position: relative;
   margin: 0 auto;
-  padding: 20px 10px;
+  padding: 20px 15px;
   display: flex;
   flex-flow: column wrap;
 }

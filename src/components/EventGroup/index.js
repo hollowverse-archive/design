@@ -3,75 +3,72 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { paths, eventTypes, uiStrings } from '../../constants';
-import { EventAppearance, EventDonation, EventQuote } from '../../components';
+import { mapEventTypeToProps } from '../../shared/utils';
+import { uiStrings } from '../../constants';
+import { Event } from '../../components';
 import './styles.css';
 
-const getEventProps = (type) => {
-  switch (type) {
-    case eventTypes.APPEARANCE:
-      return {
-        path: paths.EVENTS_APPEARANCES,
-        title: uiStrings.APPEARANCES,
-        component: EventAppearance,
-      };
+const EventGroupTitle = props => (
+  props.limit ?
+    <Link
+      to={props.path}
+      className="event-group-title"
+    >
+      <span className="event-group-person-name">
+        {props.personName}
+      </span>
+      {props.eventName}
+    </Link>
+    :
+    <div className="event-group-title">
+      <span className="event-group-person-name">
+        {props.personName}
+      </span>
+      {props.eventName}
+    </div>
+);
 
-    case eventTypes.DONATION:
-      return {
-        path: paths.EVENTS_DONATIONS,
-        title: uiStrings.DONTAIONS,
-        component: EventDonation,
-      };
 
-    case eventTypes.QUOTE:
-      return {
-        path: paths.EVENTS_QUOTES,
-        title: uiStrings.QUOTES,
-        component: EventQuote,
-      };
-
-    default:
-      return undefined;
-  }
-};
-
-const EventGroup = ({ personName, type, events }) => {
-  const eventProps = getEventProps(type);
+const EventGroup = (props) => {
+  const eventProps = mapEventTypeToProps(props.type);
 
   return (
-    <div className="event-group">
-      <Link
-        to={eventProps.path}
-        className="event-group-title"
-      >
-        {personName &&
-          <span className="event-group-person-name">
-            {personName}
-          </span>}
-        {eventProps.title}
-      </Link>
-      {events.map(event =>
-        <eventProps.component
+    <div className={classNames('event-group', { card: props.limit })}>
+      <EventGroupTitle
+        limit={props.limit}
+        path={eventProps.path}
+        personName={props.person.name}
+        eventName={eventProps.name}
+      />
+      {props.events.map(event =>
+        <Event
           key={event.id}
+          personPhotoUrl={props.person.photoUrl}
           {...event}
         />)}
+      {props.limit &&
+        <Link
+          to={eventProps.path}
+          className="event-group-link-more"
+        >
+          {uiStrings.SEE_MORE}
+        </Link>
+      }
     </div>
   );
 };
 
 EventGroup.propTypes = {
-  type: PropTypes.oneOf([
-    eventTypes.APPEARANCE,
-    eventTypes.DONATION,
-    eventTypes.QUOTE,
-  ]).isRequired,
+  type: PropTypes.string.isRequired,
+  person: PropTypes.object.isRequired,
   events: PropTypes.array.isRequired,
-  personName: PropTypes.string,
+  limit: PropTypes.bool,
 };
 
 EventGroup.defaultProps = {
-  personName: undefined,
+  limit: false,
 };
 
 export default EventGroup;
