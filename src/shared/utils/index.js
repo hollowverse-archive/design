@@ -31,3 +31,10 @@ export const mapEventTypeToProps = (type) => {
   }
 };
 
+let lastUniqueId = 0;
+
+export const uniqueId = (prefix = 'id') => {
+  lastUniqueId += 1;
+  return `${prefix}${lastUniqueId}`;
+};
+

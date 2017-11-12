@@ -13,5 +13,12 @@
   border-radius: 12px;
   color: $color-text-light;
   background-color: $color-background-light;
+
+  &.small {
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    padding: 0 10px;
+  }
 }
 

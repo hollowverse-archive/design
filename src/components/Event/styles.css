@@ -14,10 +14,8 @@
 
   &-quote {
     position: relative;
-    padding: 15px;
-    margin: 5px 0;
-    display: flex;
-    flex-flow: grow nowrap;
+    padding: 15px 40px 20px 70px;
+    margin: 5px 0 0;
     background: $color-background-light;
     border-radius: 3px;
 
@@ -32,16 +30,9 @@
     }
   }
 
-  &-quote-text {
-    flex: 1;
-    flex-shrink: 0;
-    margin-left: 15px;
-    padding-right: 40px;
-    white-space: normal;
-  }
-
-  &-avatar {
-    flex-shrink: 0;
+  &-quote-avatar {
+    position: absolute;
+    left: 15px;
     width: 40px;
     height: 40px;
     border-radius: 20px;
@@ -54,7 +45,9 @@
   &-meta {
     font-size: 12px;
     color: $color-text-light;
-    margin-top: 5px;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 
     a {
       color: $color-text-light;
@@ -71,5 +64,12 @@
       margin-right: 8px;
       color: $color-text-light;
     }
+  }
+
+  &-labels {
+    margin-right: 10px;
+    display: inline-block;
+    &::before,
+    *::before { display: none; }
   }
 }
