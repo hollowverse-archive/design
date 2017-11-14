@@ -49,7 +49,9 @@ const Event = props => (
       {props.labels.length > 0 &&
         <EnvetLabels labels={props.labels} />
       }
-      {props.happenedOn}
+      <span>
+        {props.happenedOn}
+      </span>
       {props.eventUrl &&
         <EventMetaLink url={props.eventUrl} />}
       {props.sourceUrl &&

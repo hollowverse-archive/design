@@ -46,12 +46,15 @@
     font-size: 12px;
     color: $color-text-light;
     margin-top: 10px;
-    white-space: nowrap;
-    overflow: hidden;
+
+    span {
+      white-space: nowrap;
+    }
 
     a {
       color: $color-text-light;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     a:hover {
@@ -67,7 +70,6 @@
   }
 
   &-labels {
-    margin-right: 10px;
     display: inline-block;
     &::before,
     *::before { display: none; }
