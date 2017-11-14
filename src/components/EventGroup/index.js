@@ -16,16 +16,19 @@ const EventGroupTitle = props => (
       to={props.path}
       className="event-group-title"
     >
-      <span className="event-group-person-name">
+      <span className="event-group-person">
         {props.personName}
       </span>
       {props.eventName}
     </Link>
     :
     <div className="event-group-title">
-      <span className="event-group-person-name">
+      <Link
+        to="/"
+        className="event-group-person"
+      >
         {props.personName}
-      </span>
+      </Link>
       {props.eventName}
     </div>
 );
@@ -51,7 +54,7 @@ const EventGroup = (props) => {
       {props.limit &&
         <Link
           to={eventProps.path}
-          className="event-group-link-more"
+          className="event-group-more"
         >
           {uiStrings.SEE_MORE}
         </Link>

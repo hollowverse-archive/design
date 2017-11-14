@@ -13,8 +13,8 @@
   }
 
   &-title {
-    font-size: 40px;
-    line-height: 28px;
+    font-size: 32px;
+    line-height: 24px;
     font-weight: bold;
     display: inline-block;
     color: $color-text-default;
@@ -22,15 +22,18 @@
     margin: 10px 0 15px;
   }
 
+  a.event-group-person:hover,
   a.event-group-title:hover { color: $color-blue; }
 
-  &-person-name {
-    font-size: 15px;
+  &-person {
+    font-size: 12px;
     font-weight: normal;
     display: block;
+    color: $color-text-light;
+    text-decoration: none;
   }
 
-  &-link-more {
+  &-more {
     display: inline-block;
     text-decoration: none;
     color: $color-blue;
