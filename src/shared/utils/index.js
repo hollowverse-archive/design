@@ -12,18 +12,21 @@ export const mapEventTypeToProps = (type) => {
       return {
         path: paths.EVENTS_APPEARANCES,
         name: uiStrings.APPEARANCES,
+        className: 'event-type-appearance',
       };
 
     case eventTypes.DONATION:
       return {
         path: paths.EVENTS_DONATIONS,
         name: uiStrings.DONTAIONS,
+        className: 'event-type-donation',
       };
 
     case eventTypes.QUOTE:
       return {
         path: paths.EVENTS_QUOTES,
         name: uiStrings.QUOTES,
+        className: 'event-type-quote',
       };
 
     default:

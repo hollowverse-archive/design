@@ -48,6 +48,7 @@ const EventGroup = (props) => {
       {props.events.map(event =>
         <Event
           key={event.id}
+          className={eventProps.className}
           personPhotoUrl={props.person.photoUrl}
           {...event}
         />)}

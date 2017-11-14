@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { uiStrings } from '../../constants';
 import { removeHttp, uniqueId } from '../../shared/utils';
 import { Label } from '../../components';
@@ -33,7 +34,7 @@ const EnvetLabels = ({ labels }) =>
   </div>;
 
 const Event = props => (
-  <div className="event">
+  <div className={classNames('event', { [props.className]: props.className })}>
     {props.eventName &&
       <div className="event-name">
         {props.eventName}
@@ -66,6 +67,7 @@ const Event = props => (
 
 Event.propTypes = {
   happenedOn: PropTypes.string.isRequired,
+  className: PropTypes.string,
   eventName: PropTypes.string,
   eventUrl: PropTypes.string,
   sourceUrl: PropTypes.string,
@@ -76,6 +78,7 @@ Event.propTypes = {
 
 Event.defaultProps = {
   eventName: undefined,
+  className: undefined,
   eventUrl: undefined,
   sourceUrl: undefined,
   quote: undefined,
