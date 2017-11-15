@@ -74,9 +74,5 @@
     display: inline-block;
     &::before,
     *::before { display: none; }
-    .label { background-image: none; }
-    .event-type-quote & .label { background-color: #e8f6ff; }
-    .event-type-donation & .label { background-color: #fff9e8; }
-    .event-type-appearance & .label { background-color: #e8fff0; }
   }
 }

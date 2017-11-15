@@ -13,7 +13,6 @@
   border-radius: 12px;
   color: $color-text-light;
   background-color: $color-background-light;
-  background-image: linear-gradient(0deg, #e8f6ff 0%, #e8fff0 80%, #fff9e8 100%);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 
   &.small {
