@@ -2,66 +2,88 @@
  * Event Component
  */
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import * as strings from '../../constants/uiStrings';
+import classNames from 'classnames';
+import { uiStrings } from '../../constants';
+import { removeHttp, uniqueId } from '../../shared/utils';
+import { Label } from '../../components';
 import './styles.css';
 
+const EventQuote = ({ quote, photoUrl }) => (
+  <div className="event-quote">
+    <div
+      className="event-quote-avatar"
+      style={{ backgroundImage: `url(${photoUrl})` }}
+    />
+    {quote}
+  </div>
+);
+
+const EventMetaLink = ({ url, label = '' }) =>
+  <a targe="_blank" href={url}>{`${label}${removeHttp(url)}`}</a>;
+
+const EnvetLabels = ({ labels }) =>
+  <div className="event-labels">
+    {labels.map(label =>
+      <Label
+        small
+        key={uniqueId('label-')}
+        text={label}
+      />)
+    }
+  </div>;
+
 const Event = props => (
-  <div className={classNames('event', { self: props.self })}>
-    <div className="event-content">
-      <div className="event-date">
-        {props.postedAt}
-      </div>
-      <div className="event-caption">
-        {props.self && props.author ?
-          `${props.author} ${strings.SAID}:` : `${strings.SOMEONE} ${strings.SAID}:` }
-      </div>
-      <div className="event-text">
-        {props.quote}
-      </div>
-      {props.sourceName &&
-        <div className="event-source">
-          {`${strings.SOURCE}:`} <a href={props.sourceUrl}>{props.sourceName}</a>
-        </div>
-      }
-    </div>
-    {props.userComment &&
-      <div className="event-user-comment">
-        {props.userComment}
-        <div className="event-user-name">
-          {props.userDisplayName}
-        </div>
-        <img
-          className="event-user-avatar"
-          alt={props.userDisplayName}
-          src={props.userAvatar}
-        />
+  <div className={classNames('event', { [props.className]: props.className })}>
+    {props.eventName &&
+      <div className="event-name">
+        {props.eventName}
       </div>
     }
+    {props.quote &&
+      <EventQuote
+        quote={props.quote}
+        photoUrl={props.personPhotoUrl}
+      />
+    }
+    <div className="event-meta">
+      {props.labels.length > 0 &&
+        <EnvetLabels labels={props.labels} />
+      }
+      <span>
+        {props.happenedOn}
+      </span>
+      {props.eventUrl &&
+        <EventMetaLink url={props.eventUrl} />}
+      {props.sourceUrl &&
+        <EventMetaLink
+          label={`${uiStrings.SOURCE}: `}
+          url={props.sourceUrl}
+        />
+      }
+    </div>
   </div>
 );
 
 Event.propTypes = {
-  postedAt: PropTypes.string.isRequired,
-  quote: PropTypes.string.isRequired,
-  self: PropTypes.bool,
-  author: PropTypes.string,
-  sourceName: PropTypes.string,
+  happenedOn: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  eventName: PropTypes.string,
+  eventUrl: PropTypes.string,
   sourceUrl: PropTypes.string,
-  userComment: PropTypes.string,
-  userDisplayName: PropTypes.string,
-  userAvatar: PropTypes.string,
+  quote: PropTypes.string,
+  personPhotoUrl: PropTypes.string,
+  labels: PropTypes.array,
 };
 
 Event.defaultProps = {
-  self: false,
-  author: '',
-  sourceName: '',
-  sourceUrl: '',
-  userComment: '',
-  userDisplayName: '',
-  userAvatar: '',
+  eventName: undefined,
+  className: undefined,
+  eventUrl: undefined,
+  sourceUrl: undefined,
+  quote: undefined,
+  personPhotoUrl: undefined,
+  labels: [],
 };
 
 export default Event;

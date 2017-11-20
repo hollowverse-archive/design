@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as strings from '../../constants/uiStrings';
+import { uiStrings } from '../../constants';
 import Label from '../Label';
 import './styles.css';
 
@@ -18,7 +18,7 @@ const PersonDetails = props => (
       style={{ backgroundImage: `url(${props.photoUrl})` }}
     />
     <div className="person-details-caption">
-      {strings.RELIGION_POLITICS_AND_IDEAS_OF}
+      {uiStrings.RELIGION_POLITICS_AND_IDEAS_OF}
     </div>
     <div className="person-details-name">
       {props.name}

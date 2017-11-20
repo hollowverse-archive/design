@@ -6,6 +6,7 @@
 .person-details {
   position: relative;
   animation: person-details-on 0.3s;
+  margin-bottom: 15px;
 
   &-avatar {
     width: $person-avatar-size;
@@ -26,7 +27,7 @@
 
   &-name {
     color: $color-text-default;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: bold;
     line-height: 25px;
     margin: 10px 0;
@@ -39,7 +40,9 @@
   }
 
   &-about {
+    font-size: 16px;
     clear: both;
+    margin: 0 10px;
   }
 
   p {

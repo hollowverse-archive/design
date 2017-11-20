@@ -1,103 +1,78 @@
 /**
- * Styles of Event
+ * Event Styles
  */
 @import '../../shared/styles/variables.css';
 
 .event {
-  margin: 40px auto 60px;
+  margin: 20px auto 40px;
 
-  &-content {
-    position: relative;
-    padding: 5px 0 5px 15px;
-    border-left: 5px solid $color-pink;
-
-    .self & {
-      border-left-color: $color-yellow;
-    }
-  }
-
-  &-caption {
-    font-size: 12px;
-    color: $color-text-light;
+  &-name {
+    font-size: 16px;
+    font-weight: bold;
     margin-bottom: 5px;
   }
 
-  &-date {
-    float: right;
-    font-size: 12px;
-    color: $color-text-light;
+  &-quote {
+    position: relative;
+    padding: 15px 40px 20px 70px;
+    margin: 5px 0 0;
+    background: $color-background-light;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+
+    &::after {
+      content: '”';
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 80px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: rgba(0, 0, 0, 0.11);
+    }
   }
 
-  &-text {
-    font-size: 17px;
+  &-quote-avatar {
+    position: absolute;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    user-select: none;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  &-source {
+  &-meta {
     font-size: 12px;
     color: $color-text-light;
-    margin: 5px 0;
+    margin-top: 10px;
+
+    span {
+      white-space: nowrap;
+    }
 
     a {
       color: $color-text-light;
       text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-  }
-
-  &-user-comment {
-    position: relative;
-    font-size: 14px;
-    font-style: italic;
-    margin: 10px 0 0 20px;
-    padding: 15px;
-    color: #fff;
-    border-radius: 4px;
-    background-color: $color-pink;
-
-    .self & {
-      color: $color-text-default;
-      background-color: $color-yellow;
-
-      &::after {
-        background-image: url('../../shared/assets/quote-arrow-yellow.svg');
-      }
+      white-space: nowrap;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      width: 12px;
-      height: 10px;
-      right: 15px;
-      top: -10px;
-      background: url('../../shared/assets/quote-arrow-pink.svg') 50% 50% no-repeat;
+    a:hover {
+      color: $color-blue;
+    }
+
+    *::before {
+      content: '\00B7';
+      padding-left: 8px;
+      margin-right: 8px;
+      color: $color-text-light;
     }
   }
 
-  &-user-name {
-    position: absolute;
-    font-size: 13px;
-    right: 75px;
-    bottom: -22px;
-    font-style: normal;
-    font-weight: bold;
-    color: $color-text-light;
-  }
-
-  &-user-avatar {
-    position: absolute;
-    bottom: -25px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    border: 2px solid #fff;
-    background-color: $color-pink;
-    overflow: hidden;
-
-    .self & {
-      background-color: $color-yellow;
-    }
+  &-labels {
+    display: inline-block;
+    &::before,
+    *::before { display: none; }
   }
 }
-
