@@ -62,7 +62,7 @@
       color: $color-blue;
     }
 
-    *::before {
+    > * + *::before {
       content: '\00B7';
       padding-left: 8px;
       margin-right: 8px;
@@ -71,8 +71,6 @@
   }
 
   &-labels {
-    display: inline-block;
-    &::before,
-    *::before { display: none; }
+    display: inline;
   }
 }

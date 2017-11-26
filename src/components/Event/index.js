@@ -47,12 +47,6 @@ const Event = props => (
       />
     }
     <div className="event-meta">
-      {props.labels.length > 0 &&
-        <EnvetLabels labels={props.labels} />
-      }
-      <span>
-        {props.happenedOn}
-      </span>
       {props.eventUrl &&
         <EventMetaLink url={props.eventUrl} />}
       {props.sourceUrl &&
@@ -60,6 +54,12 @@ const Event = props => (
           label={`${uiStrings.SOURCE}: `}
           url={props.sourceUrl}
         />
+      }
+      <span>
+        {props.happenedOn}
+      </span>
+      {props.labels.length > 0 &&
+        <EnvetLabels labels={props.labels} />
       }
     </div>
   </div>
