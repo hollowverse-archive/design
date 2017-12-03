@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { uiStrings } from '../../constants';
 import './styles.css';
 
 const NavBar = props => (
@@ -17,18 +16,16 @@ const NavBar = props => (
           to={props.back}
         />
       }
-      {props.title}
+      <div className="navbar-logo" />
     </div>
   </div>
 );
 
 NavBar.propTypes = {
-  title: PropTypes.string,
   back: PropTypes.string,
 };
 
 NavBar.defaultProps = {
-  title: uiStrings.HOLLOWVERSE,
   back: undefined,
 };
 

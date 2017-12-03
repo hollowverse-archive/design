@@ -4,6 +4,14 @@
 @import '../../shared/styles/variables.css';
 
 .event-group {
+  &-inner {
+    width: 100%;
+    max-width: $page-max-width;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+  }
+
   &.card {
     margin: 10px 0;
     border: 1px solid rgba(0, 0, 0, 0.08);

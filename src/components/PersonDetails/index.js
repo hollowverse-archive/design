@@ -7,27 +7,33 @@ import { uiStrings } from '../../constants';
 import Label from '../Label';
 import './styles.css';
 
-const renderLabel = (i, index) => <Label key={index} text={i} />;
+const renderLabel = (i, index) => <Label key={index} dark text={i} />;
 
 const renderParagraph = (i, index) => <p key={index}>{i}</p>;
 
 const PersonDetails = props => (
   <div className="person-details">
     <div
-      className="person-details-avatar"
+      className="person-details-cover"
       style={{ backgroundImage: `url(${props.photoUrl})` }}
     />
-    <div className="person-details-caption">
-      {uiStrings.RELIGION_POLITICS_AND_IDEAS_OF}
-    </div>
-    <div className="person-details-name">
-      {props.name}
-    </div>
-    <div className="person-details-labels">
-      {props.labels.map(renderLabel)}
-    </div>
-    <div className="person-details-about">
-      {props.about.map(renderParagraph)}
+    <div className="person-details-inner">
+      <div
+        className="person-details-avatar"
+        style={{ backgroundImage: `url(${props.photoUrl})` }}
+      />
+      <div className="person-details-caption">
+        {uiStrings.RELIGION_POLITICS_AND_IDEAS_OF}
+      </div>
+      <div className="person-details-name">
+        {props.name}
+      </div>
+      <div className="person-details-labels">
+        {props.labels.map(renderLabel)}
+      </div>
+      <div className="person-details-about">
+        {props.about.map(renderParagraph)}
+      </div>
     </div>
   </div>
 );

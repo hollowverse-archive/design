@@ -13,13 +13,17 @@
   border-radius: 12px;
   color: $color-text-light;
   background-color: $color-background-light;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 
   &.small {
     height: 20px;
     line-height: 20px;
     border-radius: 10px;
     padding: 0 10px;
+  }
+
+  &.dark {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
