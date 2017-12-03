@@ -6,6 +6,7 @@
 .navbar {
   z-index: 100;
   position: fixed;
+  top: 0;
   width: 100%;
   height: $navbar-height;
   line-height: $navbar-height;

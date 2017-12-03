@@ -7,17 +7,17 @@
   &-inner {
     width: 100%;
     max-width: $page-max-width;
-    margin: 0 auto;
-    padding: 0 20px;
     position: relative;
+    margin: 0 auto;
+    padding: 0 10px;
   }
 
-  &.card {
-    margin: 10px 0;
+  &-inner.card {
+    margin: 10px auto;
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
     border-radius: 3px;
-    padding: 5px 15px 25px;
+    padding: 5px 10px 25px;
   }
 
   &-title {

@@ -2,6 +2,7 @@
  * FbComments Component
  */
 import React, { Component } from 'react';
+import './styles.css';
 
 export default class FbComments extends Component {
   componentDidMount() {
@@ -14,12 +15,14 @@ export default class FbComments extends Component {
 
   render() {
     return (
-      <div
-        className="fb-comments"
-        width="100%"
-        data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-        data-numposts="5"
-      />
+      <div className="fb-comments-container">
+        <div
+          width="100%"
+          className="fb-comments"
+          data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+          data-numposts="5"
+        />
+      </div>
     );
   }
 }

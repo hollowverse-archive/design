@@ -7,7 +7,6 @@
   z-index: 100;
   position: absolute;
   width: 100%;
-  margin: $navbar-height 0 0;
   pointer-events: none;
 
   &-inner {

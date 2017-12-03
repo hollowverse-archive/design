@@ -38,8 +38,8 @@ const EventGroup = (props) => {
   const eventProps = mapEventTypeToProps(props.type);
 
   return (
-    <div className={classNames('event-group', { card: props.limit })}>
-      <div className="event-group-inner">
+    <div className="event-group">
+      <div className={classNames('event-group-inner', { card: props.limit })}>
         <EventGroupTitle
           limit={props.limit}
           path={eventProps.path}

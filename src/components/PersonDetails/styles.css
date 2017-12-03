@@ -6,7 +6,6 @@
 .person-details {
   width: 100%;
   position: relative;
-  margin: $navbar-height 0 15px;
   color: $color-text-default;
   overflow: hidden;
   animation: person-details-on 0.3s;
@@ -39,7 +38,7 @@
     width: 100%;
     max-width: $page-max-width;
     margin: 0 auto;
-    padding: 20px 20px 40px;
+    padding: 20px;
     position: relative;
   }
 

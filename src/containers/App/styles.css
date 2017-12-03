@@ -7,7 +7,7 @@
   width: 100%;
   min-height: calc(100% - 50px);
   position: relative;
-  margin: 0 auto;
+  margin: $navbar-height auto 0;
   display: flex;
   flex-flow: column wrap;
 }
