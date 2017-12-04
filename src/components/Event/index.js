@@ -9,12 +9,8 @@ import { removeHttp, uniqueId } from '../../shared/utils';
 import { Label } from '../../components';
 import './styles.css';
 
-const EventQuote = ({ quote, photoUrl }) => (
+const EventQuote = ({ quote }) => (
   <div className="event-quote">
-    <div
-      className="event-quote-avatar"
-      style={{ backgroundImage: `url(${photoUrl})` }}
-    />
     {quote}
   </div>
 );
@@ -35,54 +31,55 @@ const EnvetLabels = ({ labels }) =>
 
 const Event = props => (
   <div className={classNames('event', { [props.className]: props.className })}>
-    {props.eventName &&
-      <div className="event-name">
-        {props.eventName}
-      </div>
-    }
-    {props.quote &&
-      <EventQuote
-        quote={props.quote}
-        photoUrl={props.personPhotoUrl}
+    <div className="event-header">
+      <div
+        className="event-avatar"
+        style={{ backgroundImage: `url(${props.person.photoUrl})` }}
       />
-    }
-    <div className="event-meta">
-      {props.eventUrl &&
+      <div className="event-person-name">
+        {props.person.name}
+      </div>
+      <div className="event-meta">
+        <span>
+          {props.happenedOn}
+        </span>
+        {props.eventUrl &&
         <EventMetaLink url={props.eventUrl} />}
-      {props.sourceUrl &&
+        {props.sourceUrl &&
         <EventMetaLink
           label={`${uiStrings.SOURCE}: `}
           url={props.sourceUrl}
         />
       }
-      <span>
-        {props.happenedOn}
-      </span>
-      {props.labels.length > 0 &&
-        <EnvetLabels labels={props.labels} />
-      }
+      </div>
     </div>
+    {props.quote &&
+      <EventQuote
+        quote={props.quote}
+      />
+    }
+    {props.labels.length > 0 &&
+      <EnvetLabels labels={props.labels} />
+    }
   </div>
 );
 
 Event.propTypes = {
   happenedOn: PropTypes.string.isRequired,
   className: PropTypes.string,
-  eventName: PropTypes.string,
   eventUrl: PropTypes.string,
   sourceUrl: PropTypes.string,
   quote: PropTypes.string,
-  personPhotoUrl: PropTypes.string,
+  person: PropTypes.object,
   labels: PropTypes.array,
 };
 
 Event.defaultProps = {
-  eventName: undefined,
   className: undefined,
   eventUrl: undefined,
   sourceUrl: undefined,
   quote: undefined,
-  personPhotoUrl: undefined,
+  person: {},
   labels: [],
 };
 

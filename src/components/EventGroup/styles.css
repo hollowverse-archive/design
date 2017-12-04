@@ -8,16 +8,8 @@
     width: 100%;
     max-width: $page-max-width;
     position: relative;
-    margin: 0 auto;
+    margin: 15px auto;
     padding: 0 10px;
-  }
-
-  &-inner.card {
-    margin: 10px auto;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-    border-radius: 3px;
-    padding: 5px 10px 25px;
   }
 
   &-title {
@@ -27,7 +19,7 @@
     display: inline-block;
     color: $color-text-default;
     text-decoration: none;
-    margin: 10px 0 15px;
+    margin: 10px;
   }
 
   a.event-group-person:hover,
@@ -42,8 +34,12 @@
   }
 
   &-more {
-    display: inline-block;
+    display: block;
+    padding: 10px;
     text-decoration: none;
+    text-align: center;
     color: $color-blue;
+    border-radius: 2px;
+    &:hover { background-color: rgba(110, 99, 207, 0.05); }
   }
 }

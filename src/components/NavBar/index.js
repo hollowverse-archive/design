@@ -45,6 +45,7 @@ export default class NavBar extends Component {
 
   handleSearchKeyDown = (e) => {
     if (e.keyCode === 13) {
+      e.target.blur();
       this.props.onSearch(this.state.searchValue);
     }
   };

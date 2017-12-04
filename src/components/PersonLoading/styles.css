@@ -64,7 +64,7 @@
   }
 
   &-labels {
-    margin: 38px auto;
+    margin: 24px auto;
     text-align: center;
   }
 
@@ -79,7 +79,7 @@
 
   &-paragraph {
     height: 20px;
-    margin: 10px 20px;
+    margin: 10px auto;
     background-color: $color-background-light;
     &.second { width: 70%; }
     &.third { width: 80%; }

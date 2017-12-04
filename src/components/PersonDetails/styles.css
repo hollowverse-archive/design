@@ -68,13 +68,13 @@
     font-size: 36px;
     font-weight: 600;
     line-height: 1;
-    margin: 0 0 18px;
+    margin: 0 0 24px;
     text-align: center;
   }
 
   &-labels {
     text-align: center;
-    margin: 0 auto 32px;
+    margin: 0 auto 20px;
   }
 
   &-about {

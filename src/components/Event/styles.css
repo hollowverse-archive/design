@@ -4,36 +4,21 @@
 @import '../../shared/styles/variables.css';
 
 .event {
-  margin: 20px auto 40px;
+  margin: 15px auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  padding: 15px;
 
-  &-name {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  &-quote {
+  &-header {
     position: relative;
-    padding: 15px 40px 20px 70px;
-    margin: 5px 0 0;
-    background: $color-background-light;
-    border-radius: 3px;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.07);
-
-    &::after {
-      content: '”';
-      position: absolute;
-      top: 0;
-      right: 10px;
-      font-size: 80px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      color: rgba(0, 0, 0, 0.11);
-    }
+    min-height: 40px;
   }
 
-  &-quote-avatar {
+  &-avatar {
     position: absolute;
-    left: 15px;
+    top: 0;
+    left: 0;
     width: 40px;
     height: 40px;
     border-radius: 20px;
@@ -43,10 +28,15 @@
     background-size: cover;
   }
 
+  &-person-name {
+    font-weight: bold;
+    margin: 0 0 5px 55px;
+  }
+
   &-meta {
     font-size: 12px;
     color: $color-text-light;
-    margin-top: 10px;
+    margin: 0 0 0 55px;
 
     span {
       white-space: nowrap;
@@ -70,7 +60,13 @@
     }
   }
 
+  &-quote {
+    position: relative;
+    margin: 15px 2px 10px;
+    line-height: 1.5;
+  }
+
   &-labels {
-    display: inline;
+    margin: 10px 0 0;
   }
 }
