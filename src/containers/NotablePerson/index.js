@@ -25,13 +25,13 @@ const NotablePerson = ({ isLoading }) => (
         person={data.NOTABLE_PERSON}
         type={eventTypes.DONATION}
         events={data.DONATIONS.slice(0, 5)}
-      />,
+      />
       <EventGroup
         limit
         person={data.NOTABLE_PERSON}
         type={eventTypes.APPEARANCE}
         events={data.APPEARANCES.slice(0, 5)}
-      />,
+      />
       <FbComments />
     </Fragment>
 );

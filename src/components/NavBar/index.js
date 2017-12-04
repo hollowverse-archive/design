@@ -70,6 +70,7 @@ export default class NavBar extends Component {
               onFocus={this.handleSearchFocus}
               onChange={this.handleSearchChange}
               onKeyDown={this.handleSearchKeyDown}
+              maxLength={50}
             />
           }
           {logo &&
