@@ -18,20 +18,21 @@
 
   &-inner {
     position: relative;
+    height: 100%;
     max-width: $page-max-width;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &-logo {
-    display: inline-block;
     width: 160px;
     height: $navbar-height;
     background: url('../../shared/assets/logo.svg') 50% 50% no-repeat;
   }
 
   &-btn {
-    position: absolute;
-    top: 0;
     width: $navbar-height;
     height: $navbar-height;
     display: block;
@@ -56,6 +57,24 @@
   &-btn.search {
     right: 0;
     background-image: url('../../shared/assets/icn-search.svg');
+  }
+
+  &-search {
+    flex: 1;
+    flex-shrink: 1;
+    height: calc($navbar-height - 16px);
+    position: relative;
+    padding: 0 30px;
+    margin: 0 10px;
+    text-align: center;
+    border: 1px solid $color-border-light;
+    border-radius: 3px;
+    background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
+
+    &:focus {
+      border-color: $color-blue;
+      background-color: white;
+    }
   }
 }
 

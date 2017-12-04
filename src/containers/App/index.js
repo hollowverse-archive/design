@@ -1,7 +1,7 @@
 /**
  * App Container
  */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { NavBar, ErrorMessage } from '../../components';
 import './styles.css';
@@ -47,25 +47,27 @@ export default class App extends Component {
   render() {
     const Screen = this.props.screen;
 
-    return ([
-      <NavBar
-        key={1}
-        back={this.props.backPath}
-      />,
-      <div key={2} className="app-view">
-        {!this.state.errorMessage ?
-          <Screen
-            isLoading={this.state.isLoading}
-            {...this.props.screenProps}
-          />
-          :
-          <ErrorMessage
-            message={this.state.errorMessage}
-            action={() => window.location.reload()}
-            actionLabel="Reload the Page"
-          />
-        }
-      </div>,
-    ]);
+    return (
+      <Fragment>
+        <NavBar
+          search="Arnold Schwarznegger"
+          back={this.props.backPath}
+        />
+        <div className="app-view">
+          {!this.state.errorMessage ?
+            <Screen
+              isLoading={this.state.isLoading}
+              {...this.props.screenProps}
+            />
+            :
+            <ErrorMessage
+              message={this.state.errorMessage}
+              action={() => window.location.reload()}
+              actionLabel="Reload the Page"
+            />
+          }
+        </div>
+      </Fragment>
+    );
   }
 }

@@ -9,10 +9,10 @@
   padding: 0 12px;
   font-size: 12px;
   height: 24px;
-  line-height: 24px;
+  line-height: 23px;
   border-radius: 12px;
   color: $color-text-light;
-  background-color: $color-background-light;
+  border: 1px solid $color-border-light;
 
   &.small {
     height: 20px;

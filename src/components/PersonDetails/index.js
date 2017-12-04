@@ -7,7 +7,7 @@ import { uiStrings } from '../../constants';
 import Label from '../Label';
 import './styles.css';
 
-const renderLabel = (i, index) => <Label key={index} dark text={i} />;
+const renderLabel = (i, index) => <Label key={index} text={i} />;
 
 const renderParagraph = (i, index) => <p key={index}>{i}</p>;
 
