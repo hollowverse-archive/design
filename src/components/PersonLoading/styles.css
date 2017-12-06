@@ -26,7 +26,7 @@
     top: 0;
     opacity: 0.5;
     background-image:
-      linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%),
+      linear-gradient(-180deg, rgba(241, 241, 243, 0) 0%, rgba(241, 241, 243, 1) 50%),
       linear-gradient(132deg, #4cfde9 0%, rgba(251, 201, 84, 1) 50%, #4435f7 100%);
   }
 
@@ -36,7 +36,7 @@
     left: 0;
     width: 180px;
     height: 100%;
-    background-image: linear-gradient(79deg, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 75%);
+    background-image: linear-gradient(79deg, rgba(241, 241, 243, 0) 35%, rgba(241, 241, 243, 1) 50%, rgba(241, 241, 243, 0) 75%);
     animation: person-loading 0.8s linear infinite;
   }
 
@@ -46,21 +46,21 @@
     border-radius: calc($person-avatar-size / 2);
     user-select: none;
     margin: 20px auto;
-    background-color: $color-background-light;
+    background-color: $color-background;
   }
 
   &-caption {
     height: 12px;
     width: 220px;
     margin: 0 auto;
-    background-color: $color-background-light;
+    background-color: $color-background;
   }
 
   &-name {
     height: 30px;
     width: 55%;
     margin: 10px auto;
-    background-color: $color-background-light;
+    background-color: $color-background;
   }
 
   &-labels {
@@ -74,13 +74,13 @@
     border-radius: 12px;
     display: inline-block;
     margin: 0 5px 5px 0;
-    background-color: $color-background-light;
+    background-color: $color-background;
   }
 
   &-paragraph {
     height: 20px;
     margin: 10px auto;
-    background-color: $color-background-light;
+    background-color: $color-background;
     &.second { width: 70%; }
     &.third { width: 80%; }
   }
