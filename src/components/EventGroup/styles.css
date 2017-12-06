@@ -9,17 +9,15 @@
     max-width: $page-max-width;
     position: relative;
     margin: 15px auto;
-    padding: 0 10px;
   }
 
   &-title {
-    font-size: 32px;
-    line-height: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: normal;
     display: inline-block;
     color: $color-text-default;
     text-decoration: none;
-    margin: 10px;
+    margin: 0 10px;
   }
 
   a.event-group-person:hover,
