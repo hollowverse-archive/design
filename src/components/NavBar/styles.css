@@ -23,16 +23,19 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   &-logo {
     width: 160px;
     height: $navbar-height;
+    margin: 0 auto;
     background: url('../../shared/assets/logo.svg') 50% 50% no-repeat;
+    animation: navbar-logo 0.15s;
   }
 
   &-btn {
+    position: absolute;
     width: $navbar-height;
     height: $navbar-height;
     display: block;
@@ -70,6 +73,7 @@
     border: 1px solid transparent;
     border-radius: 3px;
     background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
+    animation: navbar-search 0.15s;
 
     &:focus {
       text-align: left;
@@ -78,6 +82,30 @@
       background-color: white;
       box-shadow: 0 0 2px 0 rgba(110, 99, 207, 0.5);
     }
+  }
+}
+
+@keyframes navbar-logo {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navbar-search {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateY(0);
   }
 }
 

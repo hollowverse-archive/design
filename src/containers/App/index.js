@@ -21,6 +21,7 @@ export default class App extends Component {
 
   state = {
     isLoading: true,
+    isLogo: true,
     errorMessage: undefined,
   }
 
@@ -29,6 +30,11 @@ export default class App extends Component {
     setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
 
     window.scrollTo(0, 0);
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   componentDidCatch() {
@@ -44,13 +50,22 @@ export default class App extends Component {
     });
   }
 
+  handleScroll = () => {
+    if (this.state.isLogo && window.scrollY > 200) {
+      this.setState({ isLogo: false });
+    } else if (!this.state.isLogo && window.scrollY < 200) {
+      this.setState({ isLogo: true });
+    }
+  }
+
   render() {
     const Screen = this.props.screen;
 
     return (
       <Fragment>
         <NavBar
-          search="Arnold Schwarznegger"
+          logo={this.state.isLogo}
+          search={this.state.isLogo ? '' : 'Arnold Schwarznegger'}
           back={this.props.backPath}
         />
         <div className="app-view">
