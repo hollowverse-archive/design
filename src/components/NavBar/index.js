@@ -74,7 +74,7 @@ export default class NavBar extends Component {
           {search &&
             <input
               type="text"
-              className={classNames('navbar-search', { anim })}
+              className={classNames('navbar-search', { anim, 'with-buttons': back })}
               value={searchValue}
               onFocus={this.handleSearchFocus}
               onChange={this.handleSearchChange}

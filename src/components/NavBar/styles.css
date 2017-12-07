@@ -77,6 +77,10 @@
     border-radius: 3px;
     background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
 
+    &.with-buttons {
+      margin: 0 50px;
+    }
+
     &.anim {
       animation: navbar-search 0.15s;
     }
