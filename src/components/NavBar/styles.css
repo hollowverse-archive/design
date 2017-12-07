@@ -31,7 +31,10 @@
     height: $navbar-height;
     margin: 0 auto;
     background: url('../../shared/assets/logo.svg') 50% 50% no-repeat;
-    animation: navbar-logo 0.15s;
+
+    &.anim {
+      animation: navbar-logo 0.15s;
+    }
   }
 
   &-btn {
@@ -73,7 +76,10 @@
     border: 1px solid transparent;
     border-radius: 3px;
     background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
-    animation: navbar-search 0.15s;
+
+    &.anim {
+      animation: navbar-search 0.15s;
+    }
 
     &:focus {
       text-align: left;

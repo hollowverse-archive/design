@@ -2,6 +2,7 @@
  * NavBar Component
  */
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './styles.css';
@@ -23,6 +24,7 @@ export default class NavBar extends Component {
 
   state = {
     searchValue: '',
+    anim: false,
   };
 
   componentDidMount() {
@@ -32,6 +34,11 @@ export default class NavBar extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.state.searchValue !== nextProps.search) {
       this.update(nextProps.search);
+    }
+
+    if ((nextProps.logo && !this.props.logo) ||
+        (nextProps.search && !this.props.search)) {
+      this.setState({ anim: true });
     }
   }
 
@@ -52,6 +59,7 @@ export default class NavBar extends Component {
 
   render() {
     const { back, search, logo } = this.props;
+    const { anim, searchValue } = this.state;
 
     return (
       <div className="navbar">
@@ -66,8 +74,8 @@ export default class NavBar extends Component {
           {search &&
             <input
               type="text"
-              className="navbar-search"
-              value={this.state.searchValue}
+              className={classNames('navbar-search', { anim })}
+              value={searchValue}
               onFocus={this.handleSearchFocus}
               onChange={this.handleSearchChange}
               onKeyDown={this.handleSearchKeyDown}
@@ -75,7 +83,7 @@ export default class NavBar extends Component {
             />
           }
           {logo &&
-            <div className="navbar-logo" />
+            <div className={classNames('navbar-logo', { anim })} />
           }
         </div>
       </div>
