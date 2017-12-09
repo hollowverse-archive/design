@@ -1,36 +1,92 @@
 /**
  * NavBar Component
  */
-import React from 'react';
+import React, { Component } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { uiStrings } from '../../constants';
 import './styles.css';
 
-const NavBar = props => (
-  <div className="navbar">
-    <div className="navbar-inner">
-      {props.back &&
-        <Link
-          type="button"
-          className="navbar-btn back"
-          to={props.back}
-        />
-      }
-      {props.title}
-    </div>
-  </div>
-);
+export default class NavBar extends Component {
+  static propTypes = {
+    back: PropTypes.string,
+    onSearch: PropTypes.func,
+    search: PropTypes.string,
+    logo: PropTypes.bool,
+  };
 
-NavBar.propTypes = {
-  title: PropTypes.string,
-  back: PropTypes.string,
-};
+  static defaultProps = {
+    back: undefined,
+    onSearch: () => {},
+    search: undefined,
+    logo: false,
+  };
 
-NavBar.defaultProps = {
-  title: uiStrings.HOLLOWVERSE,
-  back: undefined,
-};
+  state = {
+    searchValue: '',
+    anim: false,
+  };
 
-export default NavBar;
+  componentDidMount() {
+    this.update();
+  }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.state.searchValue !== nextProps.search) {
+      this.update(nextProps.search);
+    }
+
+    if ((nextProps.logo && !this.props.logo) ||
+        (nextProps.search && !this.props.search)) {
+      this.setState({ anim: true });
+    }
+  }
+
+  update(searchValue = this.props.search) {
+    this.setState({ searchValue });
+  }
+
+  handleSearchFocus = e => e.target.select();
+
+  handleSearchChange = e => this.setState({ searchValue: e.target.value });
+
+  handleSearchKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      e.target.blur();
+      this.props.onSearch(this.state.searchValue);
+    }
+  };
+
+  render() {
+    const { back, search, logo } = this.props;
+    const { anim, searchValue } = this.state;
+
+    return (
+      <div className="navbar">
+        <div className="navbar-inner">
+          {back &&
+            <Link
+              type="button"
+              className="navbar-btn back"
+              to={back}
+            />
+          }
+          {search &&
+            <input
+              type="text"
+              className={classNames('navbar-search', { anim, 'with-buttons': back })}
+              value={searchValue}
+              onFocus={this.handleSearchFocus}
+              onChange={this.handleSearchChange}
+              onKeyDown={this.handleSearchKeyDown}
+              maxLength={50}
+            />
+          }
+          {logo &&
+            <div className={classNames('navbar-logo', { anim })} />
+          }
+        </div>
+      </div>
+    );
+  }
+}

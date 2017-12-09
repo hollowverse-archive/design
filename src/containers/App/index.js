@@ -1,7 +1,7 @@
 /**
  * App Container
  */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { NavBar, ErrorMessage } from '../../components';
 import './styles.css';
@@ -21,6 +21,7 @@ export default class App extends Component {
 
   state = {
     isLoading: true,
+    isLogo: true,
     errorMessage: undefined,
   }
 
@@ -29,6 +30,11 @@ export default class App extends Component {
     setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
 
     window.scrollTo(0, 0);
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   componentDidCatch() {
@@ -44,28 +50,39 @@ export default class App extends Component {
     });
   }
 
+  handleScroll = () => {
+    if (this.state.isLogo && window.scrollY > 200) {
+      this.setState({ isLogo: false });
+    } else if (!this.state.isLogo && window.scrollY < 200) {
+      this.setState({ isLogo: true });
+    }
+  }
+
   render() {
     const Screen = this.props.screen;
 
-    return ([
-      <NavBar
-        key={1}
-        back={this.props.backPath}
-      />,
-      <div key={2} className="app-view">
-        {!this.state.errorMessage ?
-          <Screen
-            isLoading={this.state.isLoading}
-            {...this.props.screenProps}
-          />
-          :
-          <ErrorMessage
-            message={this.state.errorMessage}
-            action={() => window.location.reload()}
-            actionLabel="Reload the Page"
-          />
-        }
-      </div>,
-    ]);
+    return (
+      <Fragment>
+        <NavBar
+          logo={this.state.isLogo}
+          search={this.state.isLogo ? '' : 'Arnold Schwarznegger'}
+          back={this.props.backPath}
+        />
+        <div className="app-view">
+          {!this.state.errorMessage ?
+            <Screen
+              isLoading={this.state.isLoading}
+              {...this.props.screenProps}
+            />
+            :
+            <ErrorMessage
+              message={this.state.errorMessage}
+              action={() => window.location.reload()}
+              actionLabel="Reload the Page"
+            />
+          }
+        </div>
+      </Fragment>
+    );
   }
 }

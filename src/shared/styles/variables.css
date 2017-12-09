@@ -9,14 +9,15 @@ $color-yellow: #f5ca23;
 $color-text-default: #111;
 $color-text-light: rgba(0, 0, 0, 0.5);
 
-$color-border-light: #e5e5e5;
-$color-border-lighter: #f1f2f4;
+$color-border-light: rgba(0, 0, 0, 0.08);
 
-$color-background-light: #f3f3f5;
+$color-background-light: #f1f1f3;
+$color-background: #dfdfe1;
 
-$navbar-height: 46px;
+$navbar-height: 48px;
 
 $person-avatar-size: 120px;
 
 $page-min-width: 320px;
 $page-max-width: 720px;
+$page-mobile-width: 640px;

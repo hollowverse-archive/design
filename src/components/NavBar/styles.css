@@ -4,29 +4,41 @@
 @import '../../shared/styles/variables.css';
 
 .navbar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: $navbar-height;
   line-height: $navbar-height;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: 1px;
-  border-bottom: 1px solid $color-border-light;
   user-select: none;
   cursor: default;
-  color: $color-text-default;
-  background-color: #fff;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.07);
 
   &-inner {
     position: relative;
+    height: 100%;
     max-width: $page-max-width;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-logo {
+    width: 160px;
+    height: $navbar-height;
+    margin: 0 auto;
+    background: url('../../shared/assets/logo.svg') 50% 50% no-repeat;
+
+    &.anim {
+      animation: navbar-logo 0.15s;
+    }
   }
 
   &-btn {
     position: absolute;
-    top: 0;
     width: $navbar-height;
     height: $navbar-height;
     display: block;
@@ -51,6 +63,59 @@
   &-btn.search {
     right: 0;
     background-image: url('../../shared/assets/icn-search.svg');
+  }
+
+  &-search {
+    flex: 1;
+    flex-shrink: 1;
+    height: calc($navbar-height - 16px);
+    position: relative;
+    padding: 0 30px;
+    margin: 0 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
+
+    &.with-buttons {
+      margin: 0 50px;
+    }
+
+    &.anim {
+      animation: navbar-search 0.15s;
+    }
+
+    &:focus {
+      text-align: left;
+      padding-left: 10px;
+      border-color: $color-pink;
+      background-color: white;
+      box-shadow: 0 0 2px 0 rgba(110, 99, 207, 0.5);
+    }
+  }
+}
+
+@keyframes navbar-logo {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navbar-search {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateY(0);
   }
 }
 
