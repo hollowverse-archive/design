@@ -4,7 +4,13 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { data, eventTypes } from '../../constants';
-import { PersonLoading, PersonDetails, EventGroup, FbComments } from '../../components';
+import {
+  PersonLoading,
+  PersonesOther,
+  PersonDetails,
+  EventGroup,
+  FbComments,
+} from '../../components';
 
 const NotablePerson = ({ isLoading }) => (
   isLoading ?
@@ -32,6 +38,7 @@ const NotablePerson = ({ isLoading }) => (
         type={eventTypes.APPEARANCE}
         events={data.APPEARANCES.slice(0, 5)}
       />
+      <PersonesOther />
       <FbComments />
     </Fragment>
 );

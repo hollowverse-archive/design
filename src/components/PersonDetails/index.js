@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { uiStrings } from '../../constants';
-import Label from '../Label';
+import { Label } from '../../components';
 import './styles.css';
 
 const renderLabel = (i, index) => <Label key={index} text={i} />;

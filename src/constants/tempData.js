@@ -11,6 +11,33 @@ export const NOTABLE_PERSON = {
   ],
 };
 
+export const OTHER_PERSONES = [
+  {
+    id: 'sarah-michelle-gellar',
+    name: 'Sarah Michelle Gellar',
+    photoUrl: 'assets/sarah-gellar.jpg',
+    labels: ['Actress', 'Producer', 'Entrepreneur'],
+  },
+  {
+    id: 'chelsea-handler',
+    name: 'Chelsea Handler',
+    photoUrl: 'assets/chelsea-handler.jpg',
+    labels: ['Actress', 'Comedian', 'Producer'],
+  },
+  {
+    id: 'rachel-bilson',
+    name: 'Rachel Bilson',
+    photoUrl: 'assets/rachel-bilson.jpg',
+    labels: ['Actress'],
+  },
+  {
+    id: 'jamie-curtis',
+    name: 'Jamie Lee Curtis',
+    photoUrl: 'assets/jamie-curtis.jpg',
+    labels: ['Actress', 'Author'],
+  },
+];
+
 export const DONATIONS = [
   {
     id: '3846759ae59b72bddb03d84433a188ee',
