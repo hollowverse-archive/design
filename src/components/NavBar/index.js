@@ -59,7 +59,7 @@ export default class NavBar extends Component {
   };
 
   render() {
-    const { back, search, logo } = this.props;
+    const { back, logo } = this.props;
     const { anim, searchValue } = this.state;
 
     return (
@@ -72,21 +72,22 @@ export default class NavBar extends Component {
               to={back}
             />
           }
-          {search &&
-            <input
-              type="text"
-              className={classNames('navbar-search', { anim, 'with-buttons': back })}
-              value={searchValue}
-              onFocus={this.handleSearchFocus}
-              onChange={this.handleSearchChange}
-              onKeyDown={this.handleSearchKeyDown}
-              maxLength={50}
-            />
-          }
           {logo &&
             <Link
               to={paths.HOME}
               className={classNames('navbar-logo', { anim })}
+            />
+          }
+          {!logo &&
+            <input
+              type="text"
+              className={classNames('navbar-search', { anim, 'with-buttons': back })}
+              value={searchValue}
+              placeholder="Search..."
+              onFocus={this.handleSearchFocus}
+              onChange={this.handleSearchChange}
+              onKeyDown={this.handleSearchKeyDown}
+              maxLength={50}
             />
           }
         </div>

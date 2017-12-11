@@ -43,6 +43,7 @@ export default class Events extends Component {
 
     return (
       <App
+        search={data.NOTABLE_PERSON.name}
         back={paths.NOTABLE_PERSON}
         pathname={location.pathname}
       >

@@ -13,10 +13,12 @@ export default class App extends Component {
       PropTypes.arrayOf(PropTypes.node),
     ]).isRequired,
     back: PropTypes.string,
+    search: PropTypes.string,
   }
 
   static defaultProps = {
     back: undefined,
+    search: '',
   }
 
   state = {
@@ -47,14 +49,14 @@ export default class App extends Component {
   }
 
   render() {
-    const { back, children } = this.props;
+    const { back, children, search } = this.props;
     const { isLogo, errorMessage } = this.state;
 
     return (
       <Fragment>
         <NavBar
           logo={isLogo}
-          search={isLogo ? '' : 'Arnold Schwarznegger'}
+          search={search}
           back={back}
         />
         <div className="app-view">

@@ -42,7 +42,9 @@ export default class NotablePerson extends Component {
 
   render() {
     return (
-      <App>
+      <App
+        search={data.NOTABLE_PERSON.name}
+      >
         {this.state.isLoading ?
           <PersonLoading />
           :
