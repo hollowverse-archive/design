@@ -2,7 +2,7 @@
  * NotablePerson Container
  */
 import React, { Component, Fragment } from 'react';
-import { data, eventTypes } from '../../constants';
+import { data, eventTypes, paths } from '../../constants';
 import { App } from '../../containers';
 import {
   PersonLoading,
@@ -44,6 +44,7 @@ export default class NotablePerson extends Component {
     return (
       <App
         search={data.NOTABLE_PERSON.name}
+        back={paths.HOME}
       >
         {this.state.isLoading ?
           <PersonLoading />
