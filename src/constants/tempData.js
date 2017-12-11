@@ -24,7 +24,7 @@ export const OTHER_PERSONES = [
     id: 'chelsea-handler',
     name: 'Chelsea Handler',
     photoUrl: 'assets/chelsea-handler.jpg',
-    labels: ['Actress', 'Comedian', 'Producer'],
+    labels: ['Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer'],
   },
   {
     id: 'rachel-bilson',
