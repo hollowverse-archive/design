@@ -18,10 +18,6 @@ const PersonCard = ({ name, photoUrl, labels }) => (
     to={paths.NOTABLE_PERSON}
   >
     <div
-      className="person-card-cover"
-      style={{ backgroundImage: `url(${photoUrl})` }}
-    />
-    <div
       className="person-card-avatar"
       style={{ backgroundImage: `url(${photoUrl})` }}
     />

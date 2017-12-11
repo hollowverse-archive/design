@@ -18,12 +18,6 @@ import {
 /* eslint-disable react/no-danger */
 const OldContent = () => (
   <Fragment>
-    <h2>Religion</h2>
-    <p>{data.NOTABLE_PERSON.religion}</p>
-    <Separator />
-    <h2>Political Views</h2>
-    <p>{data.NOTABLE_PERSON.political}</p>
-    <Separator />
     <div dangerouslySetInnerHTML={{ __html: data.ARTICLE }} />
     <Separator />
     <Footnotes data={data.ARTICLE_FOOTNOTES} />

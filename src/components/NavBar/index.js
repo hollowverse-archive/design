@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { paths } from '../../constants';
 import './styles.css';
 
 export default class NavBar extends Component {
@@ -83,7 +84,10 @@ export default class NavBar extends Component {
             />
           }
           {logo &&
-            <div className={classNames('navbar-logo', { anim })} />
+            <Link
+              to={paths.HOME}
+              className={classNames('navbar-logo', { anim })}
+            />
           }
         </div>
       </div>

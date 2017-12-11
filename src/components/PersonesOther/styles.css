@@ -23,7 +23,6 @@
   &-inner {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     overflow-y: auto;
     padding-bottom: 30px;
   }

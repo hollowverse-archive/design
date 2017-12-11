@@ -1,0 +1,17 @@
+/**
+ * Home Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.home {
+  position: relative;
+  margin: 20px auto;
+  overflow: hidden;
+
+  &-persones {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: $page-max-width;
+  }
+}

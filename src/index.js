@@ -3,9 +3,9 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { paths, eventTypes } from './constants';
-import { App, Events, NotablePerson } from './containers';
+import { App, Events, Home, NotablePerson, Search } from './containers';
 import './shared/styles/index.css';
 
 /* eslint-disable */
@@ -36,7 +36,10 @@ render(
       <RouteEvents path={paths.EVENTS_APPEARANCES} type={eventTypes.APPEARANCE} />
       <RouteEvents path={paths.EVENTS_DONATIONS} type={eventTypes.DONATION} />
       <RouteEvents path={paths.EVENTS_QUOTES} type={eventTypes.QUOTE} />
-      <Route render={() => <App screen={NotablePerson} />} />
+      <Route path={paths.NOTABLE_PERSON} render={() => <App screen={NotablePerson} />} />
+      <Route path={paths.SEARCH} render={() => <App screen={Search} />} />
+      <Route path={paths.HOME} render={() => <App screen={Home} />} />
+      <Redirect to={paths.HOME} />
     </Switch>
   </Router>,
   document.getElementById('hv-root'),
