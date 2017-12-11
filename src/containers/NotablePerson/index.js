@@ -10,6 +10,7 @@ import {
   PersonDetails,
   EventGroup,
   FbComments,
+  Footnotes,
   Section,
   Separator,
 } from '../../components';
@@ -24,6 +25,8 @@ const OldContent = () => (
     <p>{data.NOTABLE_PERSON.political}</p>
     <Separator />
     <div dangerouslySetInnerHTML={{ __html: data.ARTICLE }} />
+    <Separator />
+    <Footnotes data={data.ARTICLE_FOOTNOTES} />
   </Fragment>
 );
 

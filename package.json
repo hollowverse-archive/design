@@ -107,7 +107,8 @@
         {
           "ignoreProperties": [
             "appearance",
-            "text-size-adjust"
+            "text-size-adjust",
+            "text-decoration-skip"
           ]
         }
       ]

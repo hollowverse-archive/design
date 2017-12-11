@@ -1,0 +1,75 @@
+/**
+ * Footnotes Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.footnotes {
+  color: $color-text-light;
+
+  &-title {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding: 0 25px 0 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background: url('../../shared/assets/icn-dropdown.svg') 50% 50% no-repeat;
+      transition: transform 0.15s;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $color-blue;
+    }
+  }
+
+  &.open .footnotes-title::after {
+    transform: scaleY(-1);
+  }
+
+  &-body {
+    animation: footnotes-body 0.15s both;
+  }
+
+  li {
+    font-size: 13px;
+    margin: 0 10px 10px;
+    line-height: 1.4;
+  }
+
+  a.back-link {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    line-height: 24px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    &:hover {
+      text-decoration: none;
+      background-color: rgba(110, 99, 207, 0.05);
+    }
+  }
+}
+
+@keyframes footnotes-body {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

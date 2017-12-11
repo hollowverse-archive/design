@@ -230,10 +230,54 @@ export const ARTICLE = `
   </blockquote>
 `;
 
-export const ARTICLE_FOOTNOTE = [
+export const ARTICLE_FOOTNOTES = [
   {
+    id: '1',
     name: 'Thom Yorke Biography',
-    source: 'Focusdep',
+    sourceName: 'Focusdep',
     url: 'http://www.focusdep.com/biographies/Thom/Yorke',
+    backLink: '#',
+  },
+  {
+    id: '2',
+    name: 'The Difference Between Low Church and High Church.',
+    sourceName: 'Christian Resource Institute',
+    url: 'http://www.cresourcei.org/lowhighchurch.html',
+    backLink: '#',
+  },
+  {
+    id: '3',
+    name: 'Thom Yorke Biography',
+    sourceName: 'Focusdep',
+    url: 'http://www.focusdep.com/biographies/Thom/Yorke',
+    backLink: '#',
+  },
+  {
+    id: '4',
+    name: 'Opinion: Thom Yorke on fair trade',
+    sourceName: 'The Guardian',
+    url: 'https://www.theguardian.com/environment/2003/sep/08/fairtrade.wto6',
+    backLink: '#',
+  },
+  {
+    id: '5',
+    name: 'An Interview: Thom Yorke on politics, being a dad, and music',
+    sourceName: 'The Comment Factory',
+    url: 'http://www.thecommentfactory.com/an-interview-thom-yorke-on-politics-being-a-dad-and-music-659/',
+    backLink: '#',
+  },
+  {
+    id: '6',
+    name: 'Thom Yorke Quotes',
+    sourceName: 'Brainy Quote',
+    url: 'http://www.brainyquote.com/quotes/authors/t/thom_yorke.html?SPvm=1&vm=l',
+    backLink: '#',
+  },
+  {
+    id: '7',
+    name: 'Radiohead’s Thom Yorke Threatens To Sue U.K. Prime Minister David Cameron',
+    sourceName: 'KROQ',
+    url: 'http://kroq.radio.com/2013/01/17/radical-radiohead-frontman-threatens-conservative-u-k-prime-minister/',
+    backLink: '#',
   },
 ];
