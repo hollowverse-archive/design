@@ -5,7 +5,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { paths, eventTypes } from './constants';
-import { App, Events, Home, NotablePerson, Search } from './containers';
+import { Events, Home, NotablePerson, Search } from './containers';
 import './shared/styles/index.css';
 
 /* eslint-disable */
@@ -18,27 +18,33 @@ import './shared/styles/index.css';
 }(document, 'script', 'facebook-jssdk'));
 /* eslint-enable */
 
-const RouteEvents = ({ type, ...rest }) =>
-  <Route
-    {...rest}
-    render={() =>
-      <App
-        screen={Events}
-        screenProps={{ type }}
-        backPath={paths.NOTABLE_PERSON}
-      />
-    }
-  />;
-
 render(
   <Router>
     <Switch>
-      <RouteEvents path={paths.EVENTS_APPEARANCES} type={eventTypes.APPEARANCE} />
-      <RouteEvents path={paths.EVENTS_DONATIONS} type={eventTypes.DONATION} />
-      <RouteEvents path={paths.EVENTS_QUOTES} type={eventTypes.QUOTE} />
-      <Route path={paths.NOTABLE_PERSON} render={() => <App screen={NotablePerson} />} />
-      <Route path={paths.SEARCH} render={() => <App screen={Search} />} />
-      <Route path={paths.HOME} render={() => <App screen={Home} />} />
+      <Route
+        path={paths.SEARCH}
+        component={Search}
+      />
+      <Route
+        path={paths.NOTABLE_PERSON}
+        component={NotablePerson}
+      />
+      <Route
+        path={paths.EVENTS_APPEARANCES}
+        render={props => <Events {...props} type={eventTypes.APPEARANCE} />}
+      />
+      <Route
+        path={paths.EVENTS_DONATIONS}
+        render={props => <Events {...props} type={eventTypes.DONATION} />}
+      />
+      <Route
+        path={paths.EVENTS_QUOTES}
+        render={props => <Events {...props} type={eventTypes.QUOTE} />}
+      />
+      <Route
+        path={paths.HOME}
+        component={Home}
+      />
       <Redirect to={paths.HOME} />
     </Switch>
   </Router>,

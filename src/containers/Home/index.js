@@ -1,9 +1,10 @@
 /**
  * Home container
  */
-import React from 'react';
+import React, { Component } from 'react';
 import { data } from '../../constants';
-import { PersonCard } from '../../components';
+import { App } from '../../containers';
+import { PersonesLoading, PersonCard } from '../../components';
 import './styles.css';
 
 const PERSONES = [
@@ -12,17 +13,38 @@ const PERSONES = [
   ...data.PERSONES.map(person => ({ ...person, id: `${person.id}-2` })),
 ];
 
-const Home = () =>
-  <div className="home">
-    <div className="home-persones">
-      {PERSONES.map(person =>
-        <PersonCard
-          key={person.id}
-          {...person}
-        />)
-      }
-    </div>
-  </div>;
+export default class Home extends Component {
+  state = {
+    isLoading: true,
+  }
 
-export default Home;
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.loadingTimeout);
+  }
+
+  handleLoaded = () => this.setState({ isLoading: false });
+
+  render() {
+    return (
+      <App>
+        {this.state.isLoading ?
+          <PersonesLoading />
+          :
+          <div className="home-persones">
+            {PERSONES.map(person =>
+              <PersonCard
+                key={person.id}
+                {...person}
+              />)
+            }
+          </div>}
+      </App>
+    );
+  }
+}
 

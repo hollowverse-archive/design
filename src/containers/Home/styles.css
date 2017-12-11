@@ -4,15 +4,12 @@
 @import '../../shared/styles/variables.css';
 
 .home {
-  position: relative;
-  width: 100%;
-  margin: 10px auto;
-  max-width: $page-max-width;
-
   &-persones {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin: 10px auto;
+    max-width: $page-max-width;
 
     .person-card {
       margin: 5px;

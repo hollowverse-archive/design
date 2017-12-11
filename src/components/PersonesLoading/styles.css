@@ -1,0 +1,37 @@
+/**
+ * PersonesLoading
+ */
+@import '../../shared/styles/variables.css';
+
+.persones-loading {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 10px auto;
+  max-width: $page-max-width;
+
+  &-item {
+    position: relative;
+    width: $person-card-width;
+    height: $person-card-height;
+    border-radius: 3px;
+    user-select: none;
+    background-color: $color-background;
+    margin: 5px;
+    animation: persones-loading 1.5s infinite;
+  }
+}
+
+@keyframes persones-loading {
+  30% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

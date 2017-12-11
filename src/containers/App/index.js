@@ -8,28 +8,23 @@ import './styles.css';
 
 export default class App extends Component {
   static propTypes = {
-    screen: PropTypes.func,
-    screenProps: PropTypes.object,
-    backPath: PropTypes.string,
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.arrayOf(PropTypes.node),
+    ]).isRequired,
+    back: PropTypes.string,
   }
 
   static defaultProps = {
-    screen: undefined,
-    screenProps: undefined,
-    backPath: undefined,
+    back: undefined,
   }
 
   state = {
-    isLoading: true,
     isLogo: true,
     errorMessage: undefined,
   }
 
   componentDidMount() {
-    // Emulate loading
-    setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
-
-    window.scrollTo(0, 0);
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -39,14 +34,7 @@ export default class App extends Component {
 
   componentDidCatch() {
     this.setState({
-      isLoading: false,
       errorMessage: 'Something is wrong on our end. Try again later.',
-    });
-  }
-
-  handleLoaded = () => {
-    this.setState({
-      isLoading: false,
     });
   }
 
@@ -59,24 +47,22 @@ export default class App extends Component {
   }
 
   render() {
-    const Screen = this.props.screen;
+    const { back, children } = this.props;
+    const { isLogo, errorMessage } = this.state;
 
     return (
       <Fragment>
         <NavBar
-          logo={this.state.isLogo}
-          search={this.state.isLogo ? '' : 'Arnold Schwarznegger'}
-          back={this.props.backPath}
+          logo={isLogo}
+          search={isLogo ? '' : 'Arnold Schwarznegger'}
+          back={back}
         />
         <div className="app-view">
-          {!this.state.errorMessage ?
-            <Screen
-              isLoading={this.state.isLoading}
-              {...this.props.screenProps}
-            />
+          {!errorMessage ?
+            children
             :
             <ErrorMessage
-              message={this.state.errorMessage}
+              message={errorMessage}
               action={() => window.location.reload()}
               actionLabel="Reload the Page"
             />

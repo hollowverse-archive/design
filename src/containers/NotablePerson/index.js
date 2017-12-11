@@ -1,9 +1,9 @@
 /**
  * NotablePerson Container
  */
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, Fragment } from 'react';
 import { data, eventTypes } from '../../constants';
+import { App } from '../../containers';
 import {
   PersonLoading,
   PersonesOther,
@@ -24,34 +24,47 @@ const OldContent = () => (
   </Fragment>
 );
 
-const NotablePerson = ({ isLoading }) => (
-  isLoading ?
-    <PersonLoading />
-    :
-    <Fragment>
-      <PersonDetails
-        {...data.NOTABLE_PERSON}
-      />
-      <EventGroup
-        limit
-        person={data.NOTABLE_PERSON}
-        type={eventTypes.QUOTE}
-        events={data.QUOTES.slice(0, 3)}
-      />
-      <Section>
-        <OldContent />
-      </Section>
-      <PersonesOther />
-      <FbComments />
-    </Fragment>
-);
+export default class NotablePerson extends Component {
+  state = {
+    isLoading: true,
+  }
 
-NotablePerson.propTypes = {
-  isLoading: PropTypes.bool,
-};
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
+  }
 
-NotablePerson.defaultProps = {
-  isLoading: false,
-};
+  componentWillUnmount() {
+    clearTimeout(this.loadingTimeout);
+  }
 
-export default NotablePerson;
+  handleLoaded = () => this.setState({ isLoading: false });
+
+  render() {
+    return (
+      <App>
+        {this.state.isLoading ?
+          <PersonLoading />
+          :
+          <Fragment>
+            <PersonDetails
+              {...data.NOTABLE_PERSON}
+            />
+            <EventGroup
+              limit
+              person={data.NOTABLE_PERSON}
+              type={eventTypes.QUOTE}
+              events={data.QUOTES.slice(0, 3)}
+            />
+            <Section>
+              <OldContent />
+            </Section>
+            <PersonesOther />
+            <FbComments />
+          </Fragment>
+        }
+      </App>
+    );
+  }
+}
+

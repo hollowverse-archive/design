@@ -29,29 +29,27 @@ const EventGroup = (props) => {
 
   return (
     <div className="event-group">
-      <div className="event-group-inner">
-        <EventGroupTitle
-          limit={props.limit}
-          path={eventProps.path}
-          personName={props.person.name}
-          eventName={eventProps.name}
-        />
-        {props.events.map(event =>
-          <Event
-            key={event.id}
-            className={eventProps.className}
-            person={props.person}
-            {...event}
-          />)}
-        {props.limit &&
-          <Link
-            to={eventProps.path}
-            className="event-group-more"
-          >
-            {uiStrings.SEE_MORE}
-          </Link>
-        }
-      </div>
+      <EventGroupTitle
+        limit={props.limit}
+        path={eventProps.path}
+        personName={props.person.name}
+        eventName={eventProps.name}
+      />
+      {props.events.map(event =>
+        <Event
+          key={event.id}
+          className={eventProps.className}
+          person={props.person}
+          {...event}
+        />)}
+      {props.limit &&
+        <Link
+          to={eventProps.path}
+          className="event-group-more"
+        >
+          {uiStrings.SEE_MORE}
+        </Link>
+      }
     </div>
   );
 };
