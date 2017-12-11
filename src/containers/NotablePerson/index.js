@@ -10,6 +10,7 @@ import {
   PersonDetails,
   EventGroup,
   FbComments,
+  SectionCard,
 } from '../../components';
 
 const NotablePerson = ({ isLoading }) => (
@@ -26,17 +27,13 @@ const NotablePerson = ({ isLoading }) => (
         type={eventTypes.QUOTE}
         events={data.QUOTES.slice(0, 3)}
       />
-      <EventGroup
-        limit
-        person={data.NOTABLE_PERSON}
-        type={eventTypes.DONATION}
-        events={data.DONATIONS.slice(0, 5)}
+      <SectionCard
+        title="Religion"
+        content={data.NOTABLE_PERSON.religion}
       />
-      <EventGroup
-        limit
-        person={data.NOTABLE_PERSON}
-        type={eventTypes.APPEARANCE}
-        events={data.APPEARANCES.slice(0, 5)}
+      <SectionCard
+        title="Political Views"
+        content={data.NOTABLE_PERSON.religion}
       />
       <PersonesOther />
       <FbComments />

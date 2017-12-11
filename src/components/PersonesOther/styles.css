@@ -7,7 +7,7 @@
   position: relative;
   width: 100%;
   max-width: $page-max-width;
-  margin: 0 auto 20px;
+  margin: 20px auto;
   overflow: hidden;
 
   &-title {

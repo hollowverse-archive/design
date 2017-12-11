@@ -9,6 +9,20 @@ export const NOTABLE_PERSON = {
     'Hanks has run the gamut of Chrisian denominations from Mormonism to Catholicism but seems to have settled on Greek Orthodox.',
     'Hanks is a hardcode Democrat and liberal, throwing his weight behind gay marriage, alternatieve energy, environmentalism, and Obama.',
   ],
+  religion: 'Arnold seems non-religious, though he did attend church as a child and has expressed some interest in Buddhism.',
+  political: 'Arnold\'s politics generally revolve around criticisms of Western hegemony, political/economic greed and exploitation and the environment.',
+  sources: [
+    {
+      id: 'schwarzenegger.com',
+      url: 'http://www.schwarzenegger.com/',
+      name: 'schwarzenegger.com',
+    },
+    {
+      id: 'wikipedia',
+      url: 'https://en.wikipedia.org/wiki/Arnold_Schwarzenegger',
+      name: 'Wikipedia',
+    },
+  ],
 };
 
 export const OTHER_PERSONES = [
