@@ -5,13 +5,17 @@
 
 .home {
   position: relative;
-  margin: 20px auto;
-  overflow: hidden;
+  width: 100%;
+  margin: 10px auto;
+  max-width: $page-max-width;
 
   &-persones {
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
-    max-width: $page-max-width;
+    justify-content: center;
+
+    .person-card {
+      margin: 5px;
+    }
   }
 }

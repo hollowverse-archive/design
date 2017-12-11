@@ -13,30 +13,54 @@ export const NOTABLE_PERSON = {
   political: 'Arnold\'s politics generally revolve around criticisms of Western hegemony, political/economic greed and exploitation and the environment.',
 };
 
-export const OTHER_PERSONES = [
+export const PERSONES = [
   {
-    id: 'sarah-michelle-gellar',
-    name: 'Sarah Michelle Gellar',
-    photoUrl: 'assets/sarah-gellar.jpg',
-    labels: ['Actress', 'Producer', 'Entrepreneur'],
-  },
-  {
-    id: 'chelsea-handler',
-    name: 'Chelsea Handler',
-    photoUrl: 'assets/chelsea-handler.jpg',
-    labels: ['Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer'],
-  },
-  {
-    id: 'rachel-bilson',
-    name: 'Rachel Bilson',
-    photoUrl: 'assets/rachel-bilson.jpg',
+    id: 'alyson-hannigan',
+    name: 'Alyson Hannigan',
+    photoUrl: 'assets/alyson-hannigan.jpg',
     labels: ['Actress'],
   },
   {
-    id: 'jamie-curtis',
-    name: 'Jamie Lee Curtis',
-    photoUrl: 'assets/jamie-curtis.jpg',
+    id: 'kelly-clarkson',
+    name: 'Kelly Clarkson',
+    photoUrl: 'assets/kelly-clarkson.jpg',
+    labels: ['Actress', 'Singer'],
+  },
+  {
+    id: 'sylvester-stallone',
+    name: 'Rachel Bilson',
+    photoUrl: 'assets/sylvester-stallone.jpg',
+    labels: ['Actor', 'Filmmaker'],
+  },
+  {
+    id: 'brenda-song',
+    name: 'Brenda Song',
+    photoUrl: 'assets/brenda-song.jpg',
     labels: ['Actress', 'Author'],
+  },
+  {
+    id: 'sigourney-weaver',
+    name: 'Sigourney Weaver',
+    photoUrl: 'assets/sigourney-weaver.jpg',
+    labels: ['Actress'],
+  },
+  {
+    id: 'paul-rudd',
+    name: 'Paul Rudd',
+    photoUrl: 'assets/paul-rudd.jpg',
+    labels: ['Actor'],
+  },
+  {
+    id: 'annalynne-mccord',
+    name: 'AnnaLynne McCord',
+    photoUrl: 'assets/annalynne-mccord.jpg',
+    labels: ['Actress', 'Model'],
+  },
+  {
+    id: 'angus-jones',
+    name: 'Angus T. Jones',
+    photoUrl: 'assets/angus-jones.jpg',
+    labels: ['Actor'],
   },
   {
     id: 'sarah-michelle-gellar',
