@@ -11,18 +11,6 @@ export const NOTABLE_PERSON = {
   ],
   religion: 'Arnold seems non-religious, though he did attend church as a child and has expressed some interest in Buddhism.',
   political: 'Arnold\'s politics generally revolve around criticisms of Western hegemony, political/economic greed and exploitation and the environment.',
-  sources: [
-    {
-      id: 'schwarzenegger.com',
-      url: 'http://www.schwarzenegger.com/',
-      name: 'schwarzenegger.com',
-    },
-    {
-      id: 'wikipedia',
-      url: 'https://en.wikipedia.org/wiki/Arnold_Schwarzenegger',
-      name: 'Wikipedia',
-    },
-  ],
 };
 
 export const OTHER_PERSONES = [
@@ -221,5 +209,27 @@ export const QUOTES = [
     sourceName: 'link.com',
     sourceUrl: 'http://link.com',
     labels: ['quotes', 'dream', 'philosophy', 'science'],
+  },
+];
+
+export const ARTICLE = `
+  <h2>The big, bad West</h2>
+  <p>Yorke has political concerns to say the least. Overall, his ire is directed at the imperialistic attitude of the Western powers. Yorke sees their thirst for power and money as oppressing the peoples of the developing world and destroying their environment. He resents the West’s sense of entitlement as managers of the world, saying:</p>
+  <blockquote>
+  I think we’re entering a very dangerous time. The West has set itself up, decided it’s in charge, not for good intentions, not for the benefit of mankind
+  </blockquote>
+  <p>This attitude has inspired Yorke to speak out against globalization, the World Trade Organization and call for fair trade practices and for the West to keep its meddling fingers out of everybody else’s business. He’s participated in anti-WTO protests and other activist activities. A rather nice summary of his views on these topics can be found in an <a href="http://www.guardian.co.uk/environment/2003/sep/08/fairtrade.wto6" target="_blank">opinion piece</a> he penned for <i>The Guardian</i>.
+  <p>Yorke has repeatedly expressed his admiration for Noam Chomsky,8 whose condemnations of American and European hegemony is well known. It’s a natural fit.</p>
+  <p>As far as partisan politics, Yorke seems most unhappy with British Conservatives and right-wing parties in all countries. When one of George W. Bush’s daughters attended a Radiohead concert, he said he was glad he didn’t know until afterwards;9 he’s expressed a sense of powerlessness he felt as a child during the Thatcher administration;10 and of current Prime Minister, Conservative David Cameron’s profession of love for Radiohead’s music, Yorke said:</p>
+  <blockquote>
+  As long as he doesn’t use it for his election campaigns, I don’t care. I’d sue the living shit out of him if he did.11
+  </blockquote>
+`;
+
+export const ARTICLE_FOOTNOTE = [
+  {
+    name: 'Thom Yorke Biography',
+    source: 'Focusdep',
+    url: 'http://www.focusdep.com/biographies/Thom/Yorke',
   },
 ];

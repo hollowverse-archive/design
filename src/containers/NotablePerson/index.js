@@ -10,8 +10,22 @@ import {
   PersonDetails,
   EventGroup,
   FbComments,
-  SectionCard,
+  Section,
+  Separator,
 } from '../../components';
+
+/* eslint-disable react/no-danger */
+const OldContent = () => (
+  <Fragment>
+    <h2>Religion</h2>
+    <p>{data.NOTABLE_PERSON.religion}</p>
+    <Separator />
+    <h2>Political Views</h2>
+    <p>{data.NOTABLE_PERSON.political}</p>
+    <Separator />
+    <div dangerouslySetInnerHTML={{ __html: data.ARTICLE }} />
+  </Fragment>
+);
 
 const NotablePerson = ({ isLoading }) => (
   isLoading ?
@@ -27,14 +41,9 @@ const NotablePerson = ({ isLoading }) => (
         type={eventTypes.QUOTE}
         events={data.QUOTES.slice(0, 3)}
       />
-      <SectionCard
-        title="Religion"
-        content={data.NOTABLE_PERSON.religion}
-      />
-      <SectionCard
-        title="Political Views"
-        content={data.NOTABLE_PERSON.religion}
-      />
+      <Section>
+        <OldContent />
+      </Section>
       <PersonesOther />
       <FbComments />
     </Fragment>
