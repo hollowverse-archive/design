@@ -216,13 +216,17 @@ export const ARTICLE = `
   <h2>The big, bad West</h2>
   <p>Yorke has political concerns to say the least. Overall, his ire is directed at the imperialistic attitude of the Western powers. Yorke sees their thirst for power and money as oppressing the peoples of the developing world and destroying their environment. He resents the West’s sense of entitlement as managers of the world, saying:</p>
   <blockquote>
-  I think we’re entering a very dangerous time. The West has set itself up, decided it’s in charge, not for good intentions, not for the benefit of mankind
+    I think we’re entering a very dangerous time. The West has set itself up, decided it’s in charge, not for good intentions, not for the benefit of mankind<sup><a href="#">1</a></sup>
   </blockquote>
   <p>This attitude has inspired Yorke to speak out against globalization, the World Trade Organization and call for fair trade practices and for the West to keep its meddling fingers out of everybody else’s business. He’s participated in anti-WTO protests and other activist activities. A rather nice summary of his views on these topics can be found in an <a href="http://www.guardian.co.uk/environment/2003/sep/08/fairtrade.wto6" target="_blank">opinion piece</a> he penned for <i>The Guardian</i>.
-  <p>Yorke has repeatedly expressed his admiration for Noam Chomsky,8 whose condemnations of American and European hegemony is well known. It’s a natural fit.</p>
-  <p>As far as partisan politics, Yorke seems most unhappy with British Conservatives and right-wing parties in all countries. When one of George W. Bush’s daughters attended a Radiohead concert, he said he was glad he didn’t know until afterwards;9 he’s expressed a sense of powerlessness he felt as a child during the Thatcher administration;10 and of current Prime Minister, Conservative David Cameron’s profession of love for Radiohead’s music, Yorke said:</p>
+  <p>Yorke has repeatedly expressed his admiration for Noam Chomsky<sup><a href="#">2</a></sup>, whose condemnations of American and European hegemony is well known. It’s a natural fit.</p>
+  <p>As far as partisan politics, Yorke seems most unhappy with British Conservatives and right-wing parties in all countries. When one of George W. Bush’s daughters attended a Radiohead concert, he said he was glad he didn’t know until afterwards;<sup><a href="#">3</a></sup> he’s expressed a sense of powerlessness he felt as a child during the Thatcher administration;<sup><a href="#">4</a></sup> and of current Prime Minister, Conservative David Cameron’s profession of love for Radiohead’s music, Yorke said:</p>
   <blockquote>
-  As long as he doesn’t use it for his election campaigns, I don’t care. I’d sue the living shit out of him if he did.11
+  As long as he doesn’t use it for his election campaigns, I don’t care. I’d sue the living shit out of him if he did.<sup><a href="#">5</a></sup>
+  </blockquote>
+  <p>Perhaps Yorke’s biggest concern is climate,<sup><a href="#">6</a></sup> which of course, is all wrapped up in economics, consumerism, corruption and greed. I’ll leave you with a final quote that seems to outline well Yorke’s sort of dark views of the world and its power structures, peoples and problems:</p>
+  <blockquote>
+  It’s just the law governing western politics’ pure blind greed–economics is an unquestionable sacred law above all humane considerations, it is a justification for slave labor, genocide, environmental and spiritual destruction. Everyone wants their cheap sneakers and bloody stupid keyrings and plasticware above all else, and are happy to leave China unchecked, happy to condone their blatant violation of human rights.<sup><a href="#">7</a></sup>
   </blockquote>
 `;
 
