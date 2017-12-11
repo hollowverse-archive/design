@@ -9,6 +9,7 @@ export { default as Footnotes } from './Footnotes';
 export { default as Label } from './Label';
 export { default as Loader } from './Loader';
 export { default as NavBar } from './NavBar';
+export { default as Pagination } from './Pagination';
 export { default as PersonCard } from './PersonCard';
 export { default as PersonDetails } from './PersonDetails';
 export { default as PersonesLoading } from './PersonesLoading';

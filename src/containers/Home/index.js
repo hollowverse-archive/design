@@ -1,10 +1,10 @@
 /**
  * Home container
  */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { data } from '../../constants';
 import { App } from '../../containers';
-import { PersonesLoading, PersonCard } from '../../components';
+import { PersonesLoading, PersonCard, Pagination } from '../../components';
 import './styles.css';
 
 const PERSONES = [
@@ -16,6 +16,7 @@ const PERSONES = [
 export default class Home extends Component {
   state = {
     isLoading: true,
+    pages: Array.from(Array(39), (item, index) => ({ id: index })),
   }
 
   componentDidMount() {
@@ -30,19 +31,27 @@ export default class Home extends Component {
   handleLoaded = () => this.setState({ isLoading: false });
 
   render() {
+    const { isLoading, pages } = this.state;
     return (
       <App>
-        {this.state.isLoading ?
+        {isLoading ?
           <PersonesLoading />
           :
-          <div className="home-persones">
-            {PERSONES.map(person =>
-              <PersonCard
-                key={person.id}
-                {...person}
-              />)
-            }
-          </div>}
+          <Fragment>
+            <div className="home-persones">
+              {PERSONES.map(person =>
+                <PersonCard
+                  key={person.id}
+                  {...person}
+                />)
+              }
+            </div>
+            <Pagination
+              items={pages}
+              onChangePage={this.handleChangePage}
+            />
+          </Fragment>
+        }
       </App>
     );
   }

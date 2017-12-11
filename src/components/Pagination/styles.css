@@ -1,0 +1,10 @@
+/**
+ * Pagination Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.pagination {
+  margin: 30px auto;
+  width: 100%;
+  max-width: $page-max-width;
+}
