@@ -116,7 +116,7 @@ export default class NavBar extends Component {
           {!isSearch && isSearchButton &&
             <button
               type="button"
-              className="navbar-btn search"
+              className={classNames('navbar-btn search', { anim })}
               onClick={this.handleSearchButtonClick}
             />
           }

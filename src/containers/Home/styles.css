@@ -17,8 +17,8 @@
   }
 
   &-footer {
-    padding: 0 20px 50px;
-    margin: 10px auto 50px;
+    padding: 0 20px 60px;
+    margin: 20px auto 60px;
     width: 100%;
     max-width: $page-max-width;
     text-align: center;

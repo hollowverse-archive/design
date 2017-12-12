@@ -63,6 +63,10 @@
   &-btn.search {
     right: 0;
     background-image: url('../../shared/assets/icn-search.svg');
+
+    &.anim {
+      animation: navbar-logo 0.15s;
+    }
   }
 
   &-search {
