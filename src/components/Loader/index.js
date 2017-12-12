@@ -2,10 +2,12 @@
  * Loader Component
  */
 import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import './styles.css';
 
-const Loader = () => (
-  <div className="loader">
+const Loader = ({ small }) => (
+  <div className={classNames('loader', { small })}>
     <svg className="loader-circular" viewBox="25 25 50 50">
       <circle
         className="loader-path"
@@ -20,5 +22,12 @@ const Loader = () => (
   </div>
 );
 
+Loader.propTypes = {
+  small: PropTypes.bool,
+};
+
+Loader.defaultProps = {
+  small: false,
+};
 
 export default Loader;
