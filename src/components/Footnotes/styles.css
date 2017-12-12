@@ -58,7 +58,7 @@
 
     &:hover {
       text-decoration: none;
-      background-color: rgba(110, 99, 207, 0.05);
+      background-color: $color-blue-opacity;
     }
   }
 }

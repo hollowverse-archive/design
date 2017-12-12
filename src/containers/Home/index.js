@@ -16,7 +16,8 @@ const PERSONES = [
 export default class Home extends Component {
   state = {
     isLoading: true,
-    pages: Array.from(Array(39), (item, index) => ({ id: index })),
+    currentPage: 1,
+    totalPages: 39,
   }
 
   componentDidMount() {
@@ -28,30 +29,40 @@ export default class Home extends Component {
     clearTimeout(this.loadingTimeout);
   }
 
+  get home() {
+    const { isLoading, currentPage, totalPages } = this.state;
+
+    if (isLoading) {
+      return <PersonesLoading />;
+    }
+
+    return (
+      <Fragment>
+        <div className="home-persones">
+          {PERSONES.map(person =>
+            <PersonCard
+              key={person.id}
+              {...person}
+            />)
+              }
+        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onChangePage={this.handleChangePage}
+        />
+      </Fragment>
+    );
+  }
+
   handleLoaded = () => this.setState({ isLoading: false });
 
+  handleChangePage = currentPage => this.setState({ currentPage });
+
   render() {
-    const { isLoading, pages } = this.state;
     return (
       <App isSearchButton>
-        {isLoading ?
-          <PersonesLoading />
-          :
-          <Fragment>
-            <div className="home-persones">
-              {PERSONES.map(person =>
-                <PersonCard
-                  key={person.id}
-                  {...person}
-                />)
-              }
-            </div>
-            <Pagination
-              items={pages}
-              onChangePage={this.handleChangePage}
-            />
-          </Fragment>
-        }
+        {this.home}
       </App>
     );
   }

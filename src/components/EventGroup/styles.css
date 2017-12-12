@@ -36,6 +36,6 @@
     text-align: center;
     color: $color-blue;
     border-radius: 2px;
-    &:hover { background-color: rgba(110, 99, 207, 0.05); }
+    &:hover { background-color: $color-blue-opacity; }
   }
 }
