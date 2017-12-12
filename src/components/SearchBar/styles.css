@@ -7,8 +7,17 @@
   flex: 1;
   flex-shrink: 1;
   margin: 0 10px;
+  position: relative;
 
-  input {
+  &.margins {
+    margin: 0 50px;
+  }
+
+  &.anim {
+    animation: navbar-search 0.15s;
+  }
+
+  &-input {
     width: 100%;
     height: calc($navbar-height - 16px);
     position: relative;
@@ -17,9 +26,10 @@
     border: 1px solid transparent;
     border-radius: 3px;
     background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
+    .loading & { background-image: none; }
   }
 
-  input:focus {
+  &-input:focus {
     text-align: left;
     padding-left: 10px;
     border-color: $color-pink;
@@ -27,11 +37,40 @@
     box-shadow: 0 0 2px 0 rgba(110, 99, 207, 0.5);
   }
 
-  &.margins {
-    margin: 0 50px;
+  &-body {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.3);
+    animation: search-bar-body 0.15s;
+
+    a {
+      color: $color-blue;
+      display: block;
+      padding: 10px 20px;
+      text-align: left;
+      text-decoration: none;
+    }
   }
 
-  &.anim {
-    animation: navbar-search 0.15s;
+  .loader {
+    left: auto;
+    top: 0;
+    right: -8px;
+    margin: 0;
+  }
+}
+
+@keyframes search-bar-body {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
