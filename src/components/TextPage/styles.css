@@ -1,21 +1,19 @@
 /**
- * Section Styles
+ * TextPage Styles
  */
 @import '../../shared/styles/variables.css';
 
-.section {
+.text-page {
   width: 100%;
   max-width: $page-max-width;
-  margin: 0 auto 15px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  border-radius: 3px;
-  padding: 20px;
-  background-color: #fff;
+  margin: auto;
+  padding: 40px 20px;
+  animation: text-page 0.3s;
 
   h1 {
     font-size: 26px;
     font-weight: normal;
-    margin: 0 0 12px;
+    margin: 0 0 26px;
   }
 
   h2 {
@@ -44,7 +42,6 @@
   }
 
   li {
-    font-size: 15px;
     margin: 0 0 15px;
     line-height: 1.5;
   }
@@ -105,5 +102,17 @@
     line-height: 1.4;
     margin-bottom: 10px;
     color: $color-text-light;
+  }
+}
+
+@keyframes text-page {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

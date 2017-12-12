@@ -83,7 +83,7 @@ export default class NavBar extends Component {
       anim, isSearch, searchValue, isSearchAutoFocus,
     } = this.state;
 
-    const isButtons = backLink || isSearchButton;
+    // const isButtons = backLink || isSearchButton;
 
     return (
       <div className="navbar">
@@ -98,7 +98,7 @@ export default class NavBar extends Component {
           {isSearch ?
             <input
               type="text"
-              className={classNames('navbar-search', { anim, 'with-buttons': isButtons })}
+              className={classNames('navbar-search', { anim, 'with-buttons': backLink })}
               value={searchValue}
               autoFocus={isSearchAutoFocus}
               placeholder="Search..."

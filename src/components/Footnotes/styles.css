@@ -40,7 +40,7 @@
     animation: footnotes-body 0.15s both;
   }
 
-  li {
+  li.footnotes-item {
     font-size: 13px;
     margin: 0 10px 10px;
     line-height: 1.4;

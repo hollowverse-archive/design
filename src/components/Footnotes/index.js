@@ -9,7 +9,7 @@ import './styles.css';
 const Footnote = ({
   name, sourceName, url, backLink,
 }) => (
-  <li>
+  <li className="footnotes-item">
     <a href={url} target="_blank">{name}</a> {sourceName} <a className="back-link" href={backLink}>↩</a>
   </li>
 );

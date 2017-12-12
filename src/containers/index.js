@@ -1,8 +1,12 @@
 /**
  * Export all containers
  */
-export { default as App } from './App';
+export { default as About } from './About';
+export { default as Contact } from './Contact';
 export { default as Events } from './Events';
 export { default as Home } from './Home';
 export { default as NotablePerson } from './NotablePerson';
+export { default as Privacy } from './Privacy';
 export { default as Search } from './Search';
+export { default as Terms } from './Terms';
+

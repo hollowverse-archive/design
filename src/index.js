@@ -5,7 +5,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { paths, eventTypes } from './constants';
-import { Events, Home, NotablePerson, Search } from './containers';
+import * as Containers from './containers';
 import './shared/styles/index.css';
 
 /* eslint-disable */
@@ -21,30 +21,25 @@ import './shared/styles/index.css';
 render(
   <Router>
     <Switch>
-      <Route
-        path={paths.SEARCH}
-        component={Search}
-      />
-      <Route
-        path={paths.NOTABLE_PERSON}
-        component={NotablePerson}
-      />
+      <Route path={paths.SEARCH} component={Containers.Search} />
+      <Route path={paths.NOTABLE_PERSON} component={Containers.NotablePerson} />
       <Route
         path={paths.EVENTS_APPEARANCES}
-        render={props => <Events {...props} type={eventTypes.APPEARANCE} />}
+        render={props => <Containers.Events {...props} type={eventTypes.APPEARANCE} />}
       />
       <Route
         path={paths.EVENTS_DONATIONS}
-        render={props => <Events {...props} type={eventTypes.DONATION} />}
+        render={props => <Containers.Events {...props} type={eventTypes.DONATION} />}
       />
       <Route
         path={paths.EVENTS_QUOTES}
-        render={props => <Events {...props} type={eventTypes.QUOTE} />}
+        render={props => <Containers.Events {...props} type={eventTypes.QUOTE} />}
       />
-      <Route
-        path={paths.HOME}
-        component={Home}
-      />
+      <Route path={paths.ABOUT} component={Containers.About} />
+      <Route path={paths.CONTACT} component={Containers.Contact} />
+      <Route path={paths.PRIVACY_POLICY} component={Containers.Privacy} />
+      <Route path={paths.TERMS_OF_SERVICE} component={Containers.Terms} />
+      <Route path={paths.HOME} component={Containers.Home} />
       <Redirect to={paths.HOME} />
     </Switch>
   </Router>,

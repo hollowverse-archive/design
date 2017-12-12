@@ -4,8 +4,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { eventTypes, data, paths } from '../../constants';
-import { App } from '../../containers';
-import { Loader, EventGroup } from '../../components';
+import { App, Loader, EventGroup } from '../../components';
 
 export default class Events extends Component {
   static propTypes = {
@@ -22,6 +21,7 @@ export default class Events extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    window.document.title = 'Events | Hollowverse';
     this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
   }
 

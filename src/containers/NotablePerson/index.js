@@ -3,8 +3,8 @@
  */
 import React, { Component, Fragment } from 'react';
 import { data, eventTypes, paths } from '../../constants';
-import { App } from '../../containers';
 import {
+  App,
   PersonLoading,
   PersonesOther,
   PersonDetails,
@@ -38,6 +38,7 @@ export default class NotablePerson extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    window.document.title = `${data.NOTABLE_PERSON.name} | Hollowverse`;
     this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
   }
 

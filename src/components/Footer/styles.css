@@ -1,0 +1,30 @@
+/**
+ * Footer Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.footer {
+  padding: 20px 20px 60px;
+  margin: auto auto 50px;
+  width: 100%;
+  max-width: $page-max-width;
+  text-align: center;
+  background: url('../../shared/assets/logo-b&w.png') 50% 100% no-repeat;
+  background-size: 25px 25px;
+
+  a {
+    display: inline-block;
+    font-size: 11px;
+    text-decoration: none;
+    color: $color-text-lighter;
+
+    &::after {
+      content: '\00b7';
+      margin: 0 10px;
+    }
+
+    &:last-child::after { display: none; }
+    &:hover { color: $color-blue; }
+    &:hover::after { color: $color-text-lighter; }
+  }
+}
