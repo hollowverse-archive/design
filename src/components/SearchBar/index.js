@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { paths } from '../../constants';
+import { paths, data } from '../../constants';
 import { Loader } from '../../components';
 import './styles.css';
 
@@ -34,7 +34,22 @@ export default class SearchBar extends Component {
 
     return (
       <div className="search-bar-body">
-        <Link to={paths.SEARCH}>
+        {data.PERSONES.map(({ id, name, photoUrl }) => (
+          <Link
+            key={id}
+            to={paths.NOTABLE_PERSON}
+          >
+            <div
+              className="search-bar-body-avatar"
+              style={{ backgroundImage: `url(${photoUrl})` }}
+            />
+            {name}
+          </Link>
+        ))}
+        <Link
+          to={paths.SEARCH}
+          className="all-results"
+        >
           {`See results for ${searchValue}`}
         </Link>
       </div>
@@ -44,8 +59,6 @@ export default class SearchBar extends Component {
   handleLoaded = () => this.setState({ isLoading: false, open: true });
 
   handleFocus = e => e.target.select();
-
-  handleBlur = () => this.setState({ open: false });
 
   render() {
     const {
@@ -63,7 +76,6 @@ export default class SearchBar extends Component {
           autoFocus={autoFocus}
           placeholder="Search..."
           onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
           onChange={onChange}
           onKeyDown={onKeyDown}
           maxLength={50}

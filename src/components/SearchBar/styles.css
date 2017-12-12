@@ -41,23 +41,52 @@
     position: absolute;
     left: 0;
     width: 100%;
+    padding: 10px 0;
     background-color: white;
     border-radius: 3px;
     box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.3);
     animation: search-bar-body 0.15s;
 
     a {
-      color: $color-blue;
       display: block;
-      padding: 10px 20px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 15px;
       text-align: left;
       text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500;
+      color: $color-text-default;
+
+      &.all-results {
+        color: $color-blue;
+      }
+
+      &:hover {
+        color: $color-blue;
+        background-color: $color-blue-opacity;
+      }
+    }
+
+    &-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      user-select: none;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px 0 0;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 
   .loader {
     left: auto;
-    top: 0;
+    top: -8px;
     right: -8px;
     margin: 0;
   }
