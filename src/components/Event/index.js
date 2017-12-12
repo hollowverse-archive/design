@@ -22,7 +22,7 @@ const EnvetLabels = ({ labels }) =>
   <div className="event-labels">
     {labels.map(label =>
       <Label
-        small
+        compact
         key={uniqueId('label-')}
         text={label}
       />)

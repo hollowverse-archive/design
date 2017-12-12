@@ -41,12 +41,12 @@
     position: absolute;
     width: $navbar-height;
     height: $navbar-height;
+    border-radius: 0;
     display: block;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     cursor: pointer;
     &:hover { opacity: 0.7; }
-    &:active { background-color: #f1f1f1; }
   }
 
   &-btn.back {

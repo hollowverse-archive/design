@@ -3,6 +3,8 @@
  */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import { paths } from '../../constants';
 import { NavBar, ErrorMessage } from '../../components';
 import './styles.css';
 
@@ -12,26 +14,20 @@ export default class App extends Component {
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
     ]).isRequired,
-    back: PropTypes.string,
-    search: PropTypes.string,
+    backLink: PropTypes.string,
+    searchValue: PropTypes.string,
+    isSearchButton: PropTypes.bool,
   }
 
   static defaultProps = {
-    back: undefined,
-    search: '',
+    backLink: undefined,
+    searchValue: '',
+    isSearchButton: false,
   }
 
   state = {
-    isLogo: true,
     errorMessage: undefined,
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    isSearchRedirect: false,
   }
 
   componentDidCatch() {
@@ -40,24 +36,27 @@ export default class App extends Component {
     });
   }
 
-  handleScroll = () => {
-    if (this.state.isLogo && window.scrollY > 200) {
-      this.setState({ isLogo: false });
-    } else if (!this.state.isLogo && window.scrollY < 200) {
-      this.setState({ isLogo: true });
-    }
+  handleSearch = () => {
+    this.setState({ isSearchRedirect: true });
   }
 
   render() {
-    const { back, children, search } = this.props;
-    const { isLogo, errorMessage } = this.state;
+    const {
+      backLink, children, searchValue, isSearchButton,
+    } = this.props;
+    const { errorMessage, isSearchRedirect } = this.state;
+
+    if (isSearchRedirect) {
+      return <Redirect to={paths.SEARCH} />;
+    }
 
     return (
       <Fragment>
         <NavBar
-          logo={isLogo}
-          search={search}
-          back={back}
+          backLink={backLink}
+          searchValue={searchValue}
+          isSearchButton={isSearchButton}
+          onSearch={this.handleSearch}
         />
         <div className="app-view">
           {!errorMessage ?

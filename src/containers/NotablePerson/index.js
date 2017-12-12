@@ -50,8 +50,8 @@ export default class NotablePerson extends Component {
   render() {
     return (
       <App
-        search={data.NOTABLE_PERSON.name}
-        back={paths.HOME}
+        searchValue={data.NOTABLE_PERSON.name}
+        backLink={paths.HOME}
       >
         {this.state.isLoading ?
           <PersonLoading />

@@ -9,7 +9,7 @@ import { paths } from '../../constants';
 import './styles.css';
 
 const renderLabel = (label, index) => (
-  <Label small key={index} text={label} />
+  <Label compact key={index} text={label} />
 );
 
 const PersonCard = ({ name, photoUrl, labels }) => (

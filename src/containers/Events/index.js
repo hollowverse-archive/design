@@ -32,7 +32,7 @@ export default class Events extends Component {
   handleLoaded = () => this.setState({ isLoading: false });
 
   render() {
-    const { location, type } = this.props;
+    const { type } = this.props;
 
     let events = data.QUOTES;
     if (type === eventTypes.APPEARANCE) {
@@ -43,9 +43,8 @@ export default class Events extends Component {
 
     return (
       <App
-        search={data.NOTABLE_PERSON.name}
-        back={paths.NOTABLE_PERSON}
-        pathname={location.pathname}
+        searchValue={data.NOTABLE_PERSON.name}
+        backLink={paths.NOTABLE_PERSON}
       >
         {this.state.isLoading ?
           <Loader />

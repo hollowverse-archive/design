@@ -33,7 +33,7 @@ export default class Home extends Component {
   render() {
     const { isLoading, pages } = this.state;
     return (
-      <App>
+      <App isSearchButton>
         {isLoading ?
           <PersonesLoading />
           :
