@@ -21,7 +21,7 @@ import './shared/styles/index.css';
 render(
   <Router>
     <Switch>
-      <Route path={paths.SEARCH} component={Containers.Search} />
+      <Route path={paths.SEARCH_NO_RESULTS} component={Containers.SearchNoResults} />
       <Route path={paths.NOTABLE_PERSON} component={Containers.NotablePerson} />
       <Route
         path={paths.EVENTS_APPEARANCES}

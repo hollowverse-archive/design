@@ -47,7 +47,7 @@ export default class SearchBar extends Component {
           </Link>
         ))}
         <Link
-          to={paths.SEARCH}
+          to={paths.SEARCH_NO_RESULTS}
           className="all-results"
         >
           {`See results for ${searchValue}`}
