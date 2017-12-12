@@ -329,3 +329,10 @@ export const ARTICLE_FOOTNOTES = [
     backLink: '#',
   },
 ];
+
+export const ARTICLE_META = {
+  author: 'Tom Kershaw',
+  authorUrl: '#',
+  created: 'December 3, 2014',
+};
+

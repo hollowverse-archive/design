@@ -21,6 +21,13 @@ const OldContent = () => (
     <div dangerouslySetInnerHTML={{ __html: data.ARTICLE }} />
     <Separator />
     <Footnotes data={data.ARTICLE_FOOTNOTES} />
+    <Separator />
+    <p className="small">
+      This article was written
+      by <a href={data.ARTICLE_META.authorUrl}>{data.ARTICLE_META.author}</a> and last
+      updated on {data.ARTICLE_META.created}. If you disagree with its content, you can
+      voice your opinion in the comments or <a href="#">submit a rewrite</a> for an independent review.
+    </p>
   </Fragment>
 );
 
