@@ -4,7 +4,7 @@
 @import '../../shared/styles/variables.css';
 
 .pagination {
-  margin: 10px auto 30px;
+  margin: 10px auto;
   width: 100%;
   max-width: $page-max-width;
   text-align: center;
