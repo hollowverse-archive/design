@@ -1,0 +1,37 @@
+/**
+ * SearchBar Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.search-bar {
+  flex: 1;
+  flex-shrink: 1;
+  margin: 0 10px;
+
+  input {
+    width: 100%;
+    height: calc($navbar-height - 16px);
+    position: relative;
+    padding: 0 30px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
+  }
+
+  input:focus {
+    text-align: left;
+    padding-left: 10px;
+    border-color: $color-pink;
+    background-color: white;
+    box-shadow: 0 0 2px 0 rgba(110, 99, 207, 0.5);
+  }
+
+  &.margins {
+    margin: 0 50px;
+  }
+
+  &.anim {
+    animation: navbar-search 0.15s;
+  }
+}

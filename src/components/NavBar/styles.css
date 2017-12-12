@@ -68,35 +68,6 @@
       animation: navbar-logo 0.15s;
     }
   }
-
-  &-search {
-    flex: 1;
-    flex-shrink: 1;
-    height: calc($navbar-height - 16px);
-    position: relative;
-    padding: 0 30px;
-    margin: 0 10px;
-    text-align: center;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
-
-    &.with-buttons {
-      margin: 0 50px;
-    }
-
-    &.anim {
-      animation: navbar-search 0.15s;
-    }
-
-    &:focus {
-      text-align: left;
-      padding-left: 10px;
-      border-color: $color-pink;
-      background-color: white;
-      box-shadow: 0 0 2px 0 rgba(110, 99, 207, 0.5);
-    }
-  }
 }
 
 @keyframes navbar-logo {

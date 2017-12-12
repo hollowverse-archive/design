@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { paths } from '../../constants';
+import { SearchBar } from '../../components';
 import './styles.css';
 
 export default class NavBar extends Component {
@@ -53,8 +54,6 @@ export default class NavBar extends Component {
     }
   }
 
-  handleSearchFocus = e => e.target.select();
-
   handleSearchChange = e => this.setState({ searchValue: e.target.value });
 
   handleSearchKeyDown = (e) => {
@@ -83,8 +82,6 @@ export default class NavBar extends Component {
       anim, isSearch, searchValue, isSearchAutoFocus,
     } = this.state;
 
-    // const isButtons = backLink || isSearchButton;
-
     return (
       <div className="navbar">
         <div className="navbar-inner">
@@ -96,16 +93,13 @@ export default class NavBar extends Component {
             />
           }
           {isSearch ?
-            <input
-              type="text"
-              className={classNames('navbar-search', { anim, 'with-buttons': backLink })}
-              value={searchValue}
+            <SearchBar
+              anim={anim}
+              margins={backLink}
+              searchValue={searchValue}
               autoFocus={isSearchAutoFocus}
-              placeholder="Search..."
-              onFocus={this.handleSearchFocus}
               onChange={this.handleSearchChange}
               onKeyDown={this.handleSearchKeyDown}
-              maxLength={50}
             />
             :
             <Link

@@ -17,6 +17,7 @@ export { default as PersonDetails } from './PersonDetails';
 export { default as PersonesLoading } from './PersonesLoading';
 export { default as PersonesOther } from './PersonesOther';
 export { default as PersonLoading } from './PersonLoading';
+export { default as SearchBar } from './SearchBar';
 export { default as Separator } from './Separator';
 export { default as TextPage } from './TextPage';
 export { default as Section } from './Section';
