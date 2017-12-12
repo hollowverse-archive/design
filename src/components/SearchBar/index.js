@@ -20,6 +20,8 @@ export default class SearchBar extends Component {
     if (!searchValue && newProps.searchValue) {
       this.setState({ isLoading: true, open: false });
       this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 500);
+    } else if (searchValue && !newProps.searchValue) {
+      this.setState({ open: false });
     }
   }
 
@@ -41,7 +43,9 @@ export default class SearchBar extends Component {
 
   handleLoaded = () => this.setState({ isLoading: false, open: true });
 
-  handleSearchFocus = e => e.target.select();
+  handleFocus = e => e.target.select();
+
+  handleBlur = () => this.setState({ open: false });
 
   render() {
     const {
@@ -58,7 +62,8 @@ export default class SearchBar extends Component {
           value={searchValue}
           autoFocus={autoFocus}
           placeholder="Search..."
-          onFocus={this.handleSearchFocus}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
           onChange={onChange}
           onKeyDown={onKeyDown}
           maxLength={50}
