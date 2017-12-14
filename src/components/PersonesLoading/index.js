@@ -9,7 +9,7 @@ const PersonesLoadingItem = () =>
 
 const PersonesLoading = () => (
   <div className="persones-loading">
-    {Array.from(Array(16), (item, index) => <PersonesLoadingItem key={index} />)}
+    {Array.from(Array(25), (item, index) => <PersonesLoadingItem key={index} />)}
   </div>
 );
 

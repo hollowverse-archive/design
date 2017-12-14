@@ -3,28 +3,19 @@
  */
 @import '../../shared/styles/variables.css';
 
-$card-crad-avatar-height: 150px;
-
 .person-card {
   flex-shrink: 0;
   position: relative;
   width: $person-card-width;
   height: $person-card-height;
-  padding: 0 0 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  border-radius: 3px;
+  border-radius: 2px;
+  margin: 1px;
   background-color: white;
-  margin: 0 10px 10px 0;
   overflow: hidden;
   text-decoration: none;
   transition: box-shadow 0.3s;
   animation: person-card 0.3s;
-
-  /* stylelint-disable */
-  @for $i from 1 to 100 {
-    &:nth-child($i) { z-index: calc(100 - $i); }
-  }
-  /* stylelint-enable */
 
   &::before {
     z-index: 2;
@@ -33,7 +24,7 @@ $card-crad-avatar-height: 150px;
     left: 0;
     top: 0;
     width: $person-card-width;
-    height: $card-crad-avatar-height;
+    height: $person-card-width;
     background-image: linear-gradient(132deg, #4cfde9 -20%, rgba(251, 201, 84, 0.1) 30%, rgba(251, 201, 84, 0.1) 60%, #4435f7 120%);
     opacity: 0;
     transition: opacity 0.15s;
@@ -41,6 +32,7 @@ $card-crad-avatar-height: 150px;
 
   &:hover,
   &:active {
+    z-index: 10;
     box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.3);
     &::before { opacity: 1; }
   }
@@ -49,7 +41,7 @@ $card-crad-avatar-height: 150px;
     z-index: 1;
     position: relative;
     width: $person-card-width;
-    height: $card-crad-avatar-height;
+    height: $person-card-width;
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
@@ -59,11 +51,14 @@ $card-crad-avatar-height: 150px;
   &-name {
     z-index: 2;
     position: relative;
+    font-size: 13px;
+    font-weight: bold;
     color: $color-text-default;
     text-align: center;
     text-decoration: none;
     margin: 10px 0;
-    padding: 0 20px;
+    padding: 0 10px;
+    overflow: hidden;
   }
 }
 

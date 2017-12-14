@@ -5,7 +5,6 @@
 
 .pagination {
   margin: 10px auto;
-  width: 100%;
   max-width: $page-max-width;
   text-align: center;
   background-color: white;

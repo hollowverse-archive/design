@@ -7,7 +7,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 10px auto;
+  margin: 2px auto;
   max-width: $page-max-width;
   animation: persones-loading 0.6s;
 
@@ -15,10 +15,10 @@
     position: relative;
     width: $person-card-width;
     height: $person-card-height;
-    border-radius: 3px;
+    border-radius: 2px;
     user-select: none;
     background-color: $color-background;
-    margin: 5px;
+    margin: 1px;
     animation: persones-loading-item 1.5s infinite;
   }
 }

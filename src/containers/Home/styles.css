@@ -8,11 +8,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 10px auto;
+    margin: 2px auto;
     max-width: $page-max-width;
-
-    .person-card {
-      margin: 5px;
-    }
   }
 }

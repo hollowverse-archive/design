@@ -12,7 +12,7 @@ const PersonesOther = () =>
       Other interesting profiles
     </div>
     <div className="persones-other-inner">
-      {data.PERSONES.slice(0, 4).map(person =>
+      {data.PERSONES.slice(0, 5).map(person =>
         <PersonCard
           key={person.id}
           {...person}

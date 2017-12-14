@@ -9,7 +9,7 @@ import './styles.css';
 const PERSONES = [
   ...data.PERSONES,
   ...data.PERSONES.map(person => ({ ...person, id: `${person.id}-1` })),
-  ...data.PERSONES.map(person => ({ ...person, id: `${person.id}-2` })),
+  ...data.PERSONES.map(person => ({ ...person, id: `${person.id}-2` })).slice(0, -1),
 ];
 
 export default class Home extends Component {

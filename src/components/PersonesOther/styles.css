@@ -7,7 +7,7 @@
   position: relative;
   width: 100%;
   max-width: $page-max-width;
-  margin: 20px auto 5px;
+  margin: 20px auto 15px;
   overflow: hidden;
 
   &-title {
@@ -24,6 +24,6 @@
     display: flex;
     flex-flow: row nowrap;
     overflow-y: auto;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
   }
 }
