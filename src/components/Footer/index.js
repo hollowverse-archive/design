@@ -16,7 +16,6 @@ const Footer = () => (
     <a href={paths.TWITTER} target="_blank">Twitter</a>
     <a href={paths.FACEBOOK} target="_blank">Facebook</a>
     <a href={paths.EMAIL_NEWSLETTER} target="_blank">Email newsletter</a>
-    <a href={paths.RSS_FEED} target="_blank">RSS Feed</a>
   </div>
 );
 
