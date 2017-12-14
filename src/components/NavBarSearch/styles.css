@@ -29,14 +29,6 @@
     .loading & { background-image: none; }
   }
 
-  &-input:focus {
-    text-align: left;
-    padding-left: 10px;
-    border-color: $color-pink;
-    background-color: white;
-    box-shadow: 0 0 2px 0 rgba(110, 99, 207, 0.5);
-  }
-
   &-body {
     position: absolute;
     left: 0;
