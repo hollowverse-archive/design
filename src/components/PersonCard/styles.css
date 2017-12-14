@@ -39,7 +39,8 @@ $card-crad-avatar-height: 150px;
     transition: opacity 0.15s;
   }
 
-  &:hover {
+  &:hover,
+  &:active {
     box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.3);
     &::before { opacity: 1; }
   }
