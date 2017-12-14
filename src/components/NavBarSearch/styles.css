@@ -65,11 +65,11 @@
     &-avatar {
       width: 30px;
       height: 30px;
-      border-radius: 15px;
+      border-radius: 2px;
       user-select: none;
       display: inline-block;
-      vertical-align: middle;
-      margin: 0 10px 0 0;
+      vertical-align: top;
+      margin: 5px 10px 0 0;
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
