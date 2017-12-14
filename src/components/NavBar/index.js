@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { paths } from '../../constants';
-import { SearchBar } from '../../components';
+import { NavBarSearch } from '../../components';
 import './styles.css';
 
 export default class NavBar extends Component {
@@ -93,13 +93,14 @@ export default class NavBar extends Component {
             />
           }
           {isSearch ?
-            <SearchBar
+            <NavBarSearch
               anim={anim}
               margins={backLink}
               searchValue={searchValue}
               autoFocus={isSearchAutoFocus}
               onChange={this.handleSearchChange}
               onKeyDown={this.handleSearchKeyDown}
+              onBlur={this.handleScroll}
             />
             :
             <Link

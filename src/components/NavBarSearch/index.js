@@ -1,14 +1,32 @@
 /**
- * SearchBar Component
+ * NavBarSearch Component
  */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { paths, data } from '../../constants';
 import { Loader } from '../../components';
 import './styles.css';
 
-export default class SearchBar extends Component {
+export default class NavBarSearch extends Component {
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    onKeyDown: PropTypes.func.isRequired,
+    onBlur: PropTypes.func.isRequired,
+    searchValue: PropTypes.string,
+    anim: PropTypes.bool,
+    margins: PropTypes.bool,
+    autoFocus: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    searchValue: undefined,
+    anim: false,
+    margins: false,
+    autoFocus: false,
+  }
+
   state = {
     isLoading: false,
     open: false,
@@ -33,14 +51,14 @@ export default class SearchBar extends Component {
     const { searchValue } = this.props;
 
     return (
-      <div className="search-bar-body">
+      <div className="navbar-search-body">
         {data.PERSONES.map(({ id, name, photoUrl }) => (
           <Link
             key={id}
             to={paths.NOTABLE_PERSON}
           >
             <div
-              className="search-bar-body-avatar"
+              className="navbar-search-body-avatar"
               style={{ backgroundImage: `url(${photoUrl})` }}
             />
             {name}
@@ -62,20 +80,21 @@ export default class SearchBar extends Component {
 
   render() {
     const {
-      anim, margins, searchValue, autoFocus, onChange, onKeyDown,
+      anim, margins, searchValue, autoFocus, onChange, onKeyDown, onBlur,
     } = this.props;
 
     const { isLoading, open } = this.state;
 
     return (
-      <div className={classNames('search-bar', { anim, margins, loading: isLoading })}>
+      <div className={classNames('navbar-search', { anim, margins, loading: isLoading })}>
         <input
           type="text"
-          className="search-bar-input"
+          className="navbar-search-input"
           value={searchValue}
           autoFocus={autoFocus}
           placeholder="Search..."
           onFocus={this.handleFocus}
+          onBlur={onBlur}
           onChange={onChange}
           onKeyDown={onKeyDown}
           maxLength={50}
