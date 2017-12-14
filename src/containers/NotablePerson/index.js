@@ -2,13 +2,12 @@
  * NotablePerson Container
  */
 import React, { Component, Fragment } from 'react';
-import { data, eventTypes, paths } from '../../constants';
+import { data, paths } from '../../constants';
 import {
   App,
   PersonLoading,
   PersonesOther,
   PersonDetails,
-  EventGroup,
   FbComments,
   Footnotes,
   Section,
@@ -59,12 +58,6 @@ export default class NotablePerson extends Component {
           <Fragment>
             <PersonDetails
               {...data.NOTABLE_PERSON}
-            />
-            <EventGroup
-              limit
-              person={data.NOTABLE_PERSON}
-              type={eventTypes.QUOTE}
-              events={data.QUOTES.slice(0, 3)}
             />
             <Section>
               <OldContent />

@@ -95,7 +95,7 @@ export default class NavBar extends Component {
           {isSearch ?
             <NavBarSearch
               anim={anim}
-              margins={backLink}
+              margins={!!backLink}
               searchValue={searchValue}
               autoFocus={isSearchAutoFocus}
               onChange={this.handleSearchChange}
