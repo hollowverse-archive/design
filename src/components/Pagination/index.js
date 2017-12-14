@@ -28,15 +28,15 @@ const Pagination = ({ currentPage, totalPages, onChangePage }) => {
   const getPages = () => {
     let startPage = 1;
 
-    if (totalPages <= 10 || currentPage <= 6) {
+    if (totalPages <= 5 || currentPage <= 3) {
       startPage = 1;
-    } else if (currentPage + 4 >= totalPages) {
-      startPage = totalPages - 9;
+    } else if (currentPage + 2 >= totalPages) {
+      startPage = totalPages - 4;
     } else {
-      startPage = currentPage - 5;
+      startPage = currentPage - 2;
     }
 
-    return Array.from(Array(10), (item, index) =>
+    return Array.from(Array(5), (item, index) =>
       ({ id: index, index: startPage + index }));
   };
 
