@@ -5,8 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { uiStrings } from '../../constants';
-import { removeHttp, uniqueId } from '../../shared/utils';
-import { Label } from '../../components';
+import { removeHttp } from '../../shared/utils';
 import './styles.css';
 
 const EventQuote = ({ quote }) => (
@@ -17,17 +16,6 @@ const EventQuote = ({ quote }) => (
 
 const EventMetaLink = ({ url, label = '' }) =>
   <a targe="_blank" href={url}>{`${label}${removeHttp(url)}`}</a>;
-
-const EnvetLabels = ({ labels }) =>
-  <div className="event-labels">
-    {labels.map(label =>
-      <Label
-        compact
-        key={uniqueId('label-')}
-        text={label}
-      />)
-    }
-  </div>;
 
 const Event = props => (
   <div className={classNames('event', { [props.className]: props.className })}>
@@ -58,9 +46,6 @@ const Event = props => (
         quote={props.quote}
       />
     }
-    {props.labels.length > 0 &&
-      <EnvetLabels labels={props.labels} />
-    }
   </div>
 );
 
@@ -71,7 +56,6 @@ Event.propTypes = {
   sourceUrl: PropTypes.string,
   quote: PropTypes.string,
   person: PropTypes.object,
-  labels: PropTypes.array,
 };
 
 Event.defaultProps = {
@@ -80,7 +64,6 @@ Event.defaultProps = {
   sourceUrl: undefined,
   quote: undefined,
   person: {},
-  labels: [],
 };
 
 export default Event;

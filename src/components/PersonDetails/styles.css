@@ -72,11 +72,6 @@
     text-align: center;
   }
 
-  &-labels {
-    text-align: center;
-    margin: 0 auto 20px;
-  }
-
   &-about {
     line-height: 1.5;
     text-align: center;
