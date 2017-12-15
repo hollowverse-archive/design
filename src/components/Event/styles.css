@@ -21,11 +21,11 @@
     left: 0;
     width: 40px;
     height: 40px;
-    border-radius: 20px;
     user-select: none;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 2px;
   }
 
   &-person-name {
@@ -64,9 +64,5 @@
     position: relative;
     margin: 15px 2px 10px;
     line-height: 1.5;
-  }
-
-  &-labels {
-    margin: 10px 0 0;
   }
 }

@@ -1,5 +1,5 @@
 /**
- * Styles of NavBar
+ * NavBar Styles
  */
 @import '../../shared/styles/variables.css';
 
@@ -9,7 +9,6 @@
   top: 0;
   width: 100%;
   height: $navbar-height;
-  line-height: $navbar-height;
   user-select: none;
   cursor: default;
   text-align: center;
@@ -41,12 +40,12 @@
     position: absolute;
     width: $navbar-height;
     height: $navbar-height;
+    border-radius: 0;
     display: block;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     cursor: pointer;
     &:hover { opacity: 0.7; }
-    &:active { background-color: #f1f1f1; }
   }
 
   &-btn.back {
@@ -63,34 +62,9 @@
   &-btn.search {
     right: 0;
     background-image: url('../../shared/assets/icn-search.svg');
-  }
-
-  &-search {
-    flex: 1;
-    flex-shrink: 1;
-    height: calc($navbar-height - 16px);
-    position: relative;
-    padding: 0 30px;
-    margin: 0 10px;
-    text-align: center;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    background: $color-background-light url('../../shared/assets/icn-search.svg') right 5px center no-repeat;
-
-    &.with-buttons {
-      margin: 0 50px;
-    }
 
     &.anim {
-      animation: navbar-search 0.15s;
-    }
-
-    &:focus {
-      text-align: left;
-      padding-left: 10px;
-      border-color: $color-pink;
-      background-color: white;
-      box-shadow: 0 0 2px 0 rgba(110, 99, 207, 0.5);
+      animation: navbar-logo 0.15s;
     }
   }
 }

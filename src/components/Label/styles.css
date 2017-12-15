@@ -14,11 +14,15 @@
   color: $color-text-light;
   border: 1px solid $color-border-light;
 
-  &.small {
-    height: 20px;
-    line-height: 20px;
-    border-radius: 10px;
-    padding: 0 10px;
+  &.compact {
+    height: 18px;
+    line-height: 18px;
+    border-radius: 9px;
+    padding: 0 8px;
+    font-size: 11px;
+    margin: 0 2px 2px 0;
+    background-color: $color-background-light;
+    border: 0;
   }
 
   &.dark {

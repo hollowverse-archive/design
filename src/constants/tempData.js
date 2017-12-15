@@ -9,7 +9,84 @@ export const NOTABLE_PERSON = {
     'Hanks has run the gamut of Chrisian denominations from Mormonism to Catholicism but seems to have settled on Greek Orthodox.',
     'Hanks is a hardcode Democrat and liberal, throwing his weight behind gay marriage, alternatieve energy, environmentalism, and Obama.',
   ],
+  religion: 'Arnold seems non-religious, though he did attend church as a child and has expressed some interest in Buddhism.',
+  political: 'Arnold\'s politics generally revolve around criticisms of Western hegemony, political/economic greed and exploitation and the environment.',
 };
+
+export const PERSONES = [
+  {
+    id: 'alyson-hannigan',
+    name: 'Alyson Hannigan',
+    photoUrl: 'assets/alyson-hannigan.jpg',
+    labels: ['Actress'],
+  },
+  {
+    id: 'kelly-clarkson',
+    name: 'Kelly Clarkson',
+    photoUrl: 'assets/kelly-clarkson.jpg',
+    labels: ['Actress', 'Singer'],
+  },
+  {
+    id: 'sylvester-stallone',
+    name: 'Rachel Bilson',
+    photoUrl: 'assets/sylvester-stallone.jpg',
+    labels: ['Actor', 'Filmmaker'],
+  },
+  {
+    id: 'brenda-song',
+    name: 'Brenda Song',
+    photoUrl: 'assets/brenda-song.jpg',
+    labels: ['Actress', 'Author'],
+  },
+  {
+    id: 'sigourney-weaver',
+    name: 'Sigourney Weaver',
+    photoUrl: 'assets/sigourney-weaver.jpg',
+    labels: ['Actress'],
+  },
+  {
+    id: 'paul-rudd',
+    name: 'Paul Rudd',
+    photoUrl: 'assets/paul-rudd.jpg',
+    labels: ['Actor'],
+  },
+  {
+    id: 'annalynne-mccord',
+    name: 'AnnaLynne McCord',
+    photoUrl: 'assets/annalynne-mccord.jpg',
+    labels: ['Actress', 'Model'],
+  },
+  {
+    id: 'angus-jones',
+    name: 'Angus T. Jones',
+    photoUrl: 'assets/angus-jones.jpg',
+    labels: ['Actor'],
+  },
+  {
+    id: 'sarah-michelle-gellar',
+    name: 'Sarah Michelle Gellar',
+    photoUrl: 'assets/sarah-gellar.jpg',
+    labels: ['Actress', 'Producer', 'Entrepreneur'],
+  },
+  {
+    id: 'chelsea-handler',
+    name: 'Chelsea Handler',
+    photoUrl: 'assets/chelsea-handler.jpg',
+    labels: ['Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer'],
+  },
+  {
+    id: 'rachel-bilson',
+    name: 'Rachel Bilson',
+    photoUrl: 'assets/rachel-bilson.jpg',
+    labels: ['Actress'],
+  },
+  {
+    id: 'jamie-curtis',
+    name: 'Jamie Lee Curtis',
+    photoUrl: 'assets/jamie-curtis.jpg',
+    labels: ['Actress', 'Author'],
+  },
+];
 
 export const DONATIONS = [
   {
@@ -182,3 +259,80 @@ export const QUOTES = [
     labels: ['quotes', 'dream', 'philosophy', 'science'],
   },
 ];
+
+export const ARTICLE = `
+  <h2>The big, bad West</h2>
+  <p>Yorke has political concerns to say the least. Overall, his ire is directed at the imperialistic attitude of the Western powers. Yorke sees their thirst for power and money as oppressing the peoples of the developing world and destroying their environment. He resents the West’s sense of entitlement as managers of the world, saying:</p>
+  <blockquote>
+    I think we’re entering a very dangerous time. The West has set itself up, decided it’s in charge, not for good intentions, not for the benefit of mankind<sup><a href="#">1</a></sup>
+  </blockquote>
+  <p>This attitude has inspired Yorke to speak out against globalization, the World Trade Organization and call for fair trade practices and for the West to keep its meddling fingers out of everybody else’s business. He’s participated in anti-WTO protests and other activist activities. A rather nice summary of his views on these topics can be found in an <a href="http://www.guardian.co.uk/environment/2003/sep/08/fairtrade.wto6" target="_blank">opinion piece</a> he penned for <i>The Guardian</i>.
+  <p>Yorke has repeatedly expressed his admiration for Noam Chomsky<sup><a href="#">2</a></sup>, whose condemnations of American and European hegemony is well known. It’s a natural fit.</p>
+  <p>As far as partisan politics, Yorke seems most unhappy with British Conservatives and right-wing parties in all countries. When one of George W. Bush’s daughters attended a Radiohead concert, he said he was glad he didn’t know until afterwards;<sup><a href="#">3</a></sup> he’s expressed a sense of powerlessness he felt as a child during the Thatcher administration;<sup><a href="#">4</a></sup> and of current Prime Minister, Conservative David Cameron’s profession of love for Radiohead’s music, Yorke said:</p>
+  <blockquote>
+  As long as he doesn’t use it for his election campaigns, I don’t care. I’d sue the living shit out of him if he did.<sup><a href="#">5</a></sup>
+  </blockquote>
+  <p>Perhaps Yorke’s biggest concern is climate,<sup><a href="#">6</a></sup> which of course, is all wrapped up in economics, consumerism, corruption and greed. I’ll leave you with a final quote that seems to outline well Yorke’s sort of dark views of the world and its power structures, peoples and problems:</p>
+  <blockquote>
+  It’s just the law governing western politics’ pure blind greed–economics is an unquestionable sacred law above all humane considerations, it is a justification for slave labor, genocide, environmental and spiritual destruction. Everyone wants their cheap sneakers and bloody stupid keyrings and plasticware above all else, and are happy to leave China unchecked, happy to condone their blatant violation of human rights.<sup><a href="#">7</a></sup>
+  </blockquote>
+`;
+
+export const ARTICLE_FOOTNOTES = [
+  {
+    id: '1',
+    name: 'Thom Yorke Biography',
+    sourceName: 'Focusdep',
+    url: 'http://www.focusdep.com/biographies/Thom/Yorke',
+    backLink: '#',
+  },
+  {
+    id: '2',
+    name: 'The Difference Between Low Church and High Church.',
+    sourceName: 'Christian Resource Institute',
+    url: 'http://www.cresourcei.org/lowhighchurch.html',
+    backLink: '#',
+  },
+  {
+    id: '3',
+    name: 'Thom Yorke Biography',
+    sourceName: 'Focusdep',
+    url: 'http://www.focusdep.com/biographies/Thom/Yorke',
+    backLink: '#',
+  },
+  {
+    id: '4',
+    name: 'Opinion: Thom Yorke on fair trade',
+    sourceName: 'The Guardian',
+    url: 'https://www.theguardian.com/environment/2003/sep/08/fairtrade.wto6',
+    backLink: '#',
+  },
+  {
+    id: '5',
+    name: 'An Interview: Thom Yorke on politics, being a dad, and music',
+    sourceName: 'The Comment Factory',
+    url: 'http://www.thecommentfactory.com/an-interview-thom-yorke-on-politics-being-a-dad-and-music-659/',
+    backLink: '#',
+  },
+  {
+    id: '6',
+    name: 'Thom Yorke Quotes',
+    sourceName: 'Brainy Quote',
+    url: 'http://www.brainyquote.com/quotes/authors/t/thom_yorke.html?SPvm=1&vm=l',
+    backLink: '#',
+  },
+  {
+    id: '7',
+    name: 'Radiohead’s Thom Yorke Threatens To Sue U.K. Prime Minister David Cameron',
+    sourceName: 'KROQ',
+    url: 'http://kroq.radio.com/2013/01/17/radical-radiohead-frontman-threatens-conservative-u-k-prime-minister/',
+    backLink: '#',
+  },
+];
+
+export const ARTICLE_META = {
+  author: 'Tom Kershaw',
+  authorUrl: '#',
+  created: 'December 3, 2014',
+};
+

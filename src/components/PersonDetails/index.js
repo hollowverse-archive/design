@@ -4,10 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { uiStrings } from '../../constants';
-import Label from '../Label';
 import './styles.css';
-
-const renderLabel = (i, index) => <Label key={index} text={i} />;
 
 const renderParagraph = (i, index) => <p key={index}>{i}</p>;
 
@@ -28,9 +25,6 @@ const PersonDetails = props => (
       <div className="person-details-name">
         {props.name}
       </div>
-      <div className="person-details-labels">
-        {props.labels.map(renderLabel)}
-      </div>
       <div className="person-details-about">
         {props.about.map(renderParagraph)}
       </div>
@@ -41,12 +35,10 @@ const PersonDetails = props => (
 PersonDetails.propTypes = {
   name: PropTypes.string.isRequired,
   photoUrl: PropTypes.string.isRequired,
-  labels: PropTypes.arrayOf(PropTypes.string),
   about: PropTypes.arrayOf(PropTypes.string),
 };
 
 PersonDetails.defaultProps = {
-  labels: [],
   about: [],
 };
 

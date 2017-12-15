@@ -3,11 +3,13 @@
  */
 
 $color-blue: #4b31f6;
+$color-blue-opacity: rgba(110, 99, 207, 0.05);
 $color-pink: #6e63cf;
 $color-yellow: #f5ca23;
 
 $color-text-default: #111;
 $color-text-light: rgba(0, 0, 0, 0.5);
+$color-text-lighter: rgba(0, 0, 0, 0.35);
 
 $color-border-light: rgba(0, 0, 0, 0.08);
 
@@ -17,6 +19,9 @@ $color-background: #dfdfe1;
 $navbar-height: 48px;
 
 $person-avatar-size: 120px;
+
+$person-card-width: 122px;
+$person-card-height: 176px;
 
 $page-min-width: 320px;
 $page-max-width: 720px;

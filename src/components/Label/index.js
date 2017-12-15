@@ -6,20 +6,20 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.css';
 
-const Label = ({ text, small, dark }) => (
-  <div className={classNames('label', { small, dark })}>
+const Label = ({ text, compact, dark }) => (
+  <div className={classNames('label', { compact, dark })}>
     {text}
   </div>
 );
 
 Label.propTypes = {
   text: PropTypes.string.isRequired,
-  small: PropTypes.bool,
+  compact: PropTypes.bool,
   dark: PropTypes.bool,
 };
 
 Label.defaultProps = {
-  small: false,
+  compact: false,
   dark: false,
 };
 

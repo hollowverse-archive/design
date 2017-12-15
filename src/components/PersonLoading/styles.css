@@ -43,14 +43,14 @@
   &-avatar {
     width: $person-avatar-size;
     height: $person-avatar-size;
-    border-radius: calc($person-avatar-size / 2);
     user-select: none;
-    margin: 20px auto;
+    margin: 20px auto 25px;
     background-color: $color-background;
+    border-radius: 1px;
   }
 
   &-caption {
-    height: 12px;
+    height: 11px;
     width: 220px;
     margin: 0 auto;
     background-color: $color-background;
@@ -59,27 +59,13 @@
   &-name {
     height: 30px;
     width: 55%;
-    margin: 10px auto;
-    background-color: $color-background;
-  }
-
-  &-labels {
-    margin: 24px auto;
-    text-align: center;
-  }
-
-  &-label {
-    height: 24px;
-    width: 100px;
-    border-radius: 12px;
-    display: inline-block;
-    margin: 0 5px 5px 0;
+    margin: 10px auto 22px;
     background-color: $color-background;
   }
 
   &-paragraph {
     height: 20px;
-    margin: 10px auto;
+    margin: 10px 0;
     background-color: $color-background;
     &.second { width: 70%; }
     &.third { width: 80%; }

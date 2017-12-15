@@ -1,0 +1,13 @@
+/**
+ * SearchNoResults Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.search-no-results {
+  padding: 20px 20px 60px;
+  margin: auto;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 300;
+  color: $color-text-light;
+}

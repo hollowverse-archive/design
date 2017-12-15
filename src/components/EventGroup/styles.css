@@ -4,12 +4,10 @@
 @import '../../shared/styles/variables.css';
 
 .event-group {
-  &-inner {
-    width: 100%;
-    max-width: $page-max-width;
-    position: relative;
-    margin: 15px auto;
-  }
+  width: 100%;
+  max-width: $page-max-width;
+  position: relative;
+  margin: 15px auto;
 
   &-title {
     font-size: 26px;
@@ -38,6 +36,6 @@
     text-align: center;
     color: $color-blue;
     border-radius: 2px;
-    &:hover { background-color: rgba(110, 99, 207, 0.05); }
+    &:hover { background-color: $color-blue-opacity; }
   }
 }

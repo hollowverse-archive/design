@@ -1,0 +1,29 @@
+/**
+ * PersonesOther Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.persones-other {
+  position: relative;
+  width: 100%;
+  max-width: $page-max-width;
+  margin: 20px auto 15px;
+  overflow: hidden;
+
+  &-title {
+    width: 100%;
+    font-size: 26px;
+    font-weight: normal;
+    display: inline-block;
+    color: $color-text-default;
+    text-decoration: none;
+    margin: 0 10px 15px;
+  }
+
+  &-inner {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-y: auto;
+    padding-bottom: 15px;
+  }
+}

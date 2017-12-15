@@ -1,28 +1,61 @@
 /**
  * Events Container
  */
-import React from 'react';
-import { eventTypes, data } from '../../constants';
-import { Loader, EventGroup } from '../../components';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { eventTypes, data, paths } from '../../constants';
+import { App, Loader, EventGroup } from '../../components';
 
-const Events = (props) => {
-  if (props.isLoading) {
-    return <Loader />;
+export default class Events extends Component {
+  static propTypes = {
+    type: PropTypes.oneOf([
+      eventTypes.APPEARANCE,
+      eventTypes.DONATION,
+      eventTypes.QUOTE,
+    ]).isRequired,
   }
 
-  let events = data.QUOTES;
-  if (props.type === eventTypes.APPEARANCE) {
-    events = data.APPEARANCES;
-  } else if (props.type === eventTypes.DONATION) {
-    events = data.DONATIONS;
+  state = {
+    isLoading: true,
   }
 
-  return (
-    <EventGroup
-      person={data.NOTABLE_PERSON}
-      type={props.type}
-      events={events}
-    />);
-};
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    window.document.title = 'Events | Hollowverse';
+    this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
+  }
 
-export default Events;
+  componentWillUnmount() {
+    clearTimeout(this.loadingTimeout);
+  }
+
+  handleLoaded = () => this.setState({ isLoading: false });
+
+  render() {
+    const { type } = this.props;
+
+    let events = data.QUOTES;
+    if (type === eventTypes.APPEARANCE) {
+      events = data.APPEARANCES;
+    } else if (type === eventTypes.DONATION) {
+      events = data.DONATIONS;
+    }
+
+    return (
+      <App
+        searchValue={data.NOTABLE_PERSON.name}
+        backLink={paths.NOTABLE_PERSON}
+      >
+        {this.state.isLoading ?
+          <Loader />
+        :
+          <EventGroup
+            person={data.NOTABLE_PERSON}
+            type={type}
+            events={events}
+          />
+        }
+      </App>);
+  }
+}
+

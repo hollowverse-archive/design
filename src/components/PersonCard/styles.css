@@ -1,0 +1,73 @@
+/**
+ * PersonCard Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.person-card {
+  flex-shrink: 0;
+  position: relative;
+  width: $person-card-width;
+  height: $person-card-height;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 2px;
+  margin: 1px;
+  background-color: white;
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.3s;
+  animation: person-card 0.3s;
+
+  &::before {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $person-card-width;
+    height: $person-card-width;
+    background-image: linear-gradient(132deg, #4cfde9 -20%, rgba(251, 201, 84, 0.1) 30%, rgba(251, 201, 84, 0.1) 60%, #4435f7 120%);
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+
+  &:hover,
+  &:active {
+    z-index: 10;
+    box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.3);
+    &::before { opacity: 1; }
+  }
+
+  &-avatar {
+    z-index: 1;
+    position: relative;
+    width: $person-card-width;
+    height: $person-card-width;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  &-name {
+    z-index: 2;
+    position: relative;
+    font-size: 13px;
+    font-weight: bold;
+    color: $color-text-default;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+}
+
+@keyframes person-card {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

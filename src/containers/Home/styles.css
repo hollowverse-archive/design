@@ -1,0 +1,14 @@
+/**
+ * Home Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.home {
+  &-persones {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 2px auto;
+    max-width: $page-max-width;
+  }
+}
