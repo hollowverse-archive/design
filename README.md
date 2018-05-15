@@ -7,3 +7,7 @@ This repo contains the UI and UX of Hollowverse, delivered by the designer in HT
 1. Clone it, and `cd` into it
 1. Install dependencies `yarn install`
 1. Run development server on `http://localhost:8080` using `yarn start`
+
+---
+
+[If you'd like to tell us something, or need help with anything...](https://github.com/hollowverse/hollowverse/wiki/Help)
