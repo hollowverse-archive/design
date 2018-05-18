@@ -111,6 +111,7 @@ export default class AppMenu extends Component {
             title="Close menu"
             aria-label="Close menu"
             className="app-menu-close"
+            onClick={this.handleClose}
           />
           {this.user}
           <Link
