@@ -18,6 +18,7 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.21);
+    cursor: pointer;
     transition: opacity 0.2s;
     animation: app-menu-fade 0.2s;
     .closing & { opacity: 0; }
@@ -29,6 +30,7 @@
     height: 100%;
     top: 0;
     left: 0;
+    padding: $navbar-height 0;
     background-color: white;
     box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.07);
     transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
@@ -42,12 +44,33 @@
     height: $navbar-height;
     border-radius: 0;
     display: block;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
     cursor: pointer;
+    top: 0;
     right: 0;
-    background-image: url('../../shared/assets/icn-close.svg');
+    background: url('../../shared/assets/icn-close.svg') 50% 50% no-repeat;
     &:hover { opacity: 0.7; }
+  }
+
+  &-signin-facebook {
+    height: 40px;
+    width: calc(100% - 80px);
+    padding: 10px 20px 10px 50px;
+    margin: 10px 0 20px 40px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: left;
+    color: white;
+    background: #4267b2 url('../../shared/assets/icn-facebook.svg') 8px 50% no-repeat;
+    cursor: pointer;
+  }
+
+  &-link {
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px 10px 40px;
+    color: $color-text-light;
+    &:hover { color: $color-text-default; }
   }
 }
 

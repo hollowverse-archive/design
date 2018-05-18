@@ -99,6 +99,8 @@ export default class NavBar extends Component {
               <button
                 type="button"
                 className="navbar-btn menu"
+                title="Open menu"
+                aria-label="Open menu"
                 onClick={onClickMenu}
               />
             }

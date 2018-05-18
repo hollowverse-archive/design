@@ -12,7 +12,10 @@ export default class Privacy extends Component {
 
   render() {
     return (
-      <App isSearchButton>
+      <App
+        isSearchButton
+        isMenuButton
+      >
         <TextPage>
           <h1>Terms of Service</h1>
           <h2>1. Terms</h2>

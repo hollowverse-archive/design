@@ -12,14 +12,17 @@ export default class Privacy extends Component {
 
   render() {
     return (
-      <App isSearchButton>
+      <App
+        isSearchButton
+        isMenuButton
+      >
         <TextPage>
           <h1>Privacy Policy</h1>
           <p>
-          Your privacy is very important to us. Accordingly, we have
-          developed this Policy in order for you to understand how we
-          collect, use, communicate and disclose and make use of personal
-          information. The following outlines our privacy policy.
+            Your privacy is very important to us. Accordingly, we have
+            developed this Policy in order for you to understand how we
+            collect, use, communicate and disclose and make use of personal
+            information. The following outlines our privacy policy.
           </p>
           <ol>
             <li>Before or at the time of collecting personal information,
@@ -51,9 +54,9 @@ export default class Privacy extends Component {
             </li>
           </ol>
           <p>
-          We are committed to conducting our business in accordance with
-          these principles in order to ensure that the confidentiality of
-          personal information is protected and maintained.
+            We are committed to conducting our business in accordance with
+            these principles in order to ensure that the confidentiality of
+            personal information is protected and maintained.
           </p>
         </TextPage>
         <Footer />
