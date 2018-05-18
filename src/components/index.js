@@ -2,6 +2,7 @@
  * Export all components
  */
 export { default as App } from './App';
+export { default as AppMenu } from './AppMenu';
 export { default as ErrorMessage } from './ErrorMessage';
 export { default as Event } from './Event';
 export { default as EventGroup } from './EventGroup';

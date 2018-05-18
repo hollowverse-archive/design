@@ -1,7 +1,7 @@
 /**
  * NavBar Component
  */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -15,13 +15,15 @@ export default class NavBar extends Component {
     searchValue: PropTypes.string,
     onSearch: PropTypes.func,
     isSearchButton: PropTypes.bool,
+    onClickMenu: PropTypes.func,
   };
 
   static defaultProps = {
     backLink: undefined,
     searchValue: undefined,
-    onSearch: () => {},
+    onSearch: () => { },
     isSearchButton: false,
+    onClickMenu: undefined,
   };
 
   state = {
@@ -77,46 +79,55 @@ export default class NavBar extends Component {
   }
 
   render() {
-    const { backLink, isSearchButton } = this.props;
+    const { backLink, isSearchButton, onClickMenu } = this.props;
     const {
       anim, isSearch, searchValue, isSearchAutoFocus,
     } = this.state;
 
     return (
-      <div className="navbar">
-        <div className="navbar-inner">
-          {backLink &&
-            <Link
-              type="button"
-              className="navbar-btn back"
-              to={backLink}
-            />
-          }
-          {isSearch ?
-            <NavBarSearch
-              anim={anim}
-              margins={!!backLink}
-              searchValue={searchValue}
-              autoFocus={isSearchAutoFocus}
-              onChange={this.handleSearchChange}
-              onKeyDown={this.handleSearchKeyDown}
-              onBlur={this.handleScroll}
-            />
-            :
-            <Link
-              to={paths.HOME}
-              className={classNames('navbar-logo', { anim })}
-            />
-          }
-          {!isSearch && isSearchButton &&
-            <button
-              type="button"
-              className={classNames('navbar-btn search', { anim })}
-              onClick={this.handleSearchButtonClick}
-            />
-          }
+      <Fragment>
+        <div className="navbar">
+          <div className="navbar-inner">
+            {!onClickMenu && backLink &&
+              <Link
+                type="button"
+                className="navbar-btn back"
+                to={backLink}
+              />
+            }
+            {!!onClickMenu &&
+              <button
+                type="button"
+                className="navbar-btn menu"
+                onClick={onClickMenu}
+              />
+            }
+            {isSearch ?
+              <NavBarSearch
+                anim={anim}
+                margins={!!backLink || !!onClickMenu}
+                searchValue={searchValue}
+                autoFocus={isSearchAutoFocus}
+                onChange={this.handleSearchChange}
+                onKeyDown={this.handleSearchKeyDown}
+                onBlur={this.handleScroll}
+              />
+              :
+              <Link
+                to={paths.HOME}
+                className={classNames('navbar-logo', { anim })}
+              />
+            }
+            {!isSearch && isSearchButton &&
+              <button
+                type="button"
+                className={classNames('navbar-btn search', { anim })}
+                onClick={this.handleSearchButtonClick}
+              />
+            }
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

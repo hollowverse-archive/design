@@ -1,0 +1,58 @@
+/**
+ * Syles of AppMenu
+ */
+@import '../../shared/styles/variables.css';
+
+.app-menu {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  &-fade {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.21);
+    transition: opacity 0.2s;
+    animation: app-menu-fade 0.2s;
+    .closing & { opacity: 0; }
+  }
+
+  &-body {
+    position: fixed;
+    width: 320px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: app-menu-body 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    .closing & { transform: translateX(-100%); }
+  }
+}
+
+@keyframes app-menu-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes app-menu-body {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

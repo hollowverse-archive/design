@@ -2,7 +2,7 @@
  * NotablePerson Container
  */
 import React, { Component, Fragment } from 'react';
-import { data, paths } from '../../constants';
+import { data } from '../../constants';
 import {
   App,
   PersonLoading,
@@ -50,7 +50,7 @@ export default class NotablePerson extends Component {
     return (
       <App
         searchValue={data.NOTABLE_PERSON.name}
-        backLink={paths.HOME}
+        isMenuButton
       >
         {this.state.isLoading ?
           <PersonLoading />

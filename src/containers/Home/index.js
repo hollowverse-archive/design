@@ -44,7 +44,7 @@ export default class Home extends Component {
               key={person.id}
               {...person}
             />)
-              }
+          }
         </div>
         <Pagination
           currentPage={currentPage}
@@ -62,7 +62,10 @@ export default class Home extends Component {
 
   render() {
     return (
-      <App isSearchButton>
+      <App
+        isSearchButton
+        isMenuButton
+      >
         {this.home}
       </App>
     );
