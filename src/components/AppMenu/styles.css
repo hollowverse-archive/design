@@ -30,7 +30,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    padding: $navbar-height 0;
+    padding: $navbar-height 40px;
     background-color: white;
     box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.07);
     transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
@@ -53,9 +53,9 @@
 
   &-signin-facebook {
     height: 40px;
-    width: calc(100% - 80px);
+    width: 100%;
     padding: 10px 20px 10px 50px;
-    margin: 10px 0 20px 40px;
+    margin: 10px 0 20px;
     font-weight: bold;
     border-radius: 4px;
     text-align: left;
@@ -64,11 +64,47 @@
     cursor: pointer;
   }
 
+  &-user {
+    margin: 0 0 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  &-user-avatar {
+    display: block;
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    margin: 0 20px 0 0;
+    background-color: $color-background-light;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-user-name {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-signout {
+    display: block;
+    text-align: left;
+    color: $color-text-light;
+    cursor: pointer;
+    margin: 5px 0 0;
+    &:hover { color: $color-text-default; }
+  }
+
   &-link {
     font-size: 14px;
     text-decoration: none;
     display: block;
-    padding: 10px 20px 10px 40px;
+    padding: 10px 0;
     color: $color-text-light;
     &:hover { color: $color-text-default; }
   }

@@ -61,15 +61,24 @@ export default class AppMenu extends Component {
     }
 
     return (
-      <button
-        type="button"
-        aria-label="Sign out"
-        title="Sign out"
-        className="app-menu-signout"
-        onClick={onSignOut}
-      >
-        Sign out
-      </button>
+      <div className="app-menu-user">
+        <div
+          className="app-menu-user-avatar"
+          style={{ backgroundImage: `url(${userAvatar})` }}
+        />
+        <div className="app-menu-user-name">
+          {userName}
+          <button
+            type="button"
+            aria-label="Sign out"
+            title="Sign out"
+            className="app-menu-signout"
+            onClick={onSignOut}
+          >
+            Sign Out
+          </button>
+        </div>
+      </div>
     );
   }
 

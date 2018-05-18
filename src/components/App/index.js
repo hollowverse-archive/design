@@ -62,6 +62,8 @@ export default class App extends Component {
         <AppMenu
           isOpen={isMenuOpen}
           toggle={this.toggleMenu}
+          userName="Chelsea Handler"
+          userAvatar="assets/chelsea-handler.jpg"
         />
         <NavBar
           backLink={!isMenuButton ? backLink : undefined}
