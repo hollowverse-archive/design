@@ -50,7 +50,13 @@ export default class AppMenu extends Component {
             className="app-menu-fade"
             onClick={this.handleClose}
           />
-          <div className="app-menu-body" />
+          <div className="app-menu-body">
+            <button
+              type="button"
+              className="app-menu-close"
+              onClick={this.handleClose}
+            />
+          </div>
         </div>
         :
         null
