@@ -29,9 +29,15 @@ export default class AppMenu extends Component {
     isClosing: false,
   }
 
+  componentDidMount() {
+    window.document.body.style.overflow = this.props.isOpen ? 'hidden' : 'auto';
+  }
+
   componentWillReceiveProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
       window.document.body.style.overflow = 'hidden';
+    } else if (this.props.isOpen && !nextProps.isOpen) {
+      window.document.body.style.overflow = 'auto';
     }
   }
 
@@ -70,7 +76,6 @@ export default class AppMenu extends Component {
   closeAndRemove = () => {
     this.setState({ isClosing: false });
     this.props.toggle();
-    window.document.body.style.overflow = 'auto';
   }
 
   handleClose = () => {
@@ -106,41 +111,35 @@ export default class AppMenu extends Component {
             title="Close menu"
             aria-label="Close menu"
             className="app-menu-close"
-            onClick={this.handleClose}
           />
           {this.user}
           <Link
             to={paths.HOME}
             className="app-menu-link"
-            onClick={this.closeAndRemove}
           >
             Home
           </Link>
           <Link
             to={paths.ABOUT}
             className="app-menu-link"
-            onClick={this.closeAndRemove}
           >
             About
           </Link>
           <Link
             to={paths.CONTACT}
             className="app-menu-link"
-            onClick={this.closeAndRemove}
           >
             Contact
           </Link>
           <Link
             to={paths.PRIVACY_POLICY}
             className="app-menu-link"
-            onClick={this.closeAndRemove}
           >
             Privacy Policy
           </Link>
           <Link
             to={paths.TERMS_OF_SERVICE}
             className="app-menu-link"
-            onClick={this.closeAndRemove}
           >
             Terms of Service
           </Link>
