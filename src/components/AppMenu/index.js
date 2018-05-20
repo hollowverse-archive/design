@@ -1,7 +1,7 @@
 /**
  * App Container
  */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
@@ -61,7 +61,7 @@ export default class AppMenu extends Component {
     }
 
     return (
-      <div className="app-menu-user">
+      <Fragment>
         <div
           className="app-menu-user-avatar"
           style={{ backgroundImage: userAvatar ? `url(${userAvatar})` : undefined }}
@@ -69,6 +69,43 @@ export default class AppMenu extends Component {
         <div className="app-menu-user-name">
           {userName}
         </div>
+      </Fragment>
+    );
+  }
+
+  get menuLinks() {
+    const { userName, onLogout } = this.props;
+    const isLoggedIn = !!userName;
+
+    return (
+      <div className="app-menu-links">
+        <Link
+          to={paths.HOME}
+          className="app-menu-link"
+        >
+          Home
+        </Link>
+        <Link
+          to={paths.ABOUT}
+          className="app-menu-link"
+        >
+          About
+        </Link>
+        <Link
+          to={paths.CONTACT}
+          className="app-menu-link"
+        >
+          Contact
+        </Link>
+        {isLoggedIn &&
+          <button
+            type="button"
+            className="app-menu-link"
+            onClick={onLogout}
+          >
+            Log out
+          </button>
+        }
       </div>
     );
   }
@@ -90,8 +127,7 @@ export default class AppMenu extends Component {
 
   render() {
     const { isClosing } = this.state;
-    const { isOpen, userName, onLogout } = this.props;
-    const isLoggedIn = !!userName;
+    const { isOpen } = this.props;
 
     if (!isOpen && !isClosing) {
       return null;
@@ -115,45 +151,24 @@ export default class AppMenu extends Component {
             onClick={this.handleClose}
           />
           {this.user}
-          <Link
-            to={paths.HOME}
-            className="app-menu-link"
-          >
-            Home
-          </Link>
-          <Link
-            to={paths.ABOUT}
-            className="app-menu-link"
-          >
-            About
-          </Link>
-          <Link
-            to={paths.CONTACT}
-            className="app-menu-link"
-          >
-            Contact
-          </Link>
-          {isLoggedIn &&
-            <button
-              type="button"
+          {this.menuLinks}
+          <div className="app-menu-footer">
+            <Link
+              to={paths.PRIVACY_POLICY}
               className="app-menu-link"
-              onClick={onLogout}
             >
-              Log out
-            </button>
-          }
-          <Link
-            to={paths.PRIVACY_POLICY}
-            className="app-menu-link"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to={paths.TERMS_OF_SERVICE}
-            className="app-menu-link"
-          >
-            Terms of Service
-          </Link>
+              Privacy Policy
+            </Link>
+            <Link
+              to={paths.TERMS_OF_SERVICE}
+              className="app-menu-link"
+            >
+              Terms of Service
+            </Link>
+            <div className="app-menu-copy">
+              &copy; 2018 Hollowverse
+            </div>
+          </div>
         </div>
       </div>
     );
