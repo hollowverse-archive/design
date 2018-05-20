@@ -2,7 +2,7 @@
  * Privacy container
  */
 import React, { Component } from 'react';
-import { App, TextPage, Footer } from '../../components';
+import { App, TextPage } from '../../components';
 
 export default class Privacy extends Component {
   componentDidMount() {
@@ -59,7 +59,6 @@ export default class Privacy extends Component {
             personal information is protected and maintained.
           </p>
         </TextPage>
-        <Footer />
       </App>
     );
   }

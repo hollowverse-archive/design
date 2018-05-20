@@ -2,7 +2,7 @@
  * About container
  */
 import React, { Component } from 'react';
-import { App, TextPage, Footer } from '../../components';
+import { App, TextPage } from '../../components';
 
 export default class About extends Component {
   componentDidMount() {
@@ -28,7 +28,6 @@ export default class About extends Component {
             you’d like to discuss anything.
           </p>
         </TextPage>
-        <Footer />
       </App>
     );
   }

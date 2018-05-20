@@ -3,7 +3,7 @@
  */
 import React, { Component, Fragment } from 'react';
 import { data } from '../../constants';
-import { App, Footer, PersonesLoading, PersonCard, Pagination } from '../../components';
+import { App, PersonesLoading, PersonCard, Pagination } from '../../components';
 import './styles.css';
 
 const PERSONES = [
@@ -51,7 +51,6 @@ export default class Home extends Component {
           totalPages={totalPages}
           onChangePage={this.handleChangePage}
         />
-        <Footer />
       </Fragment>
     );
   }
