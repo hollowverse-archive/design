@@ -51,7 +51,7 @@
     &:hover { opacity: 0.7; }
   }
 
-  &-signin-facebook {
+  &-login-facebook {
     height: 40px;
     width: 100%;
     padding: 10px 20px 10px 50px;
@@ -66,14 +66,12 @@
 
   &-user {
     margin: 0 0 20px;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    overflow: hidden;
   }
 
   &-user-avatar {
-    display: block;
-    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
     width: 64px;
     height: 64px;
     border-radius: 32px;
@@ -85,19 +83,12 @@
   }
 
   &-user-name {
+    display: inline-block;
+    vertical-align: middle;
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  &-signout {
-    display: block;
-    text-align: left;
-    color: $color-text-light;
-    cursor: pointer;
-    margin: 5px 0 0;
-    &:hover { color: $color-text-default; }
   }
 
   &-link {
@@ -106,6 +97,8 @@
     display: block;
     padding: 10px 0;
     color: $color-text-light;
+    cursor: pointer;
+    text-align: left;
     &:hover { color: $color-text-default; }
   }
 }

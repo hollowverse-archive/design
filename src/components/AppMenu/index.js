@@ -12,15 +12,15 @@ export default class AppMenu extends Component {
   static propTypes = {
     isOpen: PropTypes.bool.isRequired,
     toggle: PropTypes.func.isRequired,
-    onSignIn: PropTypes.func,
-    onSignOut: PropTypes.func,
+    onLogin: PropTypes.func,
+    onLogout: PropTypes.func,
     userName: PropTypes.string,
     userAvatar: PropTypes.string,
   }
 
   static defaultProps = {
-    onSignIn: undefined,
-    onSignOut: undefined,
+    onLogin: undefined,
+    onLogout: undefined,
     userName: undefined,
     userAvatar: undefined,
   }
@@ -43,19 +43,19 @@ export default class AppMenu extends Component {
 
   get user() {
     const {
-      onSignIn, onSignOut, userName, userAvatar,
+      onLogin, userName, userAvatar,
     } = this.props;
 
-    if (!userName && !userAvatar) {
+    if (!userName) {
       return (
         <button
           type="button"
-          title="Sign in With Facebook"
-          aria-label="Sign in With Facebook"
-          className="app-menu-signin-facebook"
-          onClick={onSignIn}
+          title="Login in with Facebook"
+          aria-label="Login in with Facebook"
+          className="app-menu-login-facebook"
+          onClick={onLogin}
         >
-          Sign in With Facebook
+          Login in with Facebook
         </button>
       );
     }
@@ -64,19 +64,10 @@ export default class AppMenu extends Component {
       <div className="app-menu-user">
         <div
           className="app-menu-user-avatar"
-          style={{ backgroundImage: `url(${userAvatar})` }}
+          style={{ backgroundImage: userAvatar ? `url(${userAvatar})` : undefined }}
         />
         <div className="app-menu-user-name">
           {userName}
-          <button
-            type="button"
-            aria-label="Sign out"
-            title="Sign out"
-            className="app-menu-signout"
-            onClick={onSignOut}
-          >
-            Sign Out
-          </button>
         </div>
       </div>
     );
@@ -99,7 +90,8 @@ export default class AppMenu extends Component {
 
   render() {
     const { isClosing } = this.state;
-    const { isOpen } = this.props;
+    const { isOpen, userName, onLogout } = this.props;
+    const isLoggedIn = !!userName;
 
     if (!isOpen && !isClosing) {
       return null;
@@ -141,6 +133,15 @@ export default class AppMenu extends Component {
           >
             Contact
           </Link>
+          {isLoggedIn &&
+            <button
+              type="button"
+              className="app-menu-link"
+              onClick={onLogout}
+            >
+              Log out
+            </button>
+          }
           <Link
             to={paths.PRIVACY_POLICY}
             className="app-menu-link"
