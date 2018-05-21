@@ -87,23 +87,23 @@ export default class NavBar extends Component {
     return (
       <Fragment>
         <div className="navbar">
+          {!onClickMenu && backLink &&
+            <Link
+              type="button"
+              className="navbar-btn back"
+              to={backLink}
+            />
+          }
+          {!!onClickMenu &&
+            <button
+              type="button"
+              className="navbar-btn menu"
+              title="Open menu"
+              aria-label="Open menu"
+              onClick={onClickMenu}
+            />
+          }
           <div className="navbar-inner">
-            {!onClickMenu && backLink &&
-              <Link
-                type="button"
-                className="navbar-btn back"
-                to={backLink}
-              />
-            }
-            {!!onClickMenu &&
-              <button
-                type="button"
-                className="navbar-btn menu"
-                title="Open menu"
-                aria-label="Open menu"
-                onClick={onClickMenu}
-              />
-            }
             {isSearch ?
               <NavBarSearch
                 anim={anim}
@@ -119,17 +119,18 @@ export default class NavBar extends Component {
                 to={paths.HOME}
                 className={classNames('navbar-logo', { anim })}
               />
-            }
-            {!isSearch && isSearchButton &&
-              <button
-                type="button"
-                className={classNames('navbar-btn search', { anim })}
-                onClick={this.handleSearchButtonClick}
-              />
+
             }
           </div>
+          {!isSearch && isSearchButton &&
+            <button
+              type="button"
+              className={classNames('navbar-btn search', { anim })}
+              onClick={this.handleSearchButtonClick}
+            />
+          }
         </div>
-      </Fragment>
+      </Fragment >
     );
   }
 }
