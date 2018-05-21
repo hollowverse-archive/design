@@ -98,14 +98,18 @@ export default class AppMenu extends Component {
           Contact
         </Link>
         {isLoggedIn &&
-          <button
-            type="button"
-            className="app-menu-link"
-            onClick={onLogout}
-          >
-            Log out
-          </button>
+          <Fragment>
+            <div className="separator" />
+            <button
+              type="button"
+              className="app-menu-link"
+              onClick={onLogout}
+            >
+              Log out
+            </button>
+          </Fragment>
         }
+        <div className="separator" />
       </div>
     );
   }
