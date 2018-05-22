@@ -43,21 +43,11 @@ export default class AppMenu extends Component {
 
   get user() {
     const {
-      onLogin, userName, userAvatar,
+      userName, userAvatar,
     } = this.props;
 
-    if (userName) {
-      return (
-        <button
-          type="button"
-          title="Login in with Facebook"
-          aria-label="Login in with Facebook"
-          className="app-menu-login-facebook"
-          onClick={onLogin}
-        >
-          Login in
-        </button>
-      );
+    if (!userName) {
+      return undefined;
     }
 
     return (
@@ -74,7 +64,7 @@ export default class AppMenu extends Component {
   }
 
   get menuLinks() {
-    const { userName, onLogout } = this.props;
+    const { userName, onLogout, onLogin } = this.props;
     const isLoggedIn = !!userName;
 
     return (
@@ -97,18 +87,21 @@ export default class AppMenu extends Component {
         >
           Contact
         </Link>
-        {isLoggedIn &&
-          <Fragment>
-            <div className="separator" />
-            <button
-              type="button"
-              className="app-menu-link"
-              onClick={onLogout}
-            >
-              Log out
-            </button>
-          </Fragment>
-        }
+        <div className="separator" />
+        {isLoggedIn && (
+          <button type="button" className="app-menu-link" onClick={onLogout}>
+            Log out
+          </button>
+        )}
+        {!isLoggedIn && (
+          <button
+            type="button"
+            className="app-menu-link app-menu-link-facebook"
+            onClick={onLogin}
+          >
+            Log in with Facebook
+          </button>
+        )}
         <div className="separator" />
       </div>
     );
