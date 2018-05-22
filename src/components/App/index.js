@@ -5,7 +5,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { paths } from '../../constants';
-import { AppMenu, NavBar, ErrorMessage } from '../../components';
+import { NavBar, ErrorMessage } from '../../components';
 import './styles.css';
 
 export default class App extends Component {
@@ -59,17 +59,12 @@ export default class App extends Component {
 
     return (
       <Fragment>
-        <AppMenu
-          isOpen={isMenuOpen}
-          toggle={this.toggleMenu}
-          userName="Chelsea Handler"
-          userAvatar="assets/chelsea-handler.jpg"
-        />
         <NavBar
           backLink={!isMenuButton ? backLink : undefined}
           searchValue={searchValue}
           isSearchButton={isSearchButton}
-          onClickMenu={isMenuButton && this.toggleMenu}
+          toggleMenu={isMenuButton && this.toggleMenu}
+          isMenuOpen={isMenuOpen}
           onSearch={this.handleSearch}
         />
         <div className="app-view">

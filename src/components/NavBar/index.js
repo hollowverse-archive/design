@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { paths } from '../../constants';
-import { NavBarSearch } from '../../components';
+import { AppMenu, NavBarSearch } from '../../components';
 import './styles.css';
 
 export default class NavBar extends Component {
@@ -15,7 +15,8 @@ export default class NavBar extends Component {
     searchValue: PropTypes.string,
     onSearch: PropTypes.func,
     isSearchButton: PropTypes.bool,
-    onClickMenu: PropTypes.func,
+    toggleMenu: PropTypes.func,
+    isMenuOpen: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -23,7 +24,8 @@ export default class NavBar extends Component {
     searchValue: undefined,
     onSearch: () => { },
     isSearchButton: false,
-    onClickMenu: undefined,
+    toggleMenu: undefined,
+    isMenuOpen: false,
   };
 
   state = {
@@ -79,7 +81,9 @@ export default class NavBar extends Component {
   }
 
   render() {
-    const { backLink, isSearchButton, onClickMenu } = this.props;
+    const {
+      backLink, isSearchButton, toggleMenu, isMenuOpen,
+    } = this.props;
     const {
       anim, isSearch, searchValue, isSearchAutoFocus,
     } = this.state;
@@ -87,27 +91,33 @@ export default class NavBar extends Component {
     return (
       <Fragment>
         <div className="navbar">
-          {!onClickMenu && backLink &&
-            <Link
-              type="button"
-              className="navbar-btn back"
-              to={backLink}
-            />
-          }
-          {!!onClickMenu &&
-            <button
-              type="button"
-              className="navbar-btn menu"
-              title="Open menu"
-              aria-label="Open menu"
-              onClick={onClickMenu}
-            />
-          }
           <div className="navbar-inner">
+            {!toggleMenu && backLink &&
+              <Link
+                type="button"
+                className="navbar-btn back"
+                to={backLink}
+              />
+            }
+            {!!toggleMenu &&
+              <button
+                type="button"
+                className="navbar-btn menu"
+                title="Open menu"
+                aria-label="Open menu"
+                onClick={toggleMenu}
+              />
+            }
+            <AppMenu
+              isOpen={isMenuOpen}
+              toggle={toggleMenu}
+              userName="Chelsea Handler"
+              userAvatar="assets/chelsea-handler.jpg"
+            />
             {isSearch ?
               <NavBarSearch
                 anim={anim}
-                margins={!!backLink || !!onClickMenu}
+                margins={!!backLink || !!toggleMenu}
                 searchValue={searchValue}
                 autoFocus={isSearchAutoFocus}
                 onChange={this.handleSearchChange}
@@ -121,14 +131,14 @@ export default class NavBar extends Component {
               />
 
             }
+            {!isSearch && isSearchButton &&
+              <button
+                type="button"
+                className={classNames('navbar-btn search', { anim })}
+                onClick={this.handleSearchButtonClick}
+              />
+            }
           </div>
-          {!isSearch && isSearchButton &&
-            <button
-              type="button"
-              className={classNames('navbar-btn search', { anim })}
-              onClick={this.handleSearchButtonClick}
-            />
-          }
         </div>
       </Fragment >
     );
