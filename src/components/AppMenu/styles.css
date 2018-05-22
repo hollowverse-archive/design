@@ -58,9 +58,9 @@
 
   &-login-facebook {
     height: 40px;
-    width: calc(100% - 80px);
+    width: calc(100% - 70px);
     padding: 12px 12px 12px 44px;
-    margin: 40px 28px 0;
+    margin: 20px 20px 0;
     font-size: 14px;
     font-weight: bold;
     border-radius: 4px;

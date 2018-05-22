@@ -46,7 +46,7 @@ export default class AppMenu extends Component {
       onLogin, userName, userAvatar,
     } = this.props;
 
-    if (!userName) {
+    if (userName) {
       return (
         <button
           type="button"
@@ -55,7 +55,7 @@ export default class AppMenu extends Component {
           className="app-menu-login-facebook"
           onClick={onLogin}
         >
-          Login in with Facebook
+          Login in
         </button>
       );
     }
