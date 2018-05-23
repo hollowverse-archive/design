@@ -18,26 +18,29 @@ export default class NavBarSearch extends Component {
     anim: PropTypes.bool,
     margins: PropTypes.bool,
     autoFocus: PropTypes.bool,
-  }
+  };
 
   static defaultProps = {
     searchValue: undefined,
     anim: false,
     margins: false,
     autoFocus: false,
-  }
+  };
 
   state = {
     isLoading: false,
     open: false,
-  }
+  };
 
   componentWillReceiveProps(newProps) {
     const { searchValue } = this.props;
 
     if (!searchValue && newProps.searchValue) {
       this.setState({ isLoading: true, open: false });
-      this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 500);
+      this.loadingTimeout = setTimeout(
+        this.handleLoaded,
+        Math.random() * 1000 + 500,
+      );
     } else if (searchValue && !newProps.searchValue) {
       this.setState({ open: false });
     }
@@ -53,23 +56,17 @@ export default class NavBarSearch extends Component {
     return (
       <div className="navbar-search-body">
         {data.PERSONES.map(({ id, name, photoUrl }) => (
-          <Link
-            key={id}
-            to={paths.NOTABLE_PERSON}
-          >
+          <button key={id} to={paths.NOTABLE_PERSON}>
             <div
               className="navbar-search-body-avatar"
               style={{ backgroundImage: `url(${photoUrl})` }}
             />
             {name}
-          </Link>
+          </button>
         ))}
-        <Link
-          to={paths.SEARCH_NO_RESULTS}
-          className="all-results"
-        >
+        <button to={paths.SEARCH_NO_RESULTS} className="all-results">
           {`See results for ${searchValue}`}
-        </Link>
+        </button>
       </div>
     );
   }
@@ -80,13 +77,25 @@ export default class NavBarSearch extends Component {
 
   render() {
     const {
-      anim, margins, searchValue, autoFocus, onChange, onKeyDown, onBlur,
+      anim,
+      margins,
+      searchValue,
+      autoFocus,
+      onChange,
+      onKeyDown,
+      onBlur,
     } = this.props;
 
     const { isLoading, open } = this.state;
 
     return (
-      <div className={classNames('navbar-search', { anim, margins, loading: isLoading })}>
+      <div
+        className={classNames('navbar-search', {
+          anim,
+          margins,
+          loading: isLoading,
+        })}
+      >
         <input
           type="text"
           className="navbar-search-input"

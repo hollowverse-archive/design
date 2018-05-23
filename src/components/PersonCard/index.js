@@ -7,20 +7,14 @@ import { Link } from 'react-router-dom';
 import { paths } from '../../constants';
 import './styles.css';
 
-
 const PersonCard = ({ name, photoUrl }) => (
-  <Link
-    className="person-card"
-    to={paths.NOTABLE_PERSON}
-  >
+  <button className="person-card" to={paths.NOTABLE_PERSON}>
     <div
       className="person-card-avatar"
       style={{ backgroundImage: `url(${photoUrl})` }}
     />
-    <div className="person-card-name">
-      {name}
-    </div>
-  </Link>
+    <div className="person-card-name">{name}</div>
+  </button>
 );
 
 PersonCard.propTypes = {

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --progress"
+    "start": "NODE_ENV=development webpack-dev-server --progress",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,8 @@
   },
   "homepage": "https://github.com/hollowverse/design#readme",
   "dependencies": {
+    "@storybook/addon-viewport": "^4.0.0-alpha.7",
+    "@storybook/react": "^4.0.0-alpha.7",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",

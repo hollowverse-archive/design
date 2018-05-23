@@ -52,11 +52,11 @@ export default class NavBar extends Component {
         anim: true,
       });
     }
-  }
+  };
 
   handleSearchChange = e => this.setState({ searchValue: e.target.value });
 
-  handleSearchKeyDown = (e) => {
+  handleSearchKeyDown = e => {
     if (e.keyCode === 13) {
       e.target.blur();
       this.props.onSearch(this.state.searchValue);
@@ -74,25 +74,19 @@ export default class NavBar extends Component {
       isSearchAutoFocus: true,
       anim: true,
     });
-  }
+  };
 
   render() {
     const { backLink, isSearchButton } = this.props;
-    const {
-      anim, isSearch, searchValue, isSearchAutoFocus,
-    } = this.state;
+    const { anim, isSearch, searchValue, isSearchAutoFocus } = this.state;
 
     return (
       <div className="navbar">
         <div className="navbar-inner">
-          {backLink &&
-            <Link
-              type="button"
-              className="navbar-btn back"
-              to={backLink}
-            />
-          }
-          {isSearch ?
+          {backLink && (
+            <button type="button" className="navbar-btn back" to={backLink} />
+          )}
+          {isSearch ? (
             <NavBarSearch
               anim={anim}
               margins={!!backLink}
@@ -102,19 +96,20 @@ export default class NavBar extends Component {
               onKeyDown={this.handleSearchKeyDown}
               onBlur={this.handleScroll}
             />
-            :
-            <Link
+          ) : (
+            <button
               to={paths.HOME}
               className={classNames('navbar-logo', { anim })}
             />
-          }
-          {!isSearch && isSearchButton &&
-            <button
-              type="button"
-              className={classNames('navbar-btn search', { anim })}
-              onClick={this.handleSearchButtonClick}
-            />
-          }
+          )}
+          {!isSearch &&
+            isSearchButton && (
+              <button
+                type="button"
+                className={classNames('navbar-btn search', { anim })}
+                onClick={this.handleSearchButtonClick}
+              />
+            )}
         </div>
       </div>
     );

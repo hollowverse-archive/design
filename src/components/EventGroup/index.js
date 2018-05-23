@@ -9,47 +9,44 @@ import { uiStrings } from '../../constants';
 import { Event } from '../../components';
 import './styles.css';
 
-const EventGroupTitle = ({ limit, path, eventName }) => (
-  limit ?
-    <Link
-      to={path}
-      className="event-group-title"
-    >
-      {eventName}
-    </Link>
-    :
-    <div className="event-group-title">
-      {eventName}
-    </div>
-);
+// const EventGroupTitle = ({ limit, path, eventName }) => (
+//   limit ?
+//     <Link
+//       to={path}
+//       className="event-group-title"
+//     >
+//       {eventName}
+//     </Link>
+//     :
+//     <div className="event-group-title">
+//       {eventName}
+//     </div>
+// );
 
-
-const EventGroup = (props) => {
+const EventGroup = props => {
   const eventProps = mapEventTypeToProps(props.type);
 
   return (
     <div className="event-group">
-      <EventGroupTitle
+      {/* <EventGroupTitle
         limit={props.limit}
         path={eventProps.path}
         personName={props.person.name}
         eventName={eventProps.name}
-      />
-      {props.events.map(event =>
+      /> */}
+      {props.events.map(event => (
         <Event
           key={event.id}
           className={eventProps.className}
           person={props.person}
           {...event}
-        />)}
-      {props.limit &&
-        <Link
-          to={eventProps.path}
-          className="event-group-more"
-        >
+        />
+      ))}
+      {/* {props.limit && (
+        <Link to={eventProps.path} className="event-group-more">
           {uiStrings.SEE_MORE}
         </Link>
-      }
+      )} */}
     </div>
   );
 };

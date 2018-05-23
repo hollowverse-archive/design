@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { paths } from '../../constants';
 import { NavBar, ErrorMessage } from '../../components';
+
 import './styles.css';
 
 export default class App extends Component {
@@ -17,18 +18,18 @@ export default class App extends Component {
     backLink: PropTypes.string,
     searchValue: PropTypes.string,
     isSearchButton: PropTypes.bool,
-  }
+  };
 
   static defaultProps = {
     backLink: undefined,
     searchValue: '',
     isSearchButton: false,
-  }
+  };
 
   state = {
     errorMessage: undefined,
     isSearchRedirect: false,
-  }
+  };
 
   componentDidCatch() {
     this.setState({
@@ -38,12 +39,10 @@ export default class App extends Component {
 
   handleSearch = () => {
     this.setState({ isSearchRedirect: true });
-  }
+  };
 
   render() {
-    const {
-      backLink, children, searchValue, isSearchButton,
-    } = this.props;
+    const { backLink, children, searchValue, isSearchButton } = this.props;
     const { errorMessage, isSearchRedirect } = this.state;
 
     if (isSearchRedirect) {
@@ -59,15 +58,15 @@ export default class App extends Component {
           onSearch={this.handleSearch}
         />
         <div className="app-view">
-          {!errorMessage ?
+          {!errorMessage ? (
             children
-            :
+          ) : (
             <ErrorMessage
               message={errorMessage}
               action={() => window.location.reload()}
               actionLabel="Reload the Page"
             />
-          }
+          )}
         </div>
       </Fragment>
     );
