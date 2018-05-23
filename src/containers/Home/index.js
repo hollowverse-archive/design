@@ -3,7 +3,7 @@
  */
 import React, { Component, Fragment } from 'react';
 import { data } from '../../constants';
-import { App, Footer, PersonesLoading, PersonCard, Pagination } from '../../components';
+import { App, PersonesLoading, PersonCard, Pagination } from '../../components';
 import './styles.css';
 
 const PERSONES = [
@@ -44,14 +44,13 @@ export default class Home extends Component {
               key={person.id}
               {...person}
             />)
-              }
+          }
         </div>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onChangePage={this.handleChangePage}
         />
-        <Footer />
       </Fragment>
     );
   }
@@ -62,7 +61,10 @@ export default class Home extends Component {
 
   render() {
     return (
-      <App isSearchButton>
+      <App
+        isSearchButton
+        isMenuButton
+      >
         {this.home}
       </App>
     );
