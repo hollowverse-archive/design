@@ -53,7 +53,7 @@ export const PERSONES = [
   {
     id: 'annalynne-mccord',
     name: 'AnnaLynne McCord',
-    photoUrl: 'assets/annalynne-mccord.jpg',
+    photoUrl: '',
     labels: ['Actress', 'Model'],
   },
   {
