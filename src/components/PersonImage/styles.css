@@ -1,0 +1,28 @@
+/**
+ * PersonImage Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.person-image {
+  z-index: 1;
+  position: relative;
+  width: $person-card-width;
+  height: $person-card-width;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  user-select: none;
+
+  &.big {
+    width: $person-avatar-size;
+    height: $person-avatar-size;
+    margin: 20px auto 25px;
+    box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.7), 0 2px 1px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+  }
+
+  &.empty {
+    background-image: url('../../shared/assets/photo-empty.svg');
+  }
+}

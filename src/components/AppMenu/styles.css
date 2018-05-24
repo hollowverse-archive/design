@@ -97,7 +97,7 @@
     &-facebook {
       color: #4267b2;
       padding-left: 32px;
-      background:  url('../../shared/assets/icn-facebook.svg') no-repeat;
+      background: url('../../shared/assets/icn-facebook.svg') no-repeat;
       background-size: 24px;
       background-position-y: 50%;
     }

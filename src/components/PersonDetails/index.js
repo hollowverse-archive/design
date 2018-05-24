@@ -4,6 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { uiStrings } from '../../constants';
+import { PersonImage } from '../../components';
 import './styles.css';
 
 const renderParagraph = (i, index) => <p key={index}>{i}</p>;
@@ -15,10 +16,7 @@ const PersonDetails = props => (
       style={{ backgroundImage: `url(${props.photoUrl})` }}
     />
     <div className="person-details-inner">
-      <div
-        className="person-details-avatar"
-        style={{ backgroundImage: `url(${props.photoUrl})` }}
-      />
+      <PersonImage big />
       <div className="person-details-caption">
         {uiStrings.RELIGION_POLITICS_AND_IDEAS_OF}
       </div>

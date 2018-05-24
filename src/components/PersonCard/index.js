@@ -5,6 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { paths } from '../../constants';
+import { PersonImage } from '../../components';
 import './styles.css';
 
 
@@ -13,10 +14,7 @@ const PersonCard = ({ name, photoUrl }) => (
     className="person-card"
     to={paths.NOTABLE_PERSON}
   >
-    <div
-      className="person-card-avatar"
-      style={{ backgroundImage: `url(${photoUrl})` }}
-    />
+    <PersonImage url={photoUrl} />
     <div className="person-card-name">
       {name}
     </div>
