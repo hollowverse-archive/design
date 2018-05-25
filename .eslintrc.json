@@ -1,5 +1,8 @@
 {
-  "extends": ["./node_modules/@hollowverse/config/eslint/base/.eslintrc.json"],
+  "extends": [
+    "./node_modules/@hollowverse/config/eslint/base/.eslintrc.json",
+    "plugin:react/recommended"
+  ],
   "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": [2, { "extensions": [".jsx"] }]

@@ -2,9 +2,10 @@
  * About container
  */
 import React, { Component } from 'react';
-import { App, TextPage } from '../../components';
+import { App } from '../../components/App';
+import { TextPage } from '../../components/TextPage';
 
-export default class About extends Component {
+export class About extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     window.document.title = 'About | Hollowverse';

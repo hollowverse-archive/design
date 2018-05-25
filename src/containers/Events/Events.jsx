@@ -3,10 +3,14 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { eventTypes, data, paths } from '../../constants';
-import { App, Loader, EventGroup } from '../../components';
+import { eventTypes } from '../../constants/eventTypes';
+import { data } from '../../constants/data';
+import { paths } from '../../constants/paths';
+import { App } from '../../components/App';
+import { Loader } from '../../components/Loader';
+import { EventGroup } from '../../components/EventGroup';
 
-export default class Events extends Component {
+export class Events extends Component {
   static propTypes = {
     type: PropTypes.oneOf([
       eventTypes.APPEARANCE,

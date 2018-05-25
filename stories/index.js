@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-filename-extension */
+
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import App from '../src/App.js';
+import App from '../src/App';
 
 storiesOf('Homepage', module).add('Default', () => <App path="/" />);
 

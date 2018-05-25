@@ -2,13 +2,11 @@
  * SearchNoResults container
  */
 import React from 'react';
-import { App } from '../../components';
+import { App } from '../../components/App';
 import './styles.css';
 
-const Search = () => (
+export const SearchNoResults = () => (
   <App isSearchButton>
     <div className="search-no-results">{"We couldn't find anything"}</div>
   </App>
 );
-
-export default Search;

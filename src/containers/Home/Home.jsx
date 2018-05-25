@@ -3,7 +3,11 @@
  */
 import React, { Component, Fragment } from 'react';
 import { data } from '../../constants';
-import { App, PersonesLoading, PersonCard, Pagination } from '../../components';
+import { App } from '../../components/App';
+import { PersonesLoading } from '../../components/PersonesLoading';
+import { PersonCard } from '../../components/PersonCard';
+import { Pagination } from '../../components/Pagination';
+
 import './styles.css';
 
 const PERSONES = [
@@ -15,7 +19,7 @@ const PERSONES = [
   ),
 ];
 
-export default class Home extends Component {
+export class Home extends Component {
   state = {
     isLoading: true,
     currentPage: 1,
