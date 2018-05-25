@@ -5,6 +5,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { paths } from '../../constants';
 import { NavBar, ErrorMessage, Link } from '../../components';
+import { Consumer } from '../../state';
 
 import './styles.css';
 

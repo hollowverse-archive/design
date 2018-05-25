@@ -16,7 +16,7 @@ const PersonDetails = props => (
       style={{ backgroundImage: `url(${props.photoUrl})` }}
     />
     <div className="person-details-inner">
-      <PersonImage big />
+      <PersonImage big url={props.photoUrl} />
       <div className="person-details-caption">
         {uiStrings.RELIGION_POLITICS_AND_IDEAS_OF}
       </div>

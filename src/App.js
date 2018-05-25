@@ -2,6 +2,8 @@
  * Entry point of the App
  */
 import React from 'react';
+import { defaultsDeep } from 'lodash';
+
 import { paths, eventTypes } from './constants';
 import * as Containers from './containers';
 import { Provider } from './state';
@@ -21,18 +23,25 @@ import './shared/styles/index.css';
 /* eslint-enable */
 
 export default class App extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    return {
-      path: state.path || props.path,
-    };
-  }
-
-  state = {
-    path: null,
+  static defaultProps = {
+    path: '/',
+    showNotablePersonImage: true,
+    withLoading: false,
+    isMenuOpen: false,
   };
 
-  setPath = path => {
-    this.setState({ path });
+  static getDerivedStateFromProps(props, state) {
+    return defaultsDeep(state, props);
+  }
+
+  actions = {
+    setPath: path => {
+      this.setState({ path });
+    },
+
+    toggleMenu: () => {
+      this.setState(state => ({ isMenuOpen: !state.isMenuOpen }));
+    },
   };
 
   renderPath = () => {
@@ -44,16 +53,14 @@ export default class App extends React.Component {
       return <Containers.NotablePerson />;
     }
 
-    return null;
+    return '🕷🐛🐜🐞';
   };
 
   render() {
     return (
       <Provider
         value={{
-          actions: {
-            setPath: this.setPath,
-          },
+          actions: this.actions,
           state: this.state,
         }}
       >

@@ -3,7 +3,7 @@
  */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link } from '../../components';
 import classNames from 'classnames';
 import { paths } from '../../constants';
 import './styles.css';

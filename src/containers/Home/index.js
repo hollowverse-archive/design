@@ -25,10 +25,7 @@ export default class Home extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     window.document.title = 'Hollowverse';
-    this.loadingTimeout = setTimeout(
-      this.handleLoaded,
-      Math.random() * 1000 + 100,
-    );
+    this.loadingTimeout = setTimeout(this.handleLoaded, 100);
   }
 
   componentWillUnmount() {
@@ -45,12 +42,7 @@ export default class Home extends Component {
     return (
       <Fragment>
         <div className="home-persones">
-          {PERSONES.map(person =>
-            <PersonCard
-              key={person.id}
-              {...person}
-            />)
-          }
+          {PERSONES.map(person => <PersonCard key={person.id} {...person} />)}
         </div>
         <Pagination
           currentPage={currentPage}
@@ -67,10 +59,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <App
-        isSearchButton
-        isMenuButton
-      >
+      <App isSearchButton isMenuButton>
         {this.home}
       </App>
     );
