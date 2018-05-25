@@ -29,15 +29,8 @@ export default class App extends Component {
   };
 
   state = {
-    errorMessage: undefined,
     isSearchRedirect: false,
   };
-
-  componentDidCatch() {
-    this.setState({
-      errorMessage: 'Something is wrong on our end. Try again later.',
-    });
-  }
 
   handleSearch = () => {
     this.setState({ isSearchRedirect: true });
@@ -59,7 +52,7 @@ export default class App extends Component {
 
     return (
       <Consumer>
-        {({ state: { isMenuOpen }, actions: { toggleMenu } }) => {
+        {({ state: { isMenuOpen, showError }, actions: { toggleMenu } }) => {
           return (
             <Fragment>
               <NavBar
@@ -70,11 +63,11 @@ export default class App extends Component {
                 onSearch={this.handleSearch}
               />
               <div className="app-view">
-                {!errorMessage ? (
+                {!showError ? (
                   children
                 ) : (
                   <ErrorMessage
-                    message={errorMessage}
+                    message="Something is wrong on our end. Try again later."
                     action={() => window.location.reload()}
                     actionLabel="Reload the Page"
                   />

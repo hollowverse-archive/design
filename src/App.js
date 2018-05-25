@@ -6,7 +6,7 @@ import { defaultsDeep } from 'lodash';
 
 import { paths, eventTypes } from './constants';
 import * as Containers from './containers';
-import { Provider } from './state';
+import { Provider, defaultState, createActions } from './state';
 
 import './shared/styles/index.css';
 
@@ -23,30 +23,13 @@ import './shared/styles/index.css';
 /* eslint-enable */
 
 export default class App extends React.Component {
-  static defaultProps = {
-    path: '/',
-    showNotablePersonImage: true,
-    withLoading: false,
-    isMenuOpen: false,
-    user: {
-      name: 'Chelsea Handler',
-      avatar: 'assets/chelsea-handler.jpg',
-    },
-  };
+  static defaultProps = defaultState;
 
   static getDerivedStateFromProps(props, state) {
     return defaultsDeep(state, props);
   }
 
-  actions = {
-    setPath: path => {
-      this.setState({ path });
-    },
-
-    toggleMenu: () => {
-      this.setState(state => ({ isMenuOpen: !state.isMenuOpen }));
-    },
-  };
+  actions = createActions(this.setState.bind(this));
 
   renderPath = () => {
     const { path } = this.state;

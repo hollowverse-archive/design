@@ -16,3 +16,5 @@ storiesOf('Main Menu', module)
   .add('Logged out', () => (
     <App path="/person" isMenuOpen={true} user={null} />
   ));
+
+storiesOf('App', module).add('Error', () => <App showError={true} />);
