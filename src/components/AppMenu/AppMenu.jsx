@@ -5,7 +5,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from '../../components/Link/Link';
-import { paths } from '../../constants/paths';
+import * as paths from '../../constants/paths';
 import { Consumer } from '../../state/state';
 
 import './styles.css';

@@ -1,7 +1,9 @@
 /**
  * Utils
  */
-import { eventTypes, paths, uiStrings } from '../../constants';
+import { eventTypes } from '../../constants/eventTypes';
+import * as paths from '../../constants/paths';
+import { uiStrings } from '../../constants/uiStrings';
 
 export const removeHttp = url => url.replace(/(^\w+:|^)\/\//, '');
 

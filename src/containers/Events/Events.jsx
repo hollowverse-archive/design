@@ -4,11 +4,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { eventTypes } from '../../constants/eventTypes';
-import { data } from '../../constants/data';
-import { paths } from '../../constants/paths';
-import { App } from '../../components/App';
-import { Loader } from '../../components/Loader';
-import { EventGroup } from '../../components/EventGroup';
+import * as data from '../../constants/tempData';
+import * as paths from '../../constants/paths';
+import { App } from '../../components/App/App';
+import { Loader } from '../../components/Loader/Loader';
+import { EventGroup } from '../../components/EventGroup/EventGroup';
 
 export class Events extends Component {
   static propTypes = {

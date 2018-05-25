@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { uiStrings } from '../../constants/uiStrings';
+import * as uiStrings from '../../constants/uiStrings';
 import { PersonImage } from '../../components/PersonImage/PersonImage';
 import './styles.css';
 

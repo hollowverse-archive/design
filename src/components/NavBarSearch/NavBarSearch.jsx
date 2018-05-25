@@ -4,8 +4,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { paths } from '../../constants/paths';
-import { data } from '../../constants/tempData';
+import * as paths from '../../constants/paths';
+import { PERSONES } from '../../constants/tempData';
 import { Loader } from '../../components/Loader/Loader';
 import { Link } from '../../components/Link/Link';
 import './styles.css';
@@ -58,7 +58,7 @@ export class NavBarSearch extends Component {
 
     return (
       <div className="navbar-search-body">
-        {data.PERSONES.map(({ id, name, photoUrl }) => (
+        {PERSONES.map(({ id, name, photoUrl }) => (
           <Link key={id} to={paths.NOTABLE_PERSON}>
             <div
               className="navbar-search-body-avatar"

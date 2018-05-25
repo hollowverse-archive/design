@@ -1,10 +1,6 @@
 import React from 'react';
 
-const State = React.createContext();
-
-export const Consumer = State.Consumer;
-
-export const Provider = State.Provider;
+export const { Consumer, Provider } = React.createContext();
 
 export const defaultState = {
   path: '/',

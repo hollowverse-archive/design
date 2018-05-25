@@ -4,7 +4,7 @@
 import React, { Component, Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { paths } from '../../constants/paths';
+import * as paths from '../../constants/paths';
 import { AppMenu } from '../../components/AppMenu/AppMenu';
 import { NavBarSearch } from '../../components/NavBarSearch/NavBarSearch';
 import { Link } from '../../components/Link/Link';

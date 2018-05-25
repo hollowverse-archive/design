@@ -12,7 +12,7 @@ const postcssSvgo = require('postcss-svgo');
 const postcssReporter = require('postcss-reporter');
 
 const buildPath = path.resolve(__dirname, 'public');
-const nodeModules = path.resolve(__dirname, 'node_modules');
+const nodeModules = path.resolve(__dirname, '..', 'node_modules');
 
 // HTML templates for HtmlWebpackPlugin
 const htmlTemplate = {

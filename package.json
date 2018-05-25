@@ -12,7 +12,8 @@
     "lint-staged": "lint-staged",
     "common-check": "run-p -c --aggregate-output 'clown check' check-integrity lint",
     "check-integrity": "yarn check --integrity",
-    "lint": "eslint ."
+    "eslint": "eslint . --config .eslintrc.json --ext .js --ext .jsx",
+    "lint": "yarn eslint"
   },
   "repository": {
     "type": "git",

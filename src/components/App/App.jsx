@@ -3,10 +3,8 @@
  */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { paths } from '../../constants/paths';
 import { NavBar } from '../../components/NavBar/NavBar';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
-import { Link } from '../../components/Link/Link';
 import { Consumer } from '../../state/state';
 
 import './styles.css';
@@ -30,27 +28,8 @@ export class App extends Component {
     isMenuButton: false,
   };
 
-  state = {
-    isSearchRedirect: false,
-  };
-
-  handleSearch = () => {
-    this.setState({ isSearchRedirect: true });
-  };
-
   render() {
-    const {
-      backLink,
-      children,
-      searchValue,
-      isSearchButton,
-      isMenuButton,
-    } = this.props;
-    const { errorMessage, isSearchRedirect, isMenuOpen } = this.state;
-
-    if (isSearchRedirect) {
-      return <Link to={paths.SEARCH} />;
-    }
+    const { children, searchValue, isSearchButton } = this.props;
 
     return (
       <Consumer>

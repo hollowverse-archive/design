@@ -2,18 +2,17 @@
  * NotablePerson Container
  */
 import React, { Component, Fragment } from 'react';
-import { data } from '../../constants/data';
-import { Consumer } from '../../state';
-import { App } from '../../components/App';
-import { PersonLoading } from '../../components/PersonLoading';
-import { PersonesOther } from '../../components/PersonesOther';
-import { PersonDetails } from '../../components/PersonDetails';
-import { FbComments } from '../../components/FbComments';
-import { Footnotes } from '../../components/Footnotes';
-import { Section } from '../../components/Section';
-import { Separator } from '../../components/Separator';
+import * as data from '../../constants/tempData';
+import { Consumer } from '../../state/state';
+import { App } from '../../components/App/App';
+import { PersonLoading } from '../../components/PersonLoading/PersonLoading';
+import { PersonesOther } from '../../components/PersonesOther/PersonesOther';
+import { PersonDetails } from '../../components/PersonDetails/PersonDetails';
+import { FbComments } from '../../components/FbComments/FbComments';
+import { Footnotes } from '../../components/Footnotes/Footnotes';
+import { Section } from '../../components/Section/Section';
+import { Separator } from '../../components/Separator/Separator';
 
-/* eslint-disable react/no-danger */
 const OldContent = () => (
   <Fragment>
     <div dangerouslySetInnerHTML={{ __html: data.ARTICLE }} />

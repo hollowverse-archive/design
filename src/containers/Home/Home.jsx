@@ -2,11 +2,11 @@
  * Home container
  */
 import React, { Component, Fragment } from 'react';
-import { data } from '../../constants';
-import { App } from '../../components/App';
-import { PersonesLoading } from '../../components/PersonesLoading';
-import { PersonCard } from '../../components/PersonCard';
-import { Pagination } from '../../components/Pagination';
+import * as data from '../../constants/tempData';
+import { App } from '../../components/App/App';
+import { PersonesLoading } from '../../components/PersonesLoading/PersonesLoading';
+import { PersonCard } from '../../components/PersonCard/PersonCard';
+import { Pagination } from '../../components/Pagination/Pagination';
 
 import './styles.css';
 

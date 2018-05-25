@@ -2,8 +2,8 @@
  * About container
  */
 import React, { Component } from 'react';
-import { App } from '../../components/App';
-import { TextPage } from '../../components/TextPage';
+import { App } from '../../components/App/App';
+import { TextPage } from '../../components/TextPage/TextPage';
 
 export class About extends Component {
   componentDidMount() {

@@ -4,9 +4,9 @@
 import React from 'react';
 import { defaultsDeep } from 'lodash';
 
-import { paths, eventTypes } from './constants';
-import * as Containers from './containers';
-import { Provider, defaultState, createActions } from './state';
+import { Home } from './containers/Home/Home';
+import { NotablePerson } from './containers/NotablePerson/NotablePerson';
+import { Provider, defaultState, createActions } from './state/state';
 
 import './shared/styles/index.css';
 
@@ -35,9 +35,9 @@ export class App extends React.Component {
     const { path } = this.state;
 
     if (path === '/') {
-      return <Containers.Home />;
+      return <Home />;
     } else if (path === '/person') {
-      return <Containers.NotablePerson />;
+      return <NotablePerson />;
     }
 
     return '🕷🐛🐜🐞';
