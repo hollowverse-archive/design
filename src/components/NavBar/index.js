@@ -4,9 +4,8 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { paths } from '../../constants';
-import { NavBarSearch } from '../../components';
+import { NavBarSearch, Link } from '../../components';
 import './styles.css';
 
 export default class NavBar extends Component {
@@ -84,7 +83,7 @@ export default class NavBar extends Component {
       <div className="navbar">
         <div className="navbar-inner">
           {backLink && (
-            <button type="button" className="navbar-btn back" to={backLink} />
+            <Link type="button" className="navbar-btn back" to={backLink} />
           )}
           {isSearch ? (
             <NavBarSearch
@@ -97,7 +96,7 @@ export default class NavBar extends Component {
               onBlur={this.handleScroll}
             />
           ) : (
-            <button
+            <Link
               to={paths.HOME}
               className={classNames('navbar-logo', { anim })}
             />

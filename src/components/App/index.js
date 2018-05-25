@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom';
 import { paths } from '../../constants';
 import { NavBar, ErrorMessage } from '../../components';
 
+import '../../shared/styles/index.css';
 import './styles.css';
 
 export default class App extends Component {

@@ -21,3 +21,4 @@ export { default as PersonLoading } from './PersonLoading';
 export { default as Separator } from './Separator';
 export { default as TextPage } from './TextPage';
 export { default as Section } from './Section';
+export { default as Link } from './Link';

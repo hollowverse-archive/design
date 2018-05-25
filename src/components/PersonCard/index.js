@@ -3,18 +3,18 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link } from '../../components';
 import { paths } from '../../constants';
 import './styles.css';
 
 const PersonCard = ({ name, photoUrl }) => (
-  <button className="person-card" to={paths.NOTABLE_PERSON}>
+  <Link className="person-card" to={paths.NOTABLE_PERSON}>
     <div
       className="person-card-avatar"
       style={{ backgroundImage: `url(${photoUrl})` }}
     />
     <div className="person-card-name">{name}</div>
-  </button>
+  </Link>
 );
 
 PersonCard.propTypes = {

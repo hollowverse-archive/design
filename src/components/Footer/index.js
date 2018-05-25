@@ -2,16 +2,16 @@
  * Footer Component
  */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../components';
 import { paths } from '../../constants';
 import './styles.css';
 
 const Footer = () => (
   <div className="footer">
-    {/* <Link to={paths.CONTACT}>Contact</Link>
+    <Link to={paths.CONTACT}>Contact</Link>
     <Link to={paths.ABOUT}>About</Link>
     <Link to={paths.PRIVACY_POLICY}>Privacy</Link>
-    <Link to={paths.TERMS_OF_SERVICE}>Terms</Link> */}
+    <Link to={paths.TERMS_OF_SERVICE}>Terms</Link>
 
     <a href={paths.TWITTER} target="_blank">
       Twitter

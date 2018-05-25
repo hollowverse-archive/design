@@ -4,9 +4,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import { paths, data } from '../../constants';
-import { Loader } from '../../components';
+import { Loader, Link } from '../../components';
 import './styles.css';
 
 export default class NavBarSearch extends Component {
@@ -56,17 +55,17 @@ export default class NavBarSearch extends Component {
     return (
       <div className="navbar-search-body">
         {data.PERSONES.map(({ id, name, photoUrl }) => (
-          <button key={id} to={paths.NOTABLE_PERSON}>
+          <Link key={id} to={paths.NOTABLE_PERSON}>
             <div
               className="navbar-search-body-avatar"
               style={{ backgroundImage: `url(${photoUrl})` }}
             />
             {name}
-          </button>
+          </Link>
         ))}
-        <button to={paths.SEARCH_NO_RESULTS} className="all-results">
+        <Link to={paths.SEARCH_NO_RESULTS} className="all-results">
           {`See results for ${searchValue}`}
-        </button>
+        </Link>
       </div>
     );
   }
