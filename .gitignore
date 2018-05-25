@@ -58,3 +58,7 @@ typings/
 
 # dotenv environment variables file
 .env
+# Created by Serverless
+.build
+.webpack
+.serverless

@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "pre-push": "yarn common-check",
+    "common-check": "run-p -c --aggregate-output 'clown check' check-integrity"
+  }
+}
