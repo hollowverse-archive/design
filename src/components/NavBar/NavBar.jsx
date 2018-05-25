@@ -4,11 +4,13 @@
 import React, { Component, Fragment } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { paths } from '../../constants';
-import { AppMenu, NavBarSearch, Link } from '../../components';
+import { paths } from '../../constants/paths';
+import { AppMenu } from '../../components/AppMenu/AppMenu';
+import { NavBarSearch } from '../../components/NavBarSearch/NavBarSearch';
+import { Link } from '../../components/Link/Link';
 import './styles.css';
 
-export default class NavBar extends Component {
+export class NavBar extends Component {
   static propTypes = {
     backLink: PropTypes.string,
     searchValue: PropTypes.string,
@@ -34,7 +36,7 @@ export default class NavBar extends Component {
     anim: false,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     this.setState({ searchValue: this.props.searchValue });
   }

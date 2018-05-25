@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const ErrorMessage = ({ message, action, actionLabel }) => (
+export const ErrorMessage = ({ message, action, actionLabel }) => (
   <div className="error-message">
     <div className="error-message-caption">{message}</div>
     {action && (
@@ -26,5 +26,3 @@ ErrorMessage.defaultProps = {
   action: undefined,
   actionLabel: undefined,
 };
-
-export default ErrorMessage;

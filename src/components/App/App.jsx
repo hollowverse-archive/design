@@ -3,13 +3,15 @@
  */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { paths } from '../../constants';
-import { NavBar, ErrorMessage, Link } from '../../components';
-import { Consumer } from '../../state';
+import { paths } from '../../constants/paths';
+import { NavBar } from '../../components/NavBar/NavBar';
+import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
+import { Link } from '../../components/Link/Link';
+import { Consumer } from '../../state/state';
 
 import './styles.css';
 
-export default class App extends Component {
+export class App extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.node,

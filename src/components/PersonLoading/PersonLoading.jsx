@@ -4,7 +4,7 @@
 import React from 'react';
 import './styles.css';
 
-const PersonLoading = () => (
+export const PersonLoading = () => (
   <div className="person-loading">
     <div className="person-loading-inner">
       <div className="person-loading-gradient" />
@@ -18,5 +18,3 @@ const PersonLoading = () => (
     </div>
   </div>
 );
-
-export default PersonLoading;

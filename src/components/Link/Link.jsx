@@ -1,7 +1,7 @@
 import React from 'react';
-import { Consumer } from '../../state';
+import { Consumer } from '../../state/state';
 
-export default ({ to, children, ...rest }) => (
+export const Link = ({ to, children, ...rest }) => (
   <Consumer>
     {({ actions: { setPath } }) => (
       <a

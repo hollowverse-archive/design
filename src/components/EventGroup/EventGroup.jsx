@@ -3,9 +3,10 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { mapEventTypeToProps } from '../../shared/utils';
-import { uiStrings } from '../../constants';
-import { Event, Link } from '../../components';
+import { mapEventTypeToProps } from '../../shared/utils/utils';
+import { uiStrings } from '../../constants/uiStrings';
+import { Event } from '../../components/Event/Event';
+import { Link } from '../../components/Link/Link';
 import './styles.css';
 
 const EventGroupTitle = ({ limit, path, eventName }) => {
@@ -18,7 +19,7 @@ const EventGroupTitle = ({ limit, path, eventName }) => {
   );
 };
 
-const EventGroup = props => {
+export const EventGroup = props => {
   const eventProps = mapEventTypeToProps(props.type);
 
   return (
@@ -56,5 +57,3 @@ EventGroup.propTypes = {
 EventGroup.defaultProps = {
   limit: false,
 };
-
-export default EventGroup;

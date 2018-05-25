@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const Loader = ({ small }) => (
+export const Loader = ({ small }) => (
   <div className={classNames('loader', { small })}>
     <svg className="loader-circular" viewBox="25 25 50 50">
       <circle
@@ -29,5 +29,3 @@ Loader.propTypes = {
 Loader.defaultProps = {
   small: false,
 };
-
-export default Loader;

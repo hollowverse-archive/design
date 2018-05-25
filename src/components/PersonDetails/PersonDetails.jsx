@@ -3,13 +3,13 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { uiStrings } from '../../constants';
-import { PersonImage } from '../../components';
+import { uiStrings } from '../../constants/uiStrings';
+import { PersonImage } from '../../components/PersonImage/PersonImage';
 import './styles.css';
 
 const renderParagraph = (i, index) => <p key={index}>{i}</p>;
 
-const PersonDetails = props => (
+export const PersonDetails = props => (
   <div className="person-details">
     <div
       className="person-details-cover"
@@ -37,5 +37,3 @@ PersonDetails.propTypes = {
 PersonDetails.defaultProps = {
   about: [],
 };
-
-export default PersonDetails;

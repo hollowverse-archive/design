@@ -18,7 +18,7 @@ const PageButton = ({ label, active, disabled, onClick }) => (
   </button>
 );
 
-const Pagination = ({ currentPage, totalPages, onChangePage }) => {
+export const Pagination = ({ currentPage, totalPages, onChangePage }) => {
   if (totalPages === 1) {
     return null;
   }
@@ -66,5 +66,3 @@ const Pagination = ({ currentPage, totalPages, onChangePage }) => {
     </div>
   );
 };
-
-export default Pagination;

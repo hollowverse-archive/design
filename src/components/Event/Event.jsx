@@ -4,8 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { uiStrings } from '../../constants';
-import { removeHttp } from '../../shared/utils';
+import { uiStrings } from '../../constants/uiStrings';
+import { removeHttp } from '../../shared/utils/utils';
 import './styles.css';
 
 const EventQuote = ({ quote }) => <div className="event-quote">{quote}</div>;
@@ -14,7 +14,7 @@ const EventMetaLink = ({ url, label = '' }) => (
   <a targe="_blank" href={url}>{`${label}${removeHttp(url)}`}</a>
 );
 
-const Event = props => (
+export const Event = props => (
   <div className={classNames('event', { [props.className]: props.className })}>
     <div className="event-header">
       <div
@@ -53,5 +53,3 @@ Event.defaultProps = {
   quote: undefined,
   person: {},
 };
-
-export default Event;

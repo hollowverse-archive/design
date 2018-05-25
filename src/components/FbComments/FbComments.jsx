@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-export default class FbComments extends Component {
+export class FbComments extends Component {
   componentDidMount() {
     /* eslint-disable no-undef */
     if (global.FB) {

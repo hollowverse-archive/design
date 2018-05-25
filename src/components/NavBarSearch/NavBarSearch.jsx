@@ -4,11 +4,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { paths, data } from '../../constants';
-import { Loader, Link } from '../../components';
+import { paths } from '../../constants/paths';
+import { data } from '../../constants/tempData';
+import { Loader } from '../../components/Loader/Loader';
+import { Link } from '../../components/Link/Link';
 import './styles.css';
 
-export default class NavBarSearch extends Component {
+export class NavBarSearch extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     onKeyDown: PropTypes.func.isRequired,
@@ -31,7 +33,9 @@ export default class NavBarSearch extends Component {
     open: false,
   };
 
-  componentWillReceiveProps(newProps) {
+  /* eslint-disable camelcase */
+  UNSAFE_componentWillReceiveProps(newProps) {
+    /* eslint-enable camelcase */
     const { searchValue } = this.props;
 
     if (!searchValue && newProps.searchValue) {

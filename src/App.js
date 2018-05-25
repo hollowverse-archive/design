@@ -22,7 +22,7 @@ import './shared/styles/index.css';
 })(document, 'script', 'facebook-jssdk');
 /* eslint-enable */
 
-export default class App extends React.Component {
+export class App extends React.Component {
   static defaultProps = defaultState;
 
   static getDerivedStateFromProps(props, state) {

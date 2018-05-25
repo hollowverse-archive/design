@@ -23,10 +23,7 @@ const htmlTemplate = {
 module.exports = {
   devtool: 'eval-source-map',
 
-  entry: [
-    'babel-polyfill',
-    path.resolve(__dirname, 'src/index.js'),
-  ],
+  entry: ['babel-polyfill', path.resolve(__dirname, 'src/index.js')],
 
   output: {
     path: buildPath,
@@ -73,23 +70,27 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png)$/i,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 50000,
-            name: 'assets/images/[name]-[hash:6].[ext]',
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 50000,
+              name: 'assets/images/[name]-[hash:6].[ext]',
+            },
           },
-        }],
+        ],
       },
       {
         test: /\.woff|woff2|otf$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: 'assets/fonts/[name]-[hash:6].[ext]',
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'assets/fonts/[name]-[hash:6].[ext]',
+            },
           },
-        }],
+        ],
       },
     ],
   },
@@ -103,7 +104,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
     modules: [nodeModules],
   },
 

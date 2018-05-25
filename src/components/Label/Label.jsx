@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.css';
 
-const Label = ({ text, compact, dark }) => (
+export const Label = ({ text, compact, dark }) => (
   <div className={classNames('label', { compact, dark })}>{text}</div>
 );
 
@@ -20,5 +20,3 @@ Label.defaultProps = {
   compact: false,
   dark: false,
 };
-
-export default Label;

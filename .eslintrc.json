@@ -4,7 +4,16 @@
     "plugin:react/recommended"
   ],
   "plugins": ["react"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": ".storybook/webpack.config.js"
+      }
+    }
+  },
   "rules": {
-    "react/jsx-filename-extension": [2, { "extensions": [".jsx"] }]
+    "react/jsx-filename-extension": [2, { "extensions": [".jsx"] }],
+    "class-methods-use-this": 0,
+    "react/prop-types": 0
   }
 }

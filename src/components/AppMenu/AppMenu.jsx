@@ -3,14 +3,14 @@
  */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from '../../components';
 import classNames from 'classnames';
-import { paths } from '../../constants';
-import { Consumer } from '../../state';
+import { Link } from '../../components/Link/Link';
+import { paths } from '../../constants/paths';
+import { Consumer } from '../../state/state';
 
 import './styles.css';
 
-export default class AppMenu extends Component {
+export class AppMenu extends Component {
   static propTypes = {
     isOpen: PropTypes.bool.isRequired,
     toggle: PropTypes.func.isRequired,
@@ -35,13 +35,15 @@ export default class AppMenu extends Component {
     window.document.body.style.overflow = this.props.isOpen ? 'hidden' : 'auto';
   }
 
-  componentWillReceiveProps(nextProps) {
+  /* eslint-disable camelcase */
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
       window.document.body.style.overflow = 'hidden';
     } else if (this.props.isOpen && !nextProps.isOpen) {
       window.document.body.style.overflow = 'auto';
     }
   }
+  /* eslint-enable camelCase */
 
   user(user) {
     if (!user) {

@@ -18,7 +18,7 @@ const Footnote = ({ name, sourceName, url, backLink }) => (
   </li>
 );
 
-export default class Footnotes extends Component {
+export class Footnotes extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
   };

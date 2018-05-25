@@ -103,10 +103,10 @@ module.exports = {
   //   // }),
   // ],
 
-  // resolve: {
-  //   extensions: ['.js'],
-  //   modules: [nodeModules],
-  // },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    modules: [nodeModules],
+  },
 
   // devServer: {
   //   hot: true,
