@@ -7,11 +7,8 @@ import './styles.css';
 
 const Search = () => (
   <App isSearchButton>
-    <div className="search-no-results">
-      {'We couldn\'t find anything'}
-    </div>
+    <div className="search-no-results">{"We couldn't find anything"}</div>
   </App>
 );
 
 export default Search;
-

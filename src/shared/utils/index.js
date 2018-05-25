@@ -3,10 +3,9 @@
  */
 import { eventTypes, paths, uiStrings } from '../../constants';
 
-export const removeHttp = url =>
-  url.replace(/(^\w+:|^)\/\//, '');
+export const removeHttp = url => url.replace(/(^\w+:|^)\/\//, '');
 
-export const mapEventTypeToProps = (type) => {
+export const mapEventTypeToProps = type => {
   switch (type) {
     case eventTypes.APPEARANCE:
       return {
@@ -40,4 +39,3 @@ export const uniqueId = (prefix = 'id') => {
   lastUniqueId += 1;
   return `${prefix}${lastUniqueId}`;
 };
-

@@ -9,8 +9,10 @@ export const NOTABLE_PERSON = {
     'Hanks has run the gamut of Chrisian denominations from Mormonism to Catholicism but seems to have settled on Greek Orthodox.',
     'Hanks is a hardcode Democrat and liberal, throwing his weight behind gay marriage, alternatieve energy, environmentalism, and Obama.',
   ],
-  religion: 'Arnold seems non-religious, though he did attend church as a child and has expressed some interest in Buddhism.',
-  political: 'Arnold\'s politics generally revolve around criticisms of Western hegemony, political/economic greed and exploitation and the environment.',
+  religion:
+    'Arnold seems non-religious, though he did attend church as a child and has expressed some interest in Buddhism.',
+  political:
+    "Arnold's politics generally revolve around criticisms of Western hegemony, political/economic greed and exploitation and the environment.",
 };
 
 export const PERSONES = [
@@ -72,7 +74,17 @@ export const PERSONES = [
     id: 'chelsea-handler',
     name: 'Chelsea Handler',
     photoUrl: 'assets/chelsea-handler.jpg',
-    labels: ['Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer', 'Actress', 'Comedian', 'Producer'],
+    labels: [
+      'Actress',
+      'Comedian',
+      'Producer',
+      'Actress',
+      'Comedian',
+      'Producer',
+      'Actress',
+      'Comedian',
+      'Producer',
+    ],
   },
   {
     id: 'rachel-bilson',
@@ -95,7 +107,8 @@ export const DONATIONS = [
     eventName: 'After-School All-Stars',
     eventUrl: 'http://link.com',
     sourceUrl: 'http://link.com',
-    quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
+    quote:
+      'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
     labels: ['donation', 'dream', 'truth'],
   },
   {
@@ -126,7 +139,8 @@ export const DONATIONS = [
     happenedOn: 'Jul 19, 2017',
     eventName: 'Children Affected by AIDS Foundation',
     sourceUrl: 'http://link.com',
-    quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
+    quote:
+      'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
   },
   {
     id: 'f9e3927b1b22175af06b3ee4171ff359',
@@ -147,7 +161,8 @@ export const DONATIONS = [
     id: '7163339794bbd6a1ece775c0e4b2ead3',
     happenedOn: 'Jul 19, 2017',
     eventName: 'Keep Memory Alive',
-    quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
+    quote:
+      'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
   },
   {
     id: '0f82534831cead5308aff75623531573',
@@ -211,7 +226,8 @@ export const APPEARANCES = [
     id: 'f73306d7fca6b0f8e8f426709f5ec632',
     happenedOn: 'Jul 19, 2017',
     eventName: 'Celebrity Fight Night Foundation',
-    quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
+    quote:
+      'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
     sourceName: 'link.com',
     sourceUrl: 'http://link.com',
     labels: ['appearance', 'celebrity', 'fight-night'],
@@ -237,7 +253,8 @@ export const QUOTES = [
   {
     id: 'a3a6a3f7338a1fc810934dae0630681d',
     happenedOn: 'Jul 19, 2017',
-    quote: 'Philosophy is considered a science but it is difficult to stay, whne one has to compare with an ordinary science, for example biology, or chemistry. This is a question that turns into a burning problem among the scientists and linguists all over the world.',
+    quote:
+      'Philosophy is considered a science but it is difficult to stay, whne one has to compare with an ordinary science, for example biology, or chemistry. This is a question that turns into a burning problem among the scientists and linguists all over the world.',
     sourceName: 'link.com',
     sourceUrl: 'http://link.com',
     labels: ['quotes', 'philosophy', 'science'],
@@ -245,7 +262,8 @@ export const QUOTES = [
   {
     id: '1f04756ef7a6f662d0bbb28950efba39',
     happenedOn: 'Jul 12, 2017',
-    quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
+    quote:
+      'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
     sourceName: 'link.com',
     sourceUrl: 'http://link.com',
     labels: ['quotes', 'dream'],
@@ -253,7 +271,8 @@ export const QUOTES = [
   {
     id: '5794c0e0e503192e5dec1f901931e63b',
     happenedOn: 'Jul 10, 2017',
-    quote: 'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
+    quote:
+      'Let us dream of tomorrow here we can truly love the soul, and know love as the ultimate truth at the heart of all creation.',
     sourceName: 'link.com',
     sourceUrl: 'http://link.com',
     labels: ['quotes', 'dream', 'philosophy', 'science'],
@@ -311,21 +330,25 @@ export const ARTICLE_FOOTNOTES = [
     id: '5',
     name: 'An Interview: Thom Yorke on politics, being a dad, and music',
     sourceName: 'The Comment Factory',
-    url: 'http://www.thecommentfactory.com/an-interview-thom-yorke-on-politics-being-a-dad-and-music-659/',
+    url:
+      'http://www.thecommentfactory.com/an-interview-thom-yorke-on-politics-being-a-dad-and-music-659/',
     backLink: '#',
   },
   {
     id: '6',
     name: 'Thom Yorke Quotes',
     sourceName: 'Brainy Quote',
-    url: 'http://www.brainyquote.com/quotes/authors/t/thom_yorke.html?SPvm=1&vm=l',
+    url:
+      'http://www.brainyquote.com/quotes/authors/t/thom_yorke.html?SPvm=1&vm=l',
     backLink: '#',
   },
   {
     id: '7',
-    name: 'Radiohead’s Thom Yorke Threatens To Sue U.K. Prime Minister David Cameron',
+    name:
+      'Radiohead’s Thom Yorke Threatens To Sue U.K. Prime Minister David Cameron',
     sourceName: 'KROQ',
-    url: 'http://kroq.radio.com/2013/01/17/radical-radiohead-frontman-threatens-conservative-u-k-prime-minister/',
+    url:
+      'http://kroq.radio.com/2013/01/17/radical-radiohead-frontman-threatens-conservative-u-k-prime-minister/',
     backLink: '#',
   },
 ];
@@ -335,4 +358,3 @@ export const ARTICLE_META = {
   authorUrl: '#',
   created: 'December 3, 2014',
 };
-

@@ -12,10 +12,7 @@ export default class About extends Component {
 
   render() {
     return (
-      <App
-        isSearchButton
-        isMenuButton
-      >
+      <App isSearchButton isMenuButton>
         <TextPage>
           <h1>About</h1>
           <p>
@@ -32,4 +29,3 @@ export default class About extends Component {
     );
   }
 }
-

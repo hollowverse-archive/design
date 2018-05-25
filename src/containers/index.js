@@ -9,4 +9,3 @@ export { default as NotablePerson } from './NotablePerson';
 export { default as Privacy } from './Privacy';
 export { default as SearchNoResults } from './SearchNoResults';
 export { default as Terms } from './Terms';
-

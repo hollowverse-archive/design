@@ -9,14 +9,9 @@ import { PersonImage } from '../../components';
 import './styles.css';
 
 const PersonCard = ({ name, photoUrl }) => (
-  <Link
-    className="person-card"
-    to={paths.NOTABLE_PERSON}
-  >
+  <Link className="person-card" to={paths.NOTABLE_PERSON}>
     <PersonImage url={photoUrl} />
-    <div className="person-card-name">
-      {name}
-    </div>
+    <div className="person-card-name">{name}</div>
   </Link>
 );
 

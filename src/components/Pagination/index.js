@@ -7,15 +7,14 @@ import './styles.css';
 
 // const DISPLAY_PAGES = 5;
 
-const PageButton = ({
-  label, active, disabled, onClick,
-}) => (
+const PageButton = ({ label, active, disabled, onClick }) => (
   <button
     type="button"
     className={classNames('pagination-button', { active })}
     onClick={onClick}
     disabled={disabled}
-  >{label}
+  >
+    {label}
   </button>
 );
 
@@ -36,8 +35,10 @@ const Pagination = ({ currentPage, totalPages, onChangePage }) => {
       startPage = currentPage - 2;
     }
 
-    return Array.from(Array(5), (item, index) =>
-      ({ id: index, index: startPage + index }));
+    return Array.from(Array(5), (item, index) => ({
+      id: index,
+      index: startPage + index,
+    }));
   };
 
   return (
@@ -48,13 +49,14 @@ const Pagination = ({ currentPage, totalPages, onChangePage }) => {
           disabled={currentPage === 1}
           onClick={() => onChangePage(1)}
         />
-        {getPages().map(page =>
+        {getPages().map(page => (
           <PageButton
             key={page.id}
             label={page.index}
             active={page.index === currentPage}
             onClick={() => onChangePage(page.index)}
-          />)}
+          />
+        ))}
         <PageButton
           label="Last"
           disabled={currentPage === totalPages}

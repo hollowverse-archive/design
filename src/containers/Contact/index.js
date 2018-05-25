@@ -12,10 +12,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <App
-        isSearchButton
-        isMenuButton
-      >
+      <App isSearchButton isMenuButton>
         <TextPage>
           <h1>Contact</h1>
           <p>
@@ -32,4 +29,3 @@ export default class Contact extends Component {
     );
   }
 }
-

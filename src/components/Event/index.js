@@ -8,14 +8,11 @@ import { uiStrings } from '../../constants';
 import { removeHttp } from '../../shared/utils';
 import './styles.css';
 
-const EventQuote = ({ quote }) => (
-  <div className="event-quote">
-    {quote}
-  </div>
-);
+const EventQuote = ({ quote }) => <div className="event-quote">{quote}</div>;
 
-const EventMetaLink = ({ url, label = '' }) =>
-  <a targe="_blank" href={url}>{`${label}${removeHttp(url)}`}</a>;
+const EventMetaLink = ({ url, label = '' }) => (
+  <a targe="_blank" href={url}>{`${label}${removeHttp(url)}`}</a>
+);
 
 const Event = props => (
   <div className={classNames('event', { [props.className]: props.className })}>
@@ -24,28 +21,19 @@ const Event = props => (
         className="event-avatar"
         style={{ backgroundImage: `url(${props.person.photoUrl})` }}
       />
-      <div className="event-person-name">
-        {props.person.name}
-      </div>
+      <div className="event-person-name">{props.person.name}</div>
       <div className="event-meta">
-        <span>
-          {props.happenedOn}
-        </span>
-        {props.eventUrl &&
-        <EventMetaLink url={props.eventUrl} />}
-        {props.sourceUrl &&
-        <EventMetaLink
-          label={`${uiStrings.SOURCE}: `}
-          url={props.sourceUrl}
-        />
-      }
+        <span>{props.happenedOn}</span>
+        {props.eventUrl && <EventMetaLink url={props.eventUrl} />}
+        {props.sourceUrl && (
+          <EventMetaLink
+            label={`${uiStrings.SOURCE}: `}
+            url={props.sourceUrl}
+          />
+        )}
       </div>
     </div>
-    {props.quote &&
-      <EventQuote
-        quote={props.quote}
-      />
-    }
+    {props.quote && <EventQuote quote={props.quote} />}
   </div>
 );
 
@@ -67,4 +55,3 @@ Event.defaultProps = {
 };
 
 export default Event;
-

@@ -20,9 +20,7 @@ const PersonDetails = props => (
       <div className="person-details-caption">
         {uiStrings.RELIGION_POLITICS_AND_IDEAS_OF}
       </div>
-      <div className="person-details-name">
-        {props.name}
-      </div>
+      <div className="person-details-name">{props.name}</div>
       <div className="person-details-about">
         {props.about.map(renderParagraph)}
       </div>
@@ -41,4 +39,3 @@ PersonDetails.defaultProps = {
 };
 
 export default PersonDetails;
-

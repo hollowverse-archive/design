@@ -13,16 +13,19 @@ export default class Events extends Component {
       eventTypes.DONATION,
       eventTypes.QUOTE,
     ]).isRequired,
-  }
+  };
 
   state = {
     isLoading: true,
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
     window.document.title = 'Events | Hollowverse';
-    this.loadingTimeout = setTimeout(this.handleLoaded, (Math.random() * 1000) + 100);
+    this.loadingTimeout = setTimeout(
+      this.handleLoaded,
+      Math.random() * 1000 + 100,
+    );
   }
 
   componentWillUnmount() {
@@ -46,16 +49,16 @@ export default class Events extends Component {
         searchValue={data.NOTABLE_PERSON.name}
         backLink={paths.NOTABLE_PERSON}
       >
-        {this.state.isLoading ?
+        {this.state.isLoading ? (
           <Loader />
-        :
+        ) : (
           <EventGroup
             person={data.NOTABLE_PERSON}
             type={type}
             events={events}
           />
-        }
-      </App>);
+        )}
+      </App>
+    );
   }
 }
-

@@ -4,10 +4,6 @@
 import React from 'react';
 import './styles.css';
 
-const TextPage = ({ children }) => (
-  <div className="text-page">
-    {children}
-  </div>
-);
+const TextPage = ({ children }) => <div className="text-page">{children}</div>;
 
 export default TextPage;
