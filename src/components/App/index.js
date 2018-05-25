@@ -17,17 +17,20 @@ export default class App extends Component {
     backLink: PropTypes.string,
     searchValue: PropTypes.string,
     isSearchButton: PropTypes.bool,
+    isMenuButton: PropTypes.bool,
   };
 
   static defaultProps = {
     backLink: undefined,
     searchValue: '',
     isSearchButton: false,
+    isMenuButton: false,
   };
 
   state = {
     errorMessage: undefined,
     isSearchRedirect: false,
+    isMenuOpen: false,
   };
 
   componentDidCatch() {
@@ -40,9 +43,15 @@ export default class App extends Component {
     this.setState({ isSearchRedirect: true });
   };
 
+  toggleMenu = () => {
+    this.setState(state => ({ isMenuOpen: !state.isMenuOpen }));
+  }
+
   render() {
-    const { backLink, children, searchValue, isSearchButton } = this.props;
-    const { errorMessage, isSearchRedirect } = this.state;
+    const {
+      backLink, children, searchValue, isSearchButton, isMenuButton,
+    } = this.props;
+    const { errorMessage, isSearchRedirect, isMenuOpen } = this.state;
 
     if (isSearchRedirect) {
       return <Link to={paths.SEARCH} />;
@@ -51,9 +60,11 @@ export default class App extends Component {
     return (
       <Fragment>
         <NavBar
-          backLink={backLink}
+          backLink={!isMenuButton ? backLink : undefined}
           searchValue={searchValue}
           isSearchButton={isSearchButton}
+          toggleMenu={isMenuButton && this.toggleMenu}
+          isMenuOpen={isMenuOpen}
           onSearch={this.handleSearch}
         />
         <div className="app-view">

@@ -3,14 +3,7 @@
  */
 import React, { Component, Fragment } from 'react';
 import { data } from '../../constants';
-import {
-  App,
-  Footer,
-  PersonesLoading,
-  PersonCard,
-  Pagination,
-} from '../../components';
-
+import { App, PersonesLoading, PersonCard, Pagination } from '../../components';
 import './styles.css';
 
 const PERSONES = [
@@ -52,14 +45,18 @@ export default class Home extends Component {
     return (
       <Fragment>
         <div className="home-persones">
-          {PERSONES.map(person => <PersonCard key={person.id} {...person} />)}
+          {PERSONES.map(person =>
+            <PersonCard
+              key={person.id}
+              {...person}
+            />)
+          }
         </div>
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onChangePage={this.handleChangePage}
         />
-        <Footer />
       </Fragment>
     );
   }
@@ -69,6 +66,13 @@ export default class Home extends Component {
   handleChangePage = currentPage => this.setState({ currentPage });
 
   render() {
-    return <App isSearchButton>{this.home}</App>;
+    return (
+      <App
+        isSearchButton
+        isMenuButton
+      >
+        {this.home}
+      </App>
+    );
   }
 }

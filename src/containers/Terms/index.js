@@ -2,7 +2,7 @@
  * Terms container
  */
 import React, { Component } from 'react';
-import { App, TextPage, Footer } from '../../components';
+import { App, TextPage } from '../../components';
 
 export default class Privacy extends Component {
   componentDidMount() {
@@ -12,7 +12,10 @@ export default class Privacy extends Component {
 
   render() {
     return (
-      <App isSearchButton>
+      <App
+        isSearchButton
+        isMenuButton
+      >
         <TextPage>
           <h1>Terms of Service</h1>
           <h2>1. Terms</h2>
@@ -101,7 +104,6 @@ export default class Privacy extends Component {
           </p>
           <p>General Terms and Conditions applicable to Use of a Web Site.</p>
         </TextPage>
-        <Footer />
       </App>
     );
   }

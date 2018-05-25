@@ -38,6 +38,8 @@
 
   &-btn {
     position: absolute;
+    z-index: 1;
+    top: 0;
     width: $navbar-height;
     height: $navbar-height;
     border-radius: 0;
