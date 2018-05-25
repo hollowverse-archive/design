@@ -21,7 +21,7 @@ export default class NavBar extends Component {
   static defaultProps = {
     backLink: undefined,
     searchValue: undefined,
-    onSearch: () => { },
+    onSearch: () => {},
     isSearchButton: false,
     toggleMenu: undefined,
     isMenuOpen: false,
@@ -80,25 +80,18 @@ export default class NavBar extends Component {
   };
 
   render() {
-    const {
-      backLink, isSearchButton, toggleMenu, isMenuOpen,
-    } = this.props;
-    const {
-      anim, isSearch, searchValue, isSearchAutoFocus,
-    } = this.state;
+    const { backLink, isSearchButton, toggleMenu, isMenuOpen } = this.props;
+    const { anim, isSearch, searchValue, isSearchAutoFocus } = this.state;
 
     return (
       <Fragment>
         <div className="navbar">
           <div className="navbar-inner">
-            {!toggleMenu && backLink &&
-              <Link
-                type="button"
-                className="navbar-btn back"
-                to={backLink}
-              />
-            }
-            {!!toggleMenu &&
+            {!toggleMenu &&
+              backLink && (
+                <Link type="button" className="navbar-btn back" to={backLink} />
+              )}
+            {!!toggleMenu && (
               <button
                 type="button"
                 className="navbar-btn menu"
@@ -106,14 +99,9 @@ export default class NavBar extends Component {
                 aria-label="Open menu"
                 onClick={toggleMenu}
               />
-            }
-            <AppMenu
-              isOpen={isMenuOpen}
-              toggle={toggleMenu}
-              userName="Chelsea Handler"
-              userAvatar="assets/chelsea-handler.jpg"
-            />
-            {isSearch ?
+            )}
+            <AppMenu isOpen={isMenuOpen} toggle={toggleMenu} />
+            {isSearch ? (
               <NavBarSearch
                 anim={anim}
                 margins={!!backLink || !!toggleMenu}
@@ -123,23 +111,23 @@ export default class NavBar extends Component {
                 onKeyDown={this.handleSearchKeyDown}
                 onBlur={this.handleScroll}
               />
-              :
+            ) : (
               <Link
                 to={paths.HOME}
                 className={classNames('navbar-logo', { anim })}
               />
-
-            }
-            {!isSearch && isSearchButton &&
-              <button
-                type="button"
-                className={classNames('navbar-btn search', { anim })}
-                onClick={this.handleSearchButtonClick}
-              />
-            }
+            )}
+            {!isSearch &&
+              isSearchButton && (
+                <button
+                  type="button"
+                  className={classNames('navbar-btn search', { anim })}
+                  onClick={this.handleSearchButtonClick}
+                />
+              )}
           </div>
         </div>
-      </Fragment >
+      </Fragment>
     );
   }
 }

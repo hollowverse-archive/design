@@ -31,7 +31,6 @@ export default class App extends Component {
   state = {
     errorMessage: undefined,
     isSearchRedirect: false,
-    isMenuOpen: false,
   };
 
   componentDidCatch() {
@@ -44,13 +43,13 @@ export default class App extends Component {
     this.setState({ isSearchRedirect: true });
   };
 
-  toggleMenu = () => {
-    this.setState(state => ({ isMenuOpen: !state.isMenuOpen }));
-  }
-
   render() {
     const {
-      backLink, children, searchValue, isSearchButton, isMenuButton,
+      backLink,
+      children,
+      searchValue,
+      isSearchButton,
+      isMenuButton,
     } = this.props;
     const { errorMessage, isSearchRedirect, isMenuOpen } = this.state;
 
@@ -59,27 +58,32 @@ export default class App extends Component {
     }
 
     return (
-      <Fragment>
-        <NavBar
-          backLink={!isMenuButton ? backLink : undefined}
-          searchValue={searchValue}
-          isSearchButton={isSearchButton}
-          toggleMenu={isMenuButton && this.toggleMenu}
-          isMenuOpen={isMenuOpen}
-          onSearch={this.handleSearch}
-        />
-        <div className="app-view">
-          {!errorMessage ? (
-            children
-          ) : (
-            <ErrorMessage
-              message={errorMessage}
-              action={() => window.location.reload()}
-              actionLabel="Reload the Page"
-            />
-          )}
-        </div>
-      </Fragment>
+      <Consumer>
+        {({ state: { isMenuOpen }, actions: { toggleMenu } }) => {
+          return (
+            <Fragment>
+              <NavBar
+                searchValue={searchValue}
+                isSearchButton={isSearchButton}
+                toggleMenu={toggleMenu}
+                isMenuOpen={isMenuOpen}
+                onSearch={this.handleSearch}
+              />
+              <div className="app-view">
+                {!errorMessage ? (
+                  children
+                ) : (
+                  <ErrorMessage
+                    message={errorMessage}
+                    action={() => window.location.reload()}
+                    actionLabel="Reload the Page"
+                  />
+                )}
+              </div>
+            </Fragment>
+          );
+        }}
+      </Consumer>
     );
   }
 }

@@ -13,4 +13,6 @@ storiesOf('Notable Person', module)
 
 storiesOf('Main Menu', module)
   .add('Default', () => <App path="/person" isMenuOpen={true} />)
-  .add('Logged out', () => <App path="/person" isMenuOpen={true} />);
+  .add('Logged out', () => (
+    <App path="/person" isMenuOpen={true} user={null} />
+  ));

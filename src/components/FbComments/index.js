@@ -7,8 +7,8 @@ import './styles.css';
 export default class FbComments extends Component {
   componentDidMount() {
     /* eslint-disable no-undef */
-    if (FB) {
-      FB.XFBML.parse(document.getElementById('hv-root'));
+    if (global.FB) {
+      global.FB.XFBML.parse(document.getElementById('hv-root'));
     }
     /* eslint-enable no-undef */
   }

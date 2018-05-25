@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import { Link } from '../../components';
 import classNames from 'classnames';
 import { paths } from '../../constants';
+import { Consumer } from '../../state';
+
 import './styles.css';
 
 export default class AppMenu extends Component {
@@ -16,18 +18,18 @@ export default class AppMenu extends Component {
     onLogout: PropTypes.func,
     userName: PropTypes.string,
     userAvatar: PropTypes.string,
-  }
+  };
 
   static defaultProps = {
     onLogin: undefined,
     onLogout: undefined,
     userName: undefined,
     userAvatar: undefined,
-  }
+  };
 
   state = {
     isClosing: false,
-  }
+  };
 
   componentDidMount() {
     window.document.body.style.overflow = this.props.isOpen ? 'hidden' : 'auto';
@@ -41,12 +43,8 @@ export default class AppMenu extends Component {
     }
   }
 
-  get user() {
-    const {
-      userName, userAvatar,
-    } = this.props;
-
-    if (!userName) {
+  user(user) {
+    if (!user) {
       return undefined;
     }
 
@@ -54,37 +52,28 @@ export default class AppMenu extends Component {
       <Fragment>
         <div
           className="app-menu-user-avatar"
-          style={{ backgroundImage: userAvatar ? `url(${userAvatar})` : undefined }}
+          style={{
+            backgroundImage: user.avatar ? `url(${user.avatar})` : undefined,
+          }}
         />
-        <div className="app-menu-user-name">
-          {userName}
-        </div>
+        <div className="app-menu-user-name">{user.name}</div>
       </Fragment>
     );
   }
 
-  get menuLinks() {
-    const { userName, onLogout, onLogin } = this.props;
-    const isLoggedIn = !!userName;
+  menuLinks(user) {
+    const { onLogout, onLogin } = this.props;
+    const isLoggedIn = !!user;
 
     return (
       <div className="app-menu-links">
-        <Link
-          to={paths.HOME}
-          className="app-menu-link"
-        >
+        <Link to={paths.HOME} className="app-menu-link">
           Home
         </Link>
-        <Link
-          to={paths.ABOUT}
-          className="app-menu-link"
-        >
+        <Link to={paths.ABOUT} className="app-menu-link">
           About
         </Link>
-        <Link
-          to={paths.CONTACT}
-          className="app-menu-link"
-        >
+        <Link to={paths.CONTACT} className="app-menu-link">
           Contact
         </Link>
         <div className="separator" />
@@ -110,7 +99,7 @@ export default class AppMenu extends Component {
   closeAndRemove = () => {
     this.setState({ isClosing: false });
     this.props.toggle();
-  }
+  };
 
   handleClose = () => {
     if (this.state.isClosing) {
@@ -120,7 +109,7 @@ export default class AppMenu extends Component {
     this.setState({ isClosing: true }, () => {
       setTimeout(this.closeAndRemove, 200);
     });
-  }
+  };
 
   render() {
     const { isClosing } = this.state;
@@ -131,43 +120,41 @@ export default class AppMenu extends Component {
     }
 
     return (
-      <div className={classNames('app-menu', { closing: isClosing })}>
-        <button
-          type="button"
-          title="Close menu"
-          aria-label="Close menu"
-          className="app-menu-fade"
-          onClick={this.handleClose}
-        />
-        <div className="app-menu-body">
-          <button
-            type="button"
-            title="Close menu"
-            aria-label="Close menu"
-            className="app-menu-close"
-            onClick={this.handleClose}
-          />
-          {this.user}
-          {this.menuLinks}
-          <div className="app-menu-footer">
-            <Link
-              to={paths.PRIVACY_POLICY}
-              className="app-menu-link"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to={paths.TERMS_OF_SERVICE}
-              className="app-menu-link"
-            >
-              Terms of Service
-            </Link>
-            <div className="app-menu-copy">
-              &copy; 2018 Hollowverse
+      <Consumer>
+        {({ state: { user } }) => {
+          return (
+            <div className={classNames('app-menu', { closing: isClosing })}>
+              <button
+                type="button"
+                title="Close menu"
+                aria-label="Close menu"
+                className="app-menu-fade"
+                onClick={this.handleClose}
+              />
+              <div className="app-menu-body">
+                <button
+                  type="button"
+                  title="Close menu"
+                  aria-label="Close menu"
+                  className="app-menu-close"
+                  onClick={this.handleClose}
+                />
+                {this.user(user)}
+                {this.menuLinks(user)}
+                <div className="app-menu-footer">
+                  <Link to={paths.PRIVACY_POLICY} className="app-menu-link">
+                    Privacy Policy
+                  </Link>
+                  <Link to={paths.TERMS_OF_SERVICE} className="app-menu-link">
+                    Terms of Service
+                  </Link>
+                  <div className="app-menu-copy">&copy; 2018 Hollowverse</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
+          );
+        }}
+      </Consumer>
     );
   }
 }

@@ -28,6 +28,10 @@ export default class App extends React.Component {
     showNotablePersonImage: true,
     withLoading: false,
     isMenuOpen: false,
+    user: {
+      name: 'Chelsea Handler',
+      avatar: 'assets/chelsea-handler.jpg',
+    },
   };
 
   static getDerivedStateFromProps(props, state) {
