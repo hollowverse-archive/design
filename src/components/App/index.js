@@ -3,11 +3,9 @@
  */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 import { paths } from '../../constants';
-import { NavBar, ErrorMessage } from '../../components';
+import { NavBar, ErrorMessage, Link } from '../../components';
 
-import '../../shared/styles/index.css';
 import './styles.css';
 
 export default class App extends Component {
@@ -47,7 +45,7 @@ export default class App extends Component {
     const { errorMessage, isSearchRedirect } = this.state;
 
     if (isSearchRedirect) {
-      return <Redirect to={paths.SEARCH} />;
+      return <Link to={paths.SEARCH} />;
     }
 
     return (
