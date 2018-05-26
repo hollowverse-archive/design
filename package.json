@@ -12,7 +12,8 @@
     "common-check": "run-p -c --aggregate-output 'clown check' check-integrity lint",
     "check-integrity": "yarn check --integrity",
     "eslint": "eslint . --config .eslintrc.json --ext .js --ext .jsx",
-    "lint": "yarn eslint"
+    "lint": "yarn eslint",
+    "build": "build-storybook -s ./public -c .storybook -o dist"
   },
   "repository": {
     "type": "git",
