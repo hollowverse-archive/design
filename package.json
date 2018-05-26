@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --progress",
-    "storybook": "start-storybook -p 9001 -s ./public -c .storybook",
+    "storybook": "start-storybook -p 8080 -s ./public -c .storybook -h 0.0.0.0",
     "clown": "clown",
     "pre-push": "yarn common-check",
     "pre-commit": "yarn common-check",
