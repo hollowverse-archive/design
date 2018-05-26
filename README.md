@@ -1,4 +1,4 @@
-# Hollowverse Design
+# Hollowverse Design [![Build Status](https://travis-ci.org/hollowverse/design.svg?branch=master)](https://travis-ci.org/hollowverse/design)
 
 This repo contains the UI/UX of Hollowverse, which is showcased at
 [https://hollowverse.github.io/design](https://hollowverse.github.io/design).
