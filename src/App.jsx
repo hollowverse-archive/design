@@ -6,7 +6,10 @@ import { defaultsDeep } from 'lodash';
 
 import { Home } from './containers/Home/Home';
 import { NotablePerson } from './containers/NotablePerson/NotablePerson';
+import { About } from './containers/About/About';
+import { Contact } from './containers/Contact/Contact';
 import { Provider, defaultState, createActions } from './state/state';
+import * as paths from './constants/paths';
 
 import './shared/styles/index.css';
 
@@ -34,13 +37,18 @@ export class App extends React.Component {
   renderPath = () => {
     const { path } = this.state;
 
-    if (path === '/') {
-      return <Home />;
-    } else if (path === '/person') {
-      return <NotablePerson />;
+    switch (path) {
+      case paths.HOME:
+        return <Home />;
+      case paths.NOTABLE_PERSON:
+        return <NotablePerson />;
+      case paths.ABOUT:
+        return <About />;
+      case paths.CONTACT:
+        return <Contact />;
+      default:
+        return '🕷🐛🐜🐞';
     }
-
-    return '🕷🐛🐜🐞';
   };
 
   render() {

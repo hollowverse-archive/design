@@ -22,7 +22,8 @@ export class Contact extends Component {
             interesting topics and I hope I can get you talking about them!
           </p>
           <p>
-            Email me at <a href="mailto:msafi@msafi.com">msafi@msafi.com</a> if
+            Email me at{' '}
+            <a href="mailto:hello@hollowverse.com">hello@hollowverse.com</a> if
             you’d like to discuss anything.
           </p>
         </TextPage>
