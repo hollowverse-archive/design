@@ -1,13 +1,26 @@
-# Hollowverse Design
+# Hollowverse Design [![Build Status](https://travis-ci.org/hollowverse/design.svg?branch=master)](https://travis-ci.org/hollowverse/design)
 
-This repo contains the UI and UX of Hollowverse, delivered by the designer in HTML, CSS, and JavaScript. The actual implementation on Hollowverse.com, which is found in [hollowverse/hollowverse](https://github.com/hollowverse/hollowverse), may deviate from the UI and UX in this repo.
+This repo contains the UI/UX of Hollowverse, which is showcased at
+[https://hollowverse.github.io/design/](https://hollowverse.github.io/design/).
 
-## How to run this repo
+While many teams use images to communicate UI/UX, we prefer to have UI/UX communicated through
+code authored in React, JavaScript, and CSS. That code lives in this repo.
 
-1. Clone it, and `cd` into it
-1. Install dependencies `yarn install`
-1. Run development server on `http://localhost:8080` using `yarn start`
+The actual front-end production code of hollowverse.com lives in
+[hollowverse/hollowverse](https://github.com/hollowverse/hollowverse), and it may produce somewhat
+different results from what is in this repo.
+
+## Contributing to Hollowverse UI/UX
+
+We use [Storybook](https://github.com/storybooks/storybook) to showcase Hollowverse UI/UX.
+
+To run Hollowverse Storybook locally, follow these steps:
+
+1.  Clone this repo, and `cd` into it
+1.  Install dependencies `yarn install`
+1.  Run `yarn start`
+1.  Open `http://0.0.0.0:8080/`
 
 ---
 
-[If you'd like to tell us something, or need help with anything...](https://github.com/hollowverse/hollowverse/wiki/Help)
+[If you need help or wanna get in touch...](https://github.com/hollowverse/hollowverse/wiki/Help)

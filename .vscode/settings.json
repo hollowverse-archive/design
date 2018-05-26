@@ -1,3 +1,33 @@
 {
-  "editor.formatOnSave": false
+  "cSpell.words": [
+    "hollowverse",
+    "loglevel",
+    "promisify",
+    "webpagetest",
+    "unhandledrejection"
+  ],
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "**/.babelrc": "jsonc",
+    "**/.babelrc.json": "jsonc",
+    "**/tslint.json": "jsonc",
+    "**/tsconfig.json": "jsonc",
+    "**/.eslintrc.json": "jsonc",
+    "**/.stylelintrc": "json"
+  },
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.exclude": {
+    "**/node_modules/**": true
+  },
+  "eslint.options": {
+    "reportUnusedDisableDirectives": true
+  },
+  "css.validate": false,
+  "scss.validate": false
 }
