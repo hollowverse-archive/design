@@ -6,6 +6,7 @@ import {
 } from '@storybook/addon-viewport';
 
 configureViewport({
+  defaultViewport: 'iphone6',
   viewports: {
     iphone6: INITIAL_VIEWPORTS.iphone6,
     responsive: INITIAL_VIEWPORTS.responsive,
@@ -14,7 +15,6 @@ configureViewport({
 
 function loadStories() {
   require('../stories/index.js');
-  // You can require as many stories as you need.
 }
 
 configure(loadStories, module);
