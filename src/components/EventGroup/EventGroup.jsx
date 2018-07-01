@@ -37,11 +37,6 @@ export const EventGroup = props => {
           {...event}
         />
       ))}
-      {props.limit && (
-        <Link to={eventProps.path} className="event-group-more">
-          See more
-        </Link>
-      )}
     </div>
   );
 };

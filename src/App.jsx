@@ -48,10 +48,6 @@ export class App extends React.Component {
         return <About />;
       case paths.CONTACT:
         return <Contact />;
-      case paths.EVENTS_APPEARANCES:
-        return <Events type={eventTypes.APPEARANCES} />;
-      case paths.EVENTS_DONATIONS:
-        return <Events type={eventTypes.DONATION} />;
       case paths.EVENTS_QUOTES:
         return <Events type={eventTypes.QUOTE} />;
       default:
