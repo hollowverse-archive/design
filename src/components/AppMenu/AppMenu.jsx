@@ -144,7 +144,6 @@ export class AppMenu extends Component {
                   <Link to={paths.PRIVACY_POLICY} className="app-menu-link">
                     Privacy Policy
                   </Link>
-                  <div className="app-menu-copy">&copy; 2018 Hollowverse</div>
                 </div>
               </div>
             </div>
