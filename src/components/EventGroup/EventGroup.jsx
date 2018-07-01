@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { mapEventTypeToProps } from '../../shared/utils/utils';
-import { uiStrings } from '../../constants/uiStrings';
 import { Event } from '../../components/Event/Event';
 import { Link } from '../../components/Link/Link';
 import './styles.css';
@@ -38,11 +37,6 @@ export const EventGroup = props => {
           {...event}
         />
       ))}
-      {props.limit && (
-        <Link to={eventProps.path} className="event-group-more">
-          {uiStrings.SEE_MORE}
-        </Link>
-      )}
     </div>
   );
 };

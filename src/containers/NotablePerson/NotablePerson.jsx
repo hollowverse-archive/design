@@ -9,9 +9,11 @@ import { PersonLoading } from '../../components/PersonLoading/PersonLoading';
 import { PersonesOther } from '../../components/PersonesOther/PersonesOther';
 import { PersonDetails } from '../../components/PersonDetails/PersonDetails';
 import { FbComments } from '../../components/FbComments/FbComments';
+import { EventGroup } from '../../components/EventGroup/EventGroup';
 import { Footnotes } from '../../components/Footnotes/Footnotes';
 import { Section } from '../../components/Section/Section';
 import { Separator } from '../../components/Separator/Separator';
+import * as eventTypes from '../../constants/eventTypes';
 
 const OldContent = () => (
   <Fragment>
@@ -48,7 +50,7 @@ export class NotablePerson extends Component {
   render() {
     return (
       <Consumer>
-        {({ state: { showNotablePersonImage, withLoading } }) => (
+        {({ state: { showNotablePersonImage, withLoading, hasQuotes } }) => (
           <App searchValue={data.NOTABLE_PERSON.name} isMenuButton>
             {this.state.isLoading && withLoading ? (
               <PersonLoading />
@@ -60,6 +62,16 @@ export class NotablePerson extends Component {
                     showNotablePersonImage ? data.NOTABLE_PERSON.photoUrl : null
                   }
                 />
+                {hasQuotes && (
+                  <Fragment>
+                    <EventGroup
+                      limit
+                      person={data.NOTABLE_PERSON}
+                      type={eventTypes.QUOTE}
+                      events={data.QUOTES.slice(0, 3)}
+                    />
+                  </Fragment>
+                )}
                 <Section>
                   <OldContent />
                 </Section>

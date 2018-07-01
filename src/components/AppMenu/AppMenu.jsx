@@ -72,9 +72,6 @@ export class AppMenu extends Component {
         <Link to={paths.HOME} className="app-menu-link">
           Home
         </Link>
-        <Link to={paths.ABOUT} className="app-menu-link">
-          About
-        </Link>
         <Link to={paths.CONTACT} className="app-menu-link">
           Contact
         </Link>
@@ -147,10 +144,6 @@ export class AppMenu extends Component {
                   <Link to={paths.PRIVACY_POLICY} className="app-menu-link">
                     Privacy Policy
                   </Link>
-                  <Link to={paths.TERMS_OF_SERVICE} className="app-menu-link">
-                    Terms of Service
-                  </Link>
-                  <div className="app-menu-copy">&copy; 2018 Hollowverse</div>
                 </div>
               </div>
             </div>

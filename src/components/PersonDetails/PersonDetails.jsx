@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as uiStrings from '../../constants/uiStrings';
 import { PersonImage } from '../../components/PersonImage/PersonImage';
 import './styles.css';
 
@@ -18,7 +17,7 @@ export const PersonDetails = props => (
     <div className="person-details-inner">
       <PersonImage big url={props.photoUrl} />
       <div className="person-details-caption">
-        {uiStrings.RELIGION_POLITICS_AND_IDEAS_OF}
+        Religion, politics and ideas of
       </div>
       <div className="person-details-name">{props.name}</div>
       <div className="person-details-about">

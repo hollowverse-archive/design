@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "yarn storybook",
-    "storybook": "start-storybook -p 8080 -s ./public -c .storybook -h 0.0.0.0",
+    "storybook": "start-storybook -p 8081 -s ./public -c .storybook -h 0.0.0.0",
     "clown": "clown",
     "pre-push": "yarn common-check",
     "pre-commit": "yarn common-check",
