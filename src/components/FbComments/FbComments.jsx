@@ -6,10 +6,10 @@ import './styles.css';
 
 export class FbComments extends Component {
   componentDidMount() {
-    /* eslint-disable no-undef */
-    if (global.FB) {
-      global.FB.XFBML.parse(document.getElementById('hv-root'));
-    }
+    // /* eslint-disable no-undef */
+    // if (global.FB) {
+    //   global.FB.XFBML.parse(document.getElementById('hv-root'));
+    // }
     /* eslint-enable no-undef */
   }
 

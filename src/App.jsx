@@ -6,10 +6,12 @@ import { defaultsDeep } from 'lodash';
 
 import { Home } from './containers/Home/Home';
 import { NotablePerson } from './containers/NotablePerson/NotablePerson';
+import { Events } from './containers/Events/Events';
 import { About } from './containers/About/About';
 import { Contact } from './containers/Contact/Contact';
 import { Provider, defaultState, createActions } from './state/state';
 import * as paths from './constants/paths';
+import * as eventTypes from './constants/eventTypes';
 
 import './shared/styles/index.css';
 
@@ -46,6 +48,12 @@ export class App extends React.Component {
         return <About />;
       case paths.CONTACT:
         return <Contact />;
+      case paths.EVENTS_APPEARANCES:
+        return <Events type={eventTypes.APPEARANCES} />;
+      case paths.EVENTS_DONATIONS:
+        return <Events type={eventTypes.DONATION} />;
+      case paths.EVENTS_QUOTES:
+        return <Events type={eventTypes.QUOTE} />;
       default:
         return '🕷🐛🐜🐞';
     }

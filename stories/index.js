@@ -14,6 +14,9 @@ storiesOf('Notable Person', module)
   ))
   .add('With loading animation', () => (
     <App path={paths.NOTABLE_PERSON} withLoading={true} />
+  ))
+  .add('With quotes', () => (
+    <App path={paths.NOTABLE_PERSON} hasQuotes={true} withLoading={true} />
   ));
 
 storiesOf('Main Menu', module)

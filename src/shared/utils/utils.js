@@ -1,9 +1,8 @@
 /**
  * Utils
  */
-import { eventTypes } from '../../constants/eventTypes';
+import * as eventTypes from '../../constants/eventTypes';
 import * as paths from '../../constants/paths';
-import { uiStrings } from '../../constants/uiStrings';
 
 export const removeHttp = url => url.replace(/(^\w+:|^)\/\//, '');
 
@@ -12,21 +11,21 @@ export const mapEventTypeToProps = type => {
     case eventTypes.APPEARANCE:
       return {
         path: paths.EVENTS_APPEARANCES,
-        name: uiStrings.APPEARANCES,
+        name: 'Appearances',
         className: 'event-type-appearance',
       };
 
     case eventTypes.DONATION:
       return {
         path: paths.EVENTS_DONATIONS,
-        name: uiStrings.DONTAIONS,
+        name: 'Donations',
         className: 'event-type-donation',
       };
 
     case eventTypes.QUOTE:
       return {
         path: paths.EVENTS_QUOTES,
-        name: uiStrings.QUOTES,
+        name: 'Quotes',
         className: 'event-type-quote',
       };
 

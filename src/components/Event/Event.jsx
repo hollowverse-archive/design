@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { uiStrings } from '../../constants/uiStrings';
 import { removeHttp } from '../../shared/utils/utils';
 import './styles.css';
 
@@ -26,10 +25,7 @@ export const Event = props => (
         <span>{props.happenedOn}</span>
         {props.eventUrl && <EventMetaLink url={props.eventUrl} />}
         {props.sourceUrl && (
-          <EventMetaLink
-            label={`${uiStrings.SOURCE}: `}
-            url={props.sourceUrl}
-          />
+          <EventMetaLink label="Source: " url={props.sourceUrl} />
         )}
       </div>
     </div>

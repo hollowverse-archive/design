@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { eventTypes } from '../../constants/eventTypes';
+import * as eventTypes from '../../constants/eventTypes';
 import * as data from '../../constants/tempData';
 import * as paths from '../../constants/paths';
 import { App } from '../../components/App/App';
