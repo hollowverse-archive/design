@@ -28,8 +28,10 @@
     position: relative;
     width: calc(100% - 40px);
     max-width: calc($page-max-width - 40px);
+    max-height: calc(100% - 40px);
     margin: auto;
     overflow: hidden;
+    overflow: scroll;
     padding: 20px;
     border-radius: 3px;
     background-color: white;

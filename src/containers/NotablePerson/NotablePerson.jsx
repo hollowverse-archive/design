@@ -15,6 +15,8 @@ import { Section } from '../../components/Section/Section';
 import { Separator } from '../../components/Separator/Separator';
 import { FloatButton } from '../../components/FloatButton/FloatButton';
 import { Modal } from '../../components/Modal/Modal';
+import { TextField } from '../../components/TextField/TextField';
+import { Button } from '../../components/Button/Button';
 import * as eventTypes from '../../constants/eventTypes';
 
 const OldContent = () => (
@@ -34,7 +36,8 @@ const OldContent = () => (
 export class NotablePerson extends Component {
   state = {
     isLoading: true,
-    isModalAddQuote: false,
+    isModal: false,
+    quote: '',
   };
 
   componentDidMount() {
@@ -49,8 +52,22 @@ export class NotablePerson extends Component {
   }
 
   get modalAddQuote() {
-    return <Modal onClose={() => this.setState({ isModalAddQuote: false })} />;
+    return (
+      <Modal onClose={this.toggleModal}>
+        <Fragment>
+          <TextField
+            autoFocus
+            label="Enter Quote"
+            value={this.state.quote}
+            onChange={quote => this.setState({ quote })}
+          />
+          <Button label="Submit Quote" onClick={this.toggleModal} />
+        </Fragment>
+      </Modal>
+    );
   }
+
+  toggleModal = () => this.setState(state => ({ isModal: !state.isModal }));
 
   handleLoaded = () => this.setState({ isLoading: false });
 
@@ -87,9 +104,9 @@ export class NotablePerson extends Component {
                 <FloatButton
                   label="Add quote"
                   className="add-quote"
-                  onClick={() => this.setState({ isModalAddQuote: true })}
+                  onClick={this.toggleModal}
                 />
-                {this.state.isModalAddQuote && this.modalAddQuote}
+                {this.state.isModal && this.modalAddQuote}
               </Fragment>
             )}
           </App>

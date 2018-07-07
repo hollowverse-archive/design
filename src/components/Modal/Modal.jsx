@@ -38,7 +38,7 @@ export class Modal extends Component {
           aria-label="Close"
           className="modal-bg"
         />
-        <div className="modal-body">{this.props.content}</div>
+        <div className="modal-body">{this.props.children}</div>
       </div>
     );
   }
