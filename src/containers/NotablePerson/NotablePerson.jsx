@@ -11,6 +11,7 @@ import { PersonDetails } from '../../components/PersonDetails/PersonDetails';
 import { FbComments } from '../../components/FbComments/FbComments';
 import { EventGroup } from '../../components/EventGroup/EventGroup';
 import { Footnotes } from '../../components/Footnotes/Footnotes';
+import { FloatButton } from '../../components/FloatButton/FloatButton';
 import { Section } from '../../components/Section/Section';
 import { Separator } from '../../components/Separator/Separator';
 import * as eventTypes from '../../constants/eventTypes';
@@ -77,6 +78,11 @@ export class NotablePerson extends Component {
                 </Section>
                 <PersonesOther />
                 <FbComments />
+                <FloatButton
+                  label="Add quote"
+                  className="add-quote"
+                  onClick={() => console.log('Click')}
+                />
               </Fragment>
             )}
           </App>
