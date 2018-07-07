@@ -1,0 +1,39 @@
+/**
+ * FloatButton Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.float-button {
+  z-index: 1000;
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  right: 16px;
+  bottom: 16px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: $color-blue;
+  text-indent: -1000px;
+  overflow: hidden;
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 0.27s cubic-bezier(0, 0, 0.2, 1) 0ms;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2),
+      0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2),
+      0 8px 10px -1px rgba(0, 0, 0, 0.14), 0 3px 5px -2px rgba(0, 0, 0, 0.12);
+  }
+
+  &.add-quote {
+    background-image: url('../../shared/assets/icn-add-quote.svg');
+  }
+}

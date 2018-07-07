@@ -13,6 +13,10 @@ import { EventGroup } from '../../components/EventGroup/EventGroup';
 import { Footnotes } from '../../components/Footnotes/Footnotes';
 import { Section } from '../../components/Section/Section';
 import { Separator } from '../../components/Separator/Separator';
+import { FloatButton } from '../../components/FloatButton/FloatButton';
+import { Modal } from '../../components/Modal/Modal';
+import { TextField } from '../../components/TextField/TextField';
+import { Button } from '../../components/Button/Button';
 import * as eventTypes from '../../constants/eventTypes';
 
 const OldContent = () => (
@@ -32,6 +36,8 @@ const OldContent = () => (
 export class NotablePerson extends Component {
   state = {
     isLoading: true,
+    isModal: false,
+    quote: '',
   };
 
   componentDidMount() {
@@ -44,6 +50,24 @@ export class NotablePerson extends Component {
   componentWillUnmount() {
     clearTimeout(this.loadingTimeout);
   }
+
+  get modalAddQuote() {
+    return (
+      <Modal onClose={this.toggleModal}>
+        <Fragment>
+          <TextField
+            autoFocus
+            label="Enter Quote"
+            value={this.state.quote}
+            onChange={quote => this.setState({ quote })}
+          />
+          <Button label="Submit Quote" onClick={this.toggleModal} />
+        </Fragment>
+      </Modal>
+    );
+  }
+
+  toggleModal = () => this.setState(state => ({ isModal: !state.isModal }));
 
   handleLoaded = () => this.setState({ isLoading: false });
 
@@ -77,6 +101,12 @@ export class NotablePerson extends Component {
                 </Section>
                 <PersonesOther />
                 <FbComments />
+                <FloatButton
+                  label="Add quote"
+                  className="add-quote"
+                  onClick={this.toggleModal}
+                />
+                {this.state.isModal && this.modalAddQuote}
               </Fragment>
             )}
           </App>

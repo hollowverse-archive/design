@@ -1,0 +1,26 @@
+/**
+ * TextField Styles
+ */
+@import '../../shared/styles/variables.css';
+
+.text-field {
+  margin: 10px 0 20px;
+
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    border-radius: 3px;
+    border: 1px solid $color-border-light;
+
+    &:focus {
+      border-color: $color-blue;
+    }
+  }
+}
