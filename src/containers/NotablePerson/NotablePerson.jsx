@@ -11,9 +11,10 @@ import { PersonDetails } from '../../components/PersonDetails/PersonDetails';
 import { FbComments } from '../../components/FbComments/FbComments';
 import { EventGroup } from '../../components/EventGroup/EventGroup';
 import { Footnotes } from '../../components/Footnotes/Footnotes';
-import { FloatButton } from '../../components/FloatButton/FloatButton';
 import { Section } from '../../components/Section/Section';
 import { Separator } from '../../components/Separator/Separator';
+import { FloatButton } from '../../components/FloatButton/FloatButton';
+import { Modal } from '../../components/Modal/Modal';
 import * as eventTypes from '../../constants/eventTypes';
 
 const OldContent = () => (
@@ -33,6 +34,7 @@ const OldContent = () => (
 export class NotablePerson extends Component {
   state = {
     isLoading: true,
+    isModalAddQuote: false,
   };
 
   componentDidMount() {
@@ -44,6 +46,10 @@ export class NotablePerson extends Component {
 
   componentWillUnmount() {
     clearTimeout(this.loadingTimeout);
+  }
+
+  get modalAddQuote() {
+    return <Modal onClose={() => this.setState({ isModalAddQuote: false })} />;
   }
 
   handleLoaded = () => this.setState({ isLoading: false });
@@ -81,8 +87,9 @@ export class NotablePerson extends Component {
                 <FloatButton
                   label="Add quote"
                   className="add-quote"
-                  onClick={() => console.log('Click')}
+                  onClick={() => this.setState({ isModalAddQuote: true })}
                 />
+                {this.state.isModalAddQuote && this.modalAddQuote}
               </Fragment>
             )}
           </App>

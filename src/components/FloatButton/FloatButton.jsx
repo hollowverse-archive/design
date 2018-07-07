@@ -8,6 +8,7 @@ import './styles.css';
 
 export const FloatButton = props => (
   <button
+    type="button"
     className={classNames('float-button', {
       [props.className]: props.className,
     })}
@@ -21,8 +22,8 @@ export const FloatButton = props => (
 
 FloatButton.propTypes = {
   label: PropTypes.string,
-  onClick: PropTypes.func,
   className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 FloatButton.defaultProps = {
