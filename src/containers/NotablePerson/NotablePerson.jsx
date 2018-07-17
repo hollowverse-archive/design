@@ -14,6 +14,7 @@ import { Footnotes } from '../../components/Footnotes/Footnotes';
 import { Section } from '../../components/Section/Section';
 import { Separator } from '../../components/Separator/Separator';
 import * as eventTypes from '../../constants/eventTypes';
+import SpeedDails from '../../components/SpeedDail/SpeedDail';
 
 const OldContent = () => (
   <Fragment>
@@ -26,6 +27,7 @@ const OldContent = () => (
       <a href={data.ARTICLE_META.authorUrl}>{data.ARTICLE_META.author}</a> and
       last updated on {data.ARTICLE_META.created}.
     </p>
+    <SpeedDails />
   </Fragment>
 );
 
